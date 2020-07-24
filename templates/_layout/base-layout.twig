@@ -1,0 +1,32 @@
+{% do view.registerCssFile("/assets/css/main.css") %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% if title is defined %}
+				{{ title }}
+				-
+			{% endif %}
+			{{ siteName }}
+		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon-tag.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-tag-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-tag-16x16.png">
+		<link rel="manifest" href="assets/images/site.webmanifest">
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+		<link href="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.css" type="text/css" rel="stylesheet"/>
+	</head>
+	<body class="flex flex-col min-h-screen"> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
+		<script src="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.js" type="text/javascript" charset="utf-8"></script>
+		<script src="assets/js/zenscroll-min.js"></script>
+		<script>
+			var defaultDuration = 777 // ms
+var edgeOffset = 0 // px
+zenscroll.setup(defaultDuration, edgeOffset)
+		</script>
+	</body>
+</html>

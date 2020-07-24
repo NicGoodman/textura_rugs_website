@@ -1,5 +1,25 @@
 @tailwind base;
 
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+p {
+
+}
+
 @tailwind components;
 
 @tailwind utilities;
