@@ -17,9 +17,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      'nexa-rust-sans': ['', 'sans-serif'],
-      'bioRhyme': ['', 'serif'],
-      'quicksand': ['', 'sans-serif'],
+      'nexa-rust-sans': ['NexaRustSans-Book', 'sans-serif'],
+      'bioRhyme': ['BioRhyme', 'serif'],
+      'quicksand': ['Quicksand', 'sans-serif'],
     }
   },
   variants: {
