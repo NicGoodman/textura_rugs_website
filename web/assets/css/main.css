@@ -593,7 +593,7 @@ video {
 @font-face {
   font-family: 'NexaRustSans-Book';
 
-  src: url('assets/fonts/nexa-rust-sans-book.woff2') format('woff2'), url('assets/fonts/nexa-rust-sans-book.woff') format('woff');
+  src: url('../fonts/nexa-rust-sans-book.woff2') format('woff2'), url('..//fonts/nexa-rust-sans-book.woff') format('woff');
 }
 
 h1 {
