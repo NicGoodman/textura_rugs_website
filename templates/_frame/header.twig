@@ -1,3 +1,7 @@
-<header class="w-full h-24 bg-rug-yellow">
-	<h2>Header Section</h2>
+<header class="flex flex-row justify-between w-full p-10 bg-rug-dark-blue">
+	{% include "_snippets/logo" %}
+	<nav>
+		{% include "_content/main-nav-list" %}
+	</nav>
+	{% include "_content/social-media-list" %}
 </header>
