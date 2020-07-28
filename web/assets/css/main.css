@@ -645,6 +645,10 @@ p {
   --text-opacity: 1;
   color: #11111e;
   color: rgba(17, 17, 30, var(--text-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .btn-main:hover {

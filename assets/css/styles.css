@@ -47,6 +47,8 @@ p {
 .btn-main {
     @apply bg-rug-light-blue;
     @apply text-rug-black;
+    @apply py-4;
+    @apply px-8;
 }
 
 .btn-main:hover {

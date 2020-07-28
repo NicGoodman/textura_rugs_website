@@ -18,13 +18,13 @@
 			{% set ctaLink = block.introCtaLink.one().getUrl() %}
 		{% endfor %}
 		<header id="hero-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16">
-			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl space-x-2">
-				<picture id="hero-intro-image" class="border-2 border-rug-light-blue">
-					<img src="" alt="">
+			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl">
+				<picture id="hero-intro-image" class="w-1/2 border-2 border-rug-light-blue">
+					<img src="" alt="" class="">
 				</picture>
-				<article id="hero-intro-text" class="bg-rug-dark-blue text-rug-white">
-					<h1></h1>
-					<h2></h2>
+				<article id="hero-intro-text" class="w-1/2 p-4 bg-rug-dark-blue text-rug-white">
+					<h1>{{ introHeader }}</h1>
+					<h2>{{ introBodyText }}</h2>
 					{% include "_snippets/btn-main" %}
 				</article>
 			</section>
