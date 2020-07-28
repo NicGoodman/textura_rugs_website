@@ -44,6 +44,10 @@ p {
     @apply text-rug-light-blue;
 }
 
+.social-item:hover {
+    @apply text-rug-yellow;
+}
+
 .btn-main {
     @apply bg-rug-light-blue;
     @apply text-rug-black;
