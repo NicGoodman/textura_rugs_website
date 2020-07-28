@@ -18,7 +18,7 @@
 			{% set ctaLink = block.introCtaLink.one().getUrl() %}
 		{% endfor %}
 		<header id="hero-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16">
-			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl">
+			<section id="hero-intro-wrapper" class="flex flex-row h-full max-w-3xl flex-shrink-1">
 				<picture id="hero-intro-image" class="flex-grow mb-12 border-2 border-rug-light-blue">
 					<img src="{{ introImage.src }}" alt="" data-srcset="{{ introImage.srcset}}" class="object-cover w-full h-full">
 				</picture>
@@ -29,6 +29,17 @@
 					</span>
 					{% include "_snippets/btn-main" %}
 				</article>
+			</section>
+			<section id="hero-contact-block" class="flex flex-col p-4 text-right bg-rug-dark-blue text-rug-white">
+				<h3>GET IN TOUCH</h3>
+				{% set contactStyles = "text-right text-rug-white text-base font-bioRhyme" %}
+				{% include "_snippets/contact-info" %}
+				{% set ctaText = "EMAIL US" %}
+				{% set ctaLink = "mailto:" %}
+				{% include "_snippets/btn-main" %}
+				{% set ctaText = "828.519.9066" %}
+				{% set ctaLink = "tel:+1-828-519-9066" %}
+				{% include "_snippets/btn-main" %}
 			</section>
 		</header>
 	{% endif %}
