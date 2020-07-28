@@ -649,6 +649,8 @@ p {
   padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  font-family: BioRhyme, serif;
+  font-size: 1.5rem;
 }
 
 .btn-main:hover {
