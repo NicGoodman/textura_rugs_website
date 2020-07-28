@@ -15,7 +15,7 @@
 			{% set introHeader = block.introHeader %}
 			{% set introBodyText = block.introBodyText %}
 			{% set ctaText = block.introCtaText %}
-			{% set ctaLink = block.introCtaLink %}
+			{% set ctaLink = block.introCtaLink.one().getUrl() %}
 		{% endfor %}
 		<header id="hero-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16">
 			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl space-x-2">
