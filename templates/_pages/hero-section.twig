@@ -1,8 +1,8 @@
 <section id="hero-section" class="flex-grow w-full h-full bg-rug-dark-blue">
+	{% set heroImage = entry.heroImage.one().optimizedImages %}
+	{% set heroImageAltText = entry.heroImage.one().title %}
 	<picture>
-		<img src="" alt="" class="object-cover w-screen min-h-2/3-screen">
+		<img src="{{ heroImage.src() }}" alt="{{ heroImageAltText }}" data-srcset="{{ heroImage.srcset() }}" class="object-cover w-screen min-h-2/3-screen">
 	</picture>
-    <header class="absolute top-1/2 right-1/12">
-
-    </header>
+	<header class="absolute top-1/2 right-1/12"></header>
 </section>
