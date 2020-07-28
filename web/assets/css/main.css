@@ -638,6 +638,21 @@ p {
   color: rgba(189, 227, 239, var(--text-opacity));
 }
 
+.btn-main {
+  --bg-opacity: 1;
+  background-color: #bde3ef;
+  background-color: rgba(189, 227, 239, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #11111e;
+  color: rgba(17, 17, 30, var(--text-opacity));
+}
+
+.btn-main:hover {
+  --bg-opacity: 1;
+  background-color: #c6c6c6;
+  background-color: rgba(198, 198, 198, var(--bg-opacity));
+}
+
 .container {
   width: 100%;
 }

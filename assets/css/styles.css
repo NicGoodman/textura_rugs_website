@@ -43,6 +43,15 @@ p {
     @apply font-medium;
     @apply text-rug-light-blue;
 }
+
+.btn-main {
+    @apply bg-rug-light-blue;
+    @apply text-rug-black;
+}
+
+.btn-main:hover {
+    @apply bg-rug-grey;
+}
 @tailwind components;
 
 @tailwind utilities;
