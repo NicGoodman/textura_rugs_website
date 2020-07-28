@@ -30,6 +30,13 @@ p {
     @apply text-sm;
 }
 
+.section-wrapper {
+    @apply max-w-screen-xl;
+    @apply flex;
+    @apply flex-col;
+    @apply my-16;
+    @apply flex-grow;
+}
 @tailwind components;
 
 @tailwind utilities;
