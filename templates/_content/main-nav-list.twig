@@ -1,0 +1,7 @@
+<ul>
+	{% for link in navLinks.all() %}
+		<li>
+			<a href="{{ link.getUrl() }}">{{ link.title }}</a>
+		</li>
+	{% endfor %}
+</ul>
