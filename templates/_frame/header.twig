@@ -1,6 +1,7 @@
 <header id="main-header" class="flex flex-row justify-between w-full p-10 bg-rug-dark-blue">
 	{% include "_snippets/logo" %}
 	<nav id="main-site-navigation" class="">
+		{% set navLinks = entry.navigationItems.all() %}
 		{% include "_content/main-nav-list" %}
 	</nav>
 	{% include "_content/social-media-list" %}
