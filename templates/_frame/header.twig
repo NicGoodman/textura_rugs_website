@@ -1,5 +1,6 @@
 <header id="main-header" class="flex flex-row justify-between w-full p-10 bg-rug-dark-blue">
 {% set logo = entry.logo.one().optimizedImages %}
+{% set logoAltText = logo.title %}
 	{% include "_snippets/logo" %}
 	<nav id="main-site-navigation" class="text-rug-white">
 		{% set navLinks = entry.navigationItems.all() %}

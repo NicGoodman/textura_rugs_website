@@ -1,11 +1,13 @@
 <footer id="main-footer" class="flex flex-row justify-between w-full p-10 bg-rug-black">
-	<nav id="site-navigation" class="" style="column-count: 2;">
+	<nav id="site-navigation" class="text-rug-white" style="column-count: 2;">
 		{% set navLinks = entry.navigationItems.all() %}
 		{% set listStyles = "" %}
 		{% include "_content/main-nav-list" %}
 		{% set socialMediaList = entry.socialMediaAccounts.all() %}
 		{% include "_content/social-media-list" %}
 	</nav>
+	{% set logo = entry.logo.one().optimizedImages %}
+	{% set logoAltText = logo.title %}
 	{% include "_snippets/logo" %}
 	{% include "_snippets/contact-info-footer" %}
 </footer>
