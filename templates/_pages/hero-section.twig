@@ -19,10 +19,10 @@
 		{% endfor %}
 		<header id="hero-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16">
 			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl">
-				<picture id="hero-intro-image" class="w-1/2 border-2 border-rug-light-blue">
-					<img src="" alt="" class="">
+				<picture id="hero-intro-image" class="flex-grow mb-8 border-2 border-rug-light-blue">
+					<img src="{{ introImage.src }}" alt="" data-srcset="{{ introImage.srcset}}" class="object-cover w-full">
 				</picture>
-				<article id="hero-intro-text" class="w-1/2 p-4 bg-rug-dark-blue text-rug-white">
+				<article id="hero-intro-text" class="w-1/2 p-4 mt-8 ml-4 bg-rug-dark-blue text-rug-white">
 					<h1>{{ introHeader }}</h1>
 					<h2 class="mb-6">{{ introBodyText }}</h2>
 					{% include "_snippets/btn-main" %}
