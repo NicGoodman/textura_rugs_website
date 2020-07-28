@@ -630,6 +630,14 @@ p {
   flex-grow: 1;
 }
 
+.social-item {
+  font-size: 1.25rem;
+  font-weight: 500;
+  --text-opacity: 1;
+  color: #bde3ef;
+  color: rgba(189, 227, 239, var(--text-opacity));
+}
+
 .container {
   width: 100%;
 }
