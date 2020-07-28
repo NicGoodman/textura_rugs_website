@@ -598,7 +598,7 @@ video {
 
 h1 {
   font-family: NexaRustSans-Book, sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.875rem;
 }
 
 h2 {
@@ -651,6 +651,8 @@ p {
   padding-right: 1.5rem;
   font-family: BioRhyme, serif;
   font-size: 1.5rem;
+  display: block;
+  text-align: center;
 }
 
 .btn-main:hover {
