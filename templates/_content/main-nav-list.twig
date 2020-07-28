@@ -1,7 +1,7 @@
 <ul class="{{ listStyles }}">
 	{% for link in navLinks %}
 		<li>
-			<a href="{{ link.getUrl() }}">{{ link.title }}</a>
+			{% include "_snippets/nav-item" %}
 		</li>
 	{% endfor %}
 </ul>
