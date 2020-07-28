@@ -1,11 +1,11 @@
-<section id="hero-section" class="w-full bg-rug-white">
+<section id="hero-section" class="relative w-full bg-rug-white">
 	{% set heroImage = entry.heroImage.one().optimizedImages %}
 	{% set heroImageAltText = entry.heroImage.one().title %}
 	<picture>
 		<img src="{{ heroImage.src() }}" alt="{{ heroImageAltText }}" data-srcset="{{ heroImage.srcset() }}" class="object-cover w-screen max-h-2/3-screen {{ heroOpacity }}">
 	</picture>
 	{% if entry.heroIntro|length %}
-		<header class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16 bg-rug-yellow">
+		<header class="absolute top-0 left-0 flex flex-row items-end justify-center w-full h-full p-16">
 			
 		</header>
 	{% endif %}
