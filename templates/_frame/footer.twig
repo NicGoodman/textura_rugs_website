@@ -1,6 +1,7 @@
 <footer id="main-footer" class="flex flex-row justify-between w-full p-10 bg-rug-black">
 	<nav id="site-navigation" class="" style="column-count: 2;">
 	{% set navLinks = entry.navigationItems.all() %}
+	{% set listStyles = "" %}
 		{% include "_content/main-nav-list" %}
 	</nav>
     {% include "_snippets/logo" %}
