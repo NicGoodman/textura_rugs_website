@@ -53,8 +53,8 @@ p {
     @apply text-rug-black;
     @apply py-2;
     @apply px-6;
-    @apply font-bioRhyme;
-    @apply text-2xl;
+    @apply font-nexa-rust-sans;
+    @apply text-xl;
     @apply block;
     @apply text-center;
 }
