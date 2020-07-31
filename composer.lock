@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e19168d6569f5e42788ca8efdd7132cd",
+    "content-hash": "ebe9ccb8a78854fdc185da3ca0998bcc",
     "packages": [
         {
             "name": "cakephp/core",
@@ -5077,6 +5077,92 @@
                 "templating"
             ],
             "time": "2020-02-11T15:31:23+00:00"
+        },
+        {
+            "name": "verbb/base",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/verbb-base.git",
+                "reference": "85a11791c811c90ea58a3718488af0e60e12ba2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/85a11791c811c90ea58a3718488af0e60e12ba2c",
+                "reference": "85a11791c811c90ea58a3718488af0e60e12ba2c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "verbb\\base\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
+            "time": "2020-04-14T23:40:29+00:00"
+        },
+        {
+            "name": "verbb/wishlist",
+            "version": "1.2.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/wishlist.git",
+                "reference": "1eaaccfe772095b3bc4905c5b33dbe5383312248"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/wishlist/zipball/1eaaccfe772095b3bc4905c5b33dbe5383312248",
+                "reference": "1eaaccfe772095b3bc4905c5b33dbe5383312248",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.4.0",
+                "verbb/base": "^1.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Wishlist",
+                "handle": "wishlist",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/wishlist/craft-3/CHANGELOG.md",
+                "class": "verbb\\wishlist\\Wishlist"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\wishlist\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Allow users to create lists to store favourite entries, save products in a wishlist and more.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "wishlist"
+            ],
+            "time": "2020-06-30T05:48:59+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
