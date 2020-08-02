@@ -16,19 +16,19 @@
                     {% set imageCaption = block.caption %}
                     {% set image = block.image.one().optimizedImages %}
 
-					{% if block.size == fullWidth %}
+					{% if block.size == "fullWidth" %}
 						{% set imageWidth = "w-full" %}
-					{% elseif block.size == halfWidth %}
+					{% elseif block.size == "halfWidth" %}
 						{% set imageWidth = "w-1/2" %}
-					{% elseif block.size == thirdWidth %}
+					{% elseif block.size == "thirdWidth" %}
 						{% set imageWidth = "w-1/3" %}
 					{% endif %}
 
-					{% if block.alignment == left %}
+					{% if block.alignment == "left" %}
 						{% set imageAlignment = "float-left" %}
-					{% elseif block.size == right %}
+					{% elseif block.size == "right" %}
 						{% set imageAlignment = "float-right" %}
-					{% elseif block.size == center %}
+					{% elseif block.size == "center" %}
 						{% set imageAlignment = "mx-auto" %}
 					{% endif %}
 
