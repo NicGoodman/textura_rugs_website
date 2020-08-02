@@ -14,6 +14,7 @@
 							</div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
+                            {% set imageHeight = "" %}
 							{% set imageSize = "" %}
 							{% set imageCaption = block.caption %}
 							{% set image = block.image.one().optimizedImages %}
