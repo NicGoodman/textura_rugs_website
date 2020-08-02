@@ -1,3 +1,7 @@
 <section id="page-content" class="section-wrapper">
-
+	{% set pageContent = entry.pageContent %}
+	{% for row in pageContent %}
+		<h1>{{ row.sectionHeader}}</h1>
+        
+	{% endfor %}
 </section>

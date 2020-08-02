@@ -1,6 +1,7 @@
 {% extends "_layout/base-layout" %}
 
 {% block header %}
+{% set entry = craft.entries().section('home').one() %}
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
@@ -10,5 +11,6 @@
 	</main>
 {% endblock %}
 {% block footer %}
+{% set entry = craft.entries().section('home').one() %}
 	{% include "_frame/footer.twig" %}
 {% endblock %}
