@@ -1,4 +1,4 @@
-<section id="page-content" class="section-wrapper">
+<section id="page-content" class="section-wrapper" x-data="{selected:null}">
 	{% set pageContent = entry.pageContent %}
 	{% for row in pageContent.all() %}
 		<article id="" class="">
@@ -10,11 +10,11 @@
 							<h2 class="w-full my-4 border-b-2 border-rug-light-blue">{{ block.subheadingText }}</h2>
 						{% case "body" %}
 							<div id="" class="flex-1 p-4">
-								{{ block.bodyText }}
+								{{ block.bodyText  | nl2br }}
 							</div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
-                            {% set imageHeight = "" %}
+							{% set imageHeight = "" %}
 							{% set imageSize = "" %}
 							{% set imageCaption = block.caption %}
 							{% set image = block.image.one().optimizedImages %}
@@ -46,6 +46,12 @@
 							</picture>
 
 						{% case "accordion" %}
+							<div id="" class="w-full mb-4 border-b-2 border-rug-light-blue" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null" :class="{ 'text-rug-light-blue': selected === {{ loop.index }}, 'text-rug-dark-blue': selected !== {{ loop.index }} }">
+								<h2>{{ block.heading }}</h2>
+							</div>
+							<div class="w-full" x-show="selected == {{ loop.index }}">
+								{{ block.text | nl2br }}
+							</div>
 
 					{% endswitch %}
 				{% endfor %}
