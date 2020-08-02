@@ -1,5 +1,6 @@
 <section id="inventory-feed" class="section-wrapper">
 {% set inventoryQuery = craft.entries().section('inventory').all() %}
+{% set list = craft.wishlist.lists().default(true).one() %}
 {% for entry in inventoryQuery %}
     {% include "_content/rug-block" %}
 {% endfor %}
