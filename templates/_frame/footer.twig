@@ -1,13 +1,14 @@
 <footer id="main-footer" class="flex flex-row items-center justify-between w-full p-10 bg-rug-black">
+{% set homeEntry = craft.entries().section('home').one() %}
 	<nav id="site-navigation" class="text-rug-white" style="column-count: 2;">
-		{% set navLinks = entry.navigationItems.all() %}
+		{% set navLinks = homeEntry.navigationItems.all() %}
 		{% set listStyles = "" %}
 		{% include "_content/main-nav-list" %}
-		{% set socialMediaList = entry.socialMediaAccounts.all() %}
+		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% include "_content/social-media-list" %}
 	</nav>
-	{% set logo = entry.logo.one().optimizedImages %}
-	{% set logoAltText = entry.logo.one().title %}
+	{% set logo = homeEntry.logo.one().optimizedImages %}
+	{% set logoAltText = homeEntry.logo.one().title %}
 	{% include "_snippets/logo" %}
 	{% set contactStyles = "text-right text-rug-white text-lg font-bioRhyme" %}
 	{% include "_snippets/contact-info" %}
