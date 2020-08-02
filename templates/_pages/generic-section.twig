@@ -32,9 +32,15 @@
 								{% set imageSize = "h-64 w-64" %}
 							{% endif %}
 
+							{% if block.height == "fullHeight" %}
+								{% set imageHeight = "h-full" %}
+							{% elseif block.height =="uniform" %}
+								{% set imageHeight = "h-64" %}
+							{% endif %}
+
 
 							<picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-4">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} {{ imageHeight }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 
