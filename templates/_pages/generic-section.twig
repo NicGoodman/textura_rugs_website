@@ -33,10 +33,11 @@
 							{% elseif block.alignment == "right" %}
 								{% set imageAlignment = "float-right pl-4" %}
 							{% elseif block.alignment == "center" %}
-								{% set imageAlignment = "mx-auto float-none px-4" %}
+								{% set imageAlignment = "float-none px-4" %}
+                                {% set imageInternalAlignment = "mx-auto" %}
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} {{ imageInternalAlignment }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 						{% case "accordion" %}
