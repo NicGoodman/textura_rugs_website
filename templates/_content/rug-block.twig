@@ -1,4 +1,5 @@
 <article id="" class="">
+{% set list = craft.wishlist.lists().default(true).one() %}
 <h2>{{ entry.productTitle }}</h2>
 	<picture>
 		<img src="" alt="">
@@ -9,6 +10,6 @@
 
         <input type="hidden" name="elementId" value="{{ entry.id }}">
 
-        <input type="submit" value="Toggle in List">
+        <input type="submit" value="{% if list contains entry.id %}Remove From{% else %}Add To{% endif %} List">
     </form>
 </article>
