@@ -1,10 +1,10 @@
 <section id="page-content" class="section-wrapper">
 	{% set pageContent = entry.pageContent %}
-	{% for row in pageContent %}
+	{% for row in pageContent.all() %}
 		<article id="" class="">
 			<h1>{{ row.sectionHeader}}</h1>
 			<div id="" class="w-full">
-				{% for block in row.sectionContent %}
+				{% for block in row.sectionContent.all() %}
 					{% switch block.type %}
 						{% case "subheading" %}
 							<h2 class="block w-full my-4 border-b-2 border-rug-light-blue">{{ block.subheadingText }}</h2>
