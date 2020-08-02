@@ -12,6 +12,7 @@
 							{{ block.bodyText }}
 						{% case "image" %}
 							{% set imageWidth = "" %}
+                            {% set imageSize = "" %}
 							{% set imageAlignment = "" %}
 							{% set imageCaption = block.caption %}
 							{% set image = block.image.one().optimizedImages %}
@@ -22,6 +23,9 @@
 								{% set imageWidth = "w-1/2" %}
 							{% elseif block.size == "thirdWidth" %}
 								{% set imageWidth = "w-1/3" %}
+							{% elseif block.size == "square" %}
+								{% set imageWidth = "" %}
+                                {% set imageSize = "h-64 w-64" %}
 							{% endif %}
 
 							{% if block.alignment == "left" %}
@@ -32,7 +36,7 @@
 								{% set imageAlignment = "mx-auto float-none px-4" %}
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover border-2 border-rug-dark-blue">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 						{% case "accordion" %}
