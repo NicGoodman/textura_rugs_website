@@ -25,15 +25,15 @@
 							{% endif %}
 
 							{% if block.alignment == "left" %}
-								{% set imageAlignment = "float-left" %}
+								{% set imageAlignment = "float-left pr-4" %}
 							{% elseif block.alignment == "right" %}
-								{% set imageAlignment = "float-right" %}
+								{% set imageAlignment = "float-right pl-4" %}
 							{% elseif block.alignment == "center" %}
-								{% set imageAlignment = "mx-auto float-none" %}
+								{% set imageAlignment = "mx-auto float-none px-4" %}
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }}">
 								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover">
-								<h3>{{ imageCaption }}</h3>
+								<p>{{ imageCaption }}</p>
 							</picture>
 						{% case "accordion" %}
 
