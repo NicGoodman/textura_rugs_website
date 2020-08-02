@@ -7,7 +7,7 @@
 				{% for block in row.sectionContent %}
 					{% switch block.type %}
 						{% case "subheading" %}
-							<h2 class="block w-full">{{ block.subheadingText }}</h2>
+							<h2 class="block w-full my-4 border-b-2 border-rug-light-blue">{{ block.subheadingText }}</h2>
 						{% case "body" %}
 							{{ block.bodyText }}
 						{% case "image" %}
@@ -31,8 +31,8 @@
 							{% elseif block.alignment == "center" %}
 								{% set imageAlignment = "mx-auto float-none px-4" %}
 							{% endif %}
-							<picture id="" class="{{ imageWidth }} {{ imageAlignment }}">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover">
+							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 						{% case "accordion" %}
