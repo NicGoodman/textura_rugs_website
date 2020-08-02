@@ -1,9 +1,11 @@
 {% extends "_layout/base-layout" %}
 
 {% block header %}
+{% set entry = craft.entries().section('home').one() %}
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
+{% set entry = craft.entries().section('collections').one() %}
 	<main class="flex flex-col items-center flex-grow w-full bg-rug-dark-blue">
 	{% set heroOpacity = "opacity-25" %}
 		{% include "_pages/hero-section" %}
@@ -12,5 +14,6 @@
 	</main>
 {% endblock %}
 {% block footer %}
+{% set entry = craft.entries().section('home').one() %}
 	{% include "_frame/footer.twig" %}
 {% endblock %}
