@@ -34,6 +34,14 @@
 								{% set imageAlignment = "float-right pl-4" %}
 							{% elseif block.alignment == "center" %}
 								{% set imageAlignment = "float-none px-4 mx-auto" %}
+							{% elseif block.alignment == "grid" %}
+                            <div id="" class="flex flex-row flex-wrap">
+                                <picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-2">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
+								<p>{{ imageCaption }}</p>
+							</picture>
+                            </div>
+
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center flex flex-col items-center">
 								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
