@@ -2,6 +2,8 @@
 {% set inventoryQuery = craft.entries().section('inventory').all() %}
 {% set list = craft.wishlist.lists().default(true).one() %}
 {% for entry in inventoryQuery %}
+{% set name = entry.productTitle %}
+{% set thumbnail = entry.primaryImage.one().optimizedImages %}
     {% include "_content/rug-block" %}
 {% endfor %}
 </section>

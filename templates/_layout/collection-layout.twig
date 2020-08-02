@@ -7,9 +7,7 @@
 {% block main %}
 {% set entry = craft.entries().section('collections').one() %}
 	<main class="flex flex-col items-center flex-grow w-full bg-rug-dark-blue">
-	{% set heroOpacity = "opacity-25" %}
-		{% include "_pages/hero-section" %}
-		{% include "_pages/collections-list-section" %}
+		{% include "_pages/inventory-feed-section" %}
 	</main>
 {% endblock %}
 {% block footer %}
