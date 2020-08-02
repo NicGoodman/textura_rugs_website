@@ -19,6 +19,29 @@
 		<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;800&display=swap" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 		<script src="https://kit.fontawesome.com/b8e1a37e87.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+		<script>
+$(document).ready(function(){
+
+    var form = $('#ajax-test-form');
+    form.submit(function(e) {
+        // prevent form submission
+        e.preventDefault();
+
+        // submit the form via Ajax
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            dataType: 'html',
+            data: form.serialize(),
+            success: function(result) {
+                // Inject the result in the HTML
+                $('#form-result').html(result);
+            }
+        });
+    });
+});
+</script>
 	</head>
 	<body class="flex flex-col min-h-screen">
 		{% block header %}

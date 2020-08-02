@@ -3,7 +3,7 @@
 	<picture>
 		<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}">
 	</picture>
-     <form method="POST">
+     <form method="POST" id="add-to-wishlist">
         <input type="hidden" name="action" value="wishlist/items/toggle">
         {{ csrfInput() }}
 
@@ -14,4 +14,5 @@
 	{% set item = craft.wishlist.item(entry.id) %}
 
     <a href="{{ item.toggleUrl() }}">Toggle</a>
+	<div id="form-result"></div>
 </article>
