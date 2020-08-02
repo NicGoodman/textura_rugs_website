@@ -4,45 +4,5 @@
 	<picture id="hero-image">
 		<img src="{{ heroImage.src() }}" alt="{{ heroImageAltText }}" data-srcset="{{ heroImage.srcset() }}" class="object-cover w-screen max-h-2/3-screen {{ heroOpacity }}">
 	</picture>
-	{% if entry.heroIntro|length %}
-		{% set introImage = "" %}
-		{% set introHeader = "" %}
-		{% set introBodyText = "" %}
-		{% set ctaText = "" %}
-		{% set ctaLink = "" %}
-		{% for block in entry.heroIntro.all() %}
-			{% set introImage = block.introImage.one().optimizedImages %}
-			{% set introHeader = block.introHeader %}
-			{% set introBodyText = block.introBodyText %}
-			{% set ctaText = block.introCtaText %}
-			{% set ctaLink = block.introCtaLink.one().getUrl() %}
-		{% endfor %}
-		<header id="hero-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-around w-full h-full p-16">
-			<section id="hero-intro-wrapper" class="flex flex-row h-full max-w-3xl flex-shrink-1">
-				<picture id="hero-intro-image" class="flex-grow mb-12 border-2 border-rug-light-blue">
-					<img src="{{ introImage.src }}" alt="" data-srcset="{{ introImage.srcset}}" class="object-cover w-full h-full">
-				</picture>
-				<article id="hero-intro-text" class="flex flex-col justify-between flex-shrink-0 w-1/2 px-4 pt-4 pb-6 mt-20 ml-4 bg-rug-dark-blue text-rug-white">
-					<span id="text-wrapper" class="">
-						<h1>{{ introHeader }}</h1>
-						<h2 class="mb-6">{{ introBodyText|nl2br }}</h2>
-					</span>
-					{% include "_snippets/btn-main" %}
-				</article>
-			</section>
-			<section id="hero-contact-block" class="flex flex-col p-4 text-right bg-rug-dark-blue text-rug-white">
-				<h3>GET IN TOUCH</h3>
-				{% set contactStyles = "text-right text-rug-white text-base font-bioRhyme" %}
-				{% include "_snippets/contact-info" %}
-				<br/>
-				{% set ctaText = "EMAIL US" %}
-				{% set ctaLink = "mailto:" %}
-				{% include "_snippets/btn-main" %}
-				<br/>
-				{% set ctaText = "828.519.9066" %}
-				{% set ctaLink = "tel:+1-828-519-9066" %}
-				{% include "_snippets/btn-main" %}
-			</section>
-		</header>
-	{% endif %}
+
 </section>
