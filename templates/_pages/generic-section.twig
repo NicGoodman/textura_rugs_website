@@ -34,26 +34,43 @@
 								{% set imageAlignment = "float-right pl-4" %}
 							{% elseif block.alignment == "center" %}
 								{% set imageAlignment = "float-none px-4 mx-auto" %}
-							{% elseif block.alignment == "grid" %}
-                            <div id="" class="flex flex-row flex-wrap">
-                                <picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-2">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
-								<p>{{ imageCaption }}</p>
-							</picture>
-                            </div>
-
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center flex flex-col items-center">
 								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 
-						{% case "imageGrid" %}
-
 						{% case "accordion" %}
 
 					{% endswitch %}
 				{% endfor %}
+				<div id="" class="flex flex-row flex-wrap">
+					{% for block in row.sectionContent.all() %}
+                    {% set imageWidth = "" %}
+							{% set imageSize = "" %}
+							{% set imageAlignment = "" %}
+							{% set imageCaption = block.caption %}
+							{% set image = block.image.one().optimizedImages %}
+
+							{% if block.size == "fullWidth" %}
+								{% set imageWidth = "w-full" %}
+							{% elseif block.size == "halfWidth" %}
+								{% set imageWidth = "w-1/2" %}
+							{% elseif block.size == "thirdWidth" %}
+								{% set imageWidth = "w-1/3" %}
+							{% elseif block.size == "square" %}
+								{% set imageWidth = "" %}
+								{% set imageSize = "h-64 w-64" %}
+							{% endif %}
+						{% if block.alignment == "grid" %}
+							<picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-2">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
+								<p>{{ imageCaption }}</p>
+							</picture>
+						{% endif %}
+
+					{% endfor %}
+				</div>
 			</div>
 		</article>
 	{% endfor %}
