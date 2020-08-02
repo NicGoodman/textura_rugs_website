@@ -36,7 +36,7 @@
 								{% set imageAlignment = "float-none px-4 mx-auto" %}
 							{% endif %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center flex flex-col">
-								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} {{ imageInternalAlignment }} object-cover border-2 border-rug-dark-blue">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
 						{% case "accordion" %}
