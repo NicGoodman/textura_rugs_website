@@ -5,7 +5,7 @@
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
-{% set entry = craft.entries().section('collections').one() %}
+{% set entry = craft.entries().section('rugs').one() %}
 	<main class="flex flex-col items-center flex-grow w-full bg-rug-dark-blue">
 	{% set heroOpacity = "opacity-25" %}
 		{% include "_pages/hero-section" %}
