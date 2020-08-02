@@ -1,6 +1,14 @@
-<article id="{{ rugName }}" class="">
+<article id="" class="">
+<h2>{{ entry.productTitle }}</h2>
 	<picture>
 		<img src="" alt="">
 	</picture>
-    
+     <form method="POST">
+        <input type="hidden" name="action" value="wishlist/items/toggle">
+        {{ csrfInput() }}
+
+        <input type="text" name="elementId" value="{{ entry.id }}">
+
+        <input type="submit" value="Toggle in List">
+    </form>
 </article>

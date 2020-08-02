@@ -4,9 +4,11 @@
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
-	<main class="flex flex-col items-center flex-grow w-full">
+	<main class="flex flex-col items-center flex-grow w-full bg-rug-dark-blue">
+	{% set heroOpacity = "opacity-25" %}
 		{% include "_pages/hero-section" %}
-
+		{% include "_pages/inventory-feed-section" %}
+		{% include "_pages/wish-list-section" %}
 	</main>
 {% endblock %}
 {% block footer %}

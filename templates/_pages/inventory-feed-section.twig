@@ -1,6 +1,6 @@
 <section id="inventory-feed" class="section-wrapper">
 {% set inventoryQuery = craft.entries().section('inventory').all() %}
-{% for rug in inventoryQuery %}
+{% for entry in inventoryQuery %}
     {% include "_content/rug-block" %}
 {% endfor %}
 </section>

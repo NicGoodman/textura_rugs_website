@@ -1,0 +1,11 @@
+<section id="wish-list" class="">
+{# Get the list #}
+{% set list = craft.wishlist.lists().default(true).one() %}
+
+{# Display list items #}
+<ul>
+    {% for item in list.items.all() %}
+        <li>{{ item.title }}</li>
+    {% endfor %}
+</ul>
+</section>
