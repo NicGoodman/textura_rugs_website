@@ -31,10 +31,12 @@
 							{% elseif block.alignment == "center" %}
 								{% set imageAlignment = "mx-auto float-none" %}
 							{% endif %}
-							<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover {{ imageWidth }} {{ imageAlignment }}">
-							<h3>{{ imageCaption }}</h3>
+							<picture id="" class="{{ imageWidth }} {{ imageAlignment }}">
+								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover">
+								<h3>{{ imageCaption }}</h3>
+							</picture>
 						{% case "accordion" %}
-                        
+
 					{% endswitch %}
 				</div>
 			{% endfor %}
