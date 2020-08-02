@@ -7,9 +7,7 @@
 				{% case "subheading" %}
 					<h2>{{ block.subheadingText }}</h2>
 				{% case "body" %}
-
-						{{ block.bodyText }}
-
+					{{ block.bodyText }}
 				{% case "image" %}
 					{% set imageWidth = "" %}
 					{% set imageAlignment = "" %}
@@ -31,9 +29,6 @@
 					{% elseif block.alignment == "center" %}
 						{% set imageAlignment = "mx-auto float-none" %}
 					{% endif %}
-
-					{{ imageWidth }}
-					{{ imageAlignment}}
 					<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover {{ imageWidth }} {{ imageAlignment }}">
 					<h3>{{ imageCaption }}</h3>
 				{% case "accordion" %}
