@@ -1,11 +1,12 @@
 <section id="wish-list" class="">
 {# Get the list #}
 {% set list = craft.wishlist.lists().default(true).one() %}
-
+{% if list|length %}
 {# Display list items #}
 <ul>
     {% for item in list.items.all() %}
         <li>{{ item.title }}</li>
     {% endfor %}
 </ul>
+{% endif %}
 </section>
