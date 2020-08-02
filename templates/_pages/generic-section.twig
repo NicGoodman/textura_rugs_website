@@ -1,9 +1,9 @@
 <section id="page-content" class="section-wrapper" x-data="{selected:null}">
 	{% set pageContent = entry.pageContent %}
 	{% for row in pageContent.all() %}
-		<article id="" class="">
+		<article id="" class="my-8 ">
 			<h1>{{ row.sectionHeader}}</h1>
-			<div id="" class="flex flex-row flex-wrap w-full my-8">
+			<div id="" class="flex flex-row flex-wrap w-full">
 				{% for block in row.sectionContent.all() %}
 					{% switch block.type %}
 						{% case "subheading" %}
