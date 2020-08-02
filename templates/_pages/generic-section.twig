@@ -2,6 +2,45 @@
 	{% set pageContent = entry.pageContent %}
 	{% for row in pageContent %}
 		<h1>{{ row.sectionHeader}}</h1>
-        
+		{% for block in row.sectionContent %}
+			{% switch block.type %}
+				{% case "subheading" %}
+					<h2>{{ block.subheadingText }}</h2>
+				{% case "body" %}
+					<div id="" class="">
+						{{ block.bodyText }}
+					</div>
+				{% case "image" %}
+					{% set imageWidth = "" %}
+					{% set imageAlignment = "" %}
+                    {% set imageCaption = block.caption %}
+                    {% set image = block.image.one().optimizedImages %}
+
+					{% if block.size == fullWidth %}
+						{% set imageWidth = "w-full" %}
+					{% elseif block.size == halfWidth %}
+						{% set imageWidth = "w-1/2" %}
+					{% elseif block.size == thirdWidth %}
+						{% set imageWidth = "w-1/3" %}
+					{% endif %}
+
+					{% if block.alignment == left %}
+						{% set imageAlignment = "float-left" %}
+					{% elseif block.size == right %}
+						{% set imageAlignment = "float-right" %}
+					{% elseif block.size == center %}
+						{% set imageAlignment = "mx-auto" %}
+					{% endif %}
+
+					{{ imageWidth }}
+					{{ imageAlignment}}
+                    <img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="object-cover {{ imageWidth }} {{ imageAlignment }}">
+                    <h3>{{ imageCaption }}</h3>
+				{% case "accordion" %}
+
+
+			{% endswitch %}
+
+		{% endfor %}
 	{% endfor %}
 </section>
