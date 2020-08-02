@@ -33,11 +33,7 @@ $(document).ready(function(){
             url: form.attr('action'),
             type: form.attr('method'),
             dataType: 'html',
-            data: form.serialize(),
-            success: function(result) {
-                // Inject the result in the HTML
-                $('#form-result').html(result);
-            }
+            data: form.serialize()
         });
     });
 });
