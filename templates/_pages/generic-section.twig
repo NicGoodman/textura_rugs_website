@@ -3,13 +3,15 @@
 	{% for row in pageContent.all() %}
 		<article id="" class="">
 			<h1>{{ row.sectionHeader}}</h1>
-			<div id="" class="w-full">
+			<div id="" class="flex flex-row flex-wrap w-full">
 				{% for block in row.sectionContent.all() %}
 					{% switch block.type %}
 						{% case "subheading" %}
-							<h2 class="inline-block w-full my-4 border-b-2 border-rug-light-blue">{{ block.subheadingText }}</h2>
+							<h2 class="w-full my-4 border-b-2 border-rug-light-blue">{{ block.subheadingText }}</h2>
 						{% case "body" %}
-							{{ block.bodyText }}
+							<div id="" class="flex-grow">
+								{{ block.bodyText }}
+							</div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
 							{% set imageSize = "" %}
@@ -29,48 +31,23 @@
 							{% endif %}
 
 							{% if block.alignment == "left" %}
-								{% set imageAlignment = "float-left pr-4" %}
+								{% set imageAlignment = "order-first pr-4" %}
 							{% elseif block.alignment == "right" %}
-								{% set imageAlignment = "float-right pl-4" %}
+								{% set imageAlignment = "order-last pl-4" %}
 							{% elseif block.alignment == "center" %}
-								{% set imageAlignment = "float-none px-4 mx-auto" %}
+								{% set imageAlignment = "px-4" %}
 							{% endif %}
-							{% if block.alignment != "grid" %}
+
 								<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center flex flex-col items-center">
 									<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
 									<p>{{ imageCaption }}</p>
 								</picture>
-							{% endif %}
-							<div id="" class="flex flex-row flex-wrap justify-between">
-                            {% if block.alignment == "grid" %}
-								{% set imageWidth = "" %}
-								{% set imageSize = "" %}
-								{% set imageAlignment = "" %}
-								{% set imageCaption = block.caption %}
-								{% set image = block.image.one().optimizedImages %}
-
-								{% if block.size == "fullWidth" %}
-									{% set imageWidth = "w-full" %}
-								{% elseif block.size == "halfWidth" %}
-									{% set imageWidth = "w-1/2" %}
-								{% elseif block.size == "thirdWidth" %}
-									{% set imageWidth = "w-1/3" %}
-								{% elseif block.size == "square" %}
-									{% set imageWidth = "" %}
-									{% set imageSize = "h-64 w-64" %}
-								{% endif %}
-
-								<picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-2">
-									<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue w-full h-64">
-									<p>{{ imageCaption }}</p>
-								</picture>
-							{% endif %}
-                            </div>
 
 						{% case "accordion" %}
 
 					{% endswitch %}
 				{% endfor %}
-		</div>
-	</article>
-{% endfor %}</section>
+			</div>
+		</article>
+	{% endfor %}
+</section>
