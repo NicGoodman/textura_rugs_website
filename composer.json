@@ -5,6 +5,8 @@
     "craftcms/redactor": "^2.6",
     "nystudio107/craft-imageoptimize": "^1.6",
     "nystudio107/craft-seomatic": "^3.3",
+    "olivestudio/craft-olivemenus": "^1.2",
+    "verbb/expanded-singles": "^1.1",
     "verbb/wishlist": "^1.2",
     "vlucas/phpdotenv": "^3.4.0"
   },
