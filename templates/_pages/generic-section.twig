@@ -35,10 +35,12 @@
 							{% elseif block.alignment == "center" %}
 								{% set imageAlignment = "float-none px-4 mx-auto" %}
 							{% endif %}
+                            {% if block.alignment != "grid" %}
 							<picture id="" class="{{ imageWidth }} {{ imageAlignment }} text-center flex flex-col items-center">
 								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} object-cover border-2 border-rug-dark-blue">
 								<p>{{ imageCaption }}</p>
 							</picture>
+                            {% endif %}
 
 						{% case "accordion" %}
 
