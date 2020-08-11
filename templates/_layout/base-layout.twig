@@ -38,12 +38,7 @@ $(document).ready(function(){
             dataType: 'html',
 			data: form.serialize()
 		});
-			$.ajax(form.attr('wishListURL'), {
-				dataType: 'html',
-				success: function(response) {
-					refreshWishList(response);
-				}
-			});
+
 	});
 	
 
