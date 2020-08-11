@@ -1,11 +1,11 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
 
 {% if list|length %}
-	<a href="/wish-list" class="wish-list-link text-rug-yellow" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
-		<i class="fas fa-clipboard-list"></i>
+	<a href="/wish-list" class="wish-list-link text-rug-yellow">
+		<i class="fas fa-clipboard-list" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }"></i>
 	</a>
 	{% else %}
-	<a href="/wish-list" class="wish-list-link text-rug-light-blue" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
-		<i class="fas fa-clipboard-list"></i>
+	<a href="/wish-list" class="wish-list-link text-rug-light-blue">
+		<i class="fas fa-clipboard-list" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }"></i>
 	</a>
 {% endif %}
