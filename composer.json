@@ -5,6 +5,7 @@
     "craftcms/redactor": "^2.6",
     "nystudio107/craft-imageoptimize": "^1.6",
     "nystudio107/craft-seomatic": "^3.3",
+    "venveo/craft-bulkedit": "^2.0",
     "verbb/expanded-singles": "^1.1",
     "verbb/super-table": "^2.5",
     "verbb/wishlist": "^1.2",
