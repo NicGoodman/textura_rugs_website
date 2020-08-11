@@ -39,7 +39,13 @@ var form = $(e.currentTarget);
             dataType: 'html',
 			data: form.serialize()
 		});
-
+        $.ajax({
+            url: '/wish-list',
+            dataType: 'html',
+            success: function(response) {
+                refreshWishList(response);
+            }
+        });
 	}
 	
 
