@@ -9,6 +9,6 @@
 
 		<input type="hidden" name="elementId" value="{{ entry.id }}">
 
-		<input type="submit" value="{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add To{% endif %} List" class="">
+		<input type="submit" value="{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add To{% endif %} List" class="wish-list-link">
 	</form>
 </article>
