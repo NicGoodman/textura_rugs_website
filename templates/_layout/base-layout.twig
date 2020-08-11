@@ -23,6 +23,9 @@
 		<script>
 $(document).ready(function(){
 // Add an event listener for filter clicks
+		$(function() {
+			$('body').on('click', '.wish-list-link', onWishListClick);
+		});
     var form = $('#add-to-wishlist');
     form.submit(function(e) {
         // prevent form submission
@@ -33,12 +36,13 @@ $(document).ready(function(){
             url: form.attr('action'),
             type: form.attr('method'),
             dataType: 'html',
-			data: form.serialize()
+			data: form.serialize(),
+						success: function(response) {
+				refreshWishList(response);
+			}
 		});
 	});
-			$(function() {
-			$('body').on('click', '.wish-list-link', onWishListClick);
-		});
+	
 
 		// Event handler for the filter click
 		function onWishListClick(e) {
