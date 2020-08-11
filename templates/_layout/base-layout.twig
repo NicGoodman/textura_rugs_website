@@ -48,5 +48,31 @@ $(document).ready(function(){
 		
 		{% block footer %}
 		{% endblock %}
+
+		<script type="text/javascript">
+		// Add an event listener for filter clicks
+		$(function() {
+			$('body').on('click', '.wish-list-link', onWishListClick);
+		});
+
+		// Event handler for the filter click
+		function onWishListClick(e) {
+			e.preventDefault();
+			var $wishListIcon = $(e.currentTarget);
+			var href = $wishListIcon.attr('href');
+			$.ajax($wishListIcon.attr('href'), {
+				dataType: 'html',
+				success: function(response) {
+					refreshInventory(response);
+				}
+			});
+		}
+
+		function refreshWishList(html) {
+			// Update the .inventoryItemContent DOM element with new HTML
+			var $html = $('<div />').append(html);
+			$('.wishListContent').html($html.find('.wishListContent').html());
+		}
+	</script>
 	</body>
 </html>

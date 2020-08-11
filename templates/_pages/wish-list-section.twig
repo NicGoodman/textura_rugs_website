@@ -1,4 +1,4 @@
-<section id="wish-list" class="">
+<div id="wish-list" class="wishListContent">
 {# Get the list #}
 {% set list = craft.wishlist.lists().default(true).one() %}
 {% if list|length %}
@@ -9,4 +9,4 @@
     {% endfor %}
 </ul>
 {% endif %}
-</section>
+</div>
