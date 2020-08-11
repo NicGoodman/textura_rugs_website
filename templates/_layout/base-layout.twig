@@ -38,13 +38,18 @@ $(document).ready(function(){
             dataType: 'html',
 			data: form.serialize()
 		});
-
+        $.ajax({
+            url: form.attr('wishListURL'),
+            dataType: 'html',
+            success: function(response) {
+                refreshWishList(response);
+            }
+        });
 	});
 	
 
 		// Event handler for the filter click
 		function onWishListClick(e) {
-			e.preventDefault();
 			var $wishListIcon = $(e.currentTarget);
 			var href = $wishListIcon.attr('href');
 			$.ajax($wishListIcon.attr('href'), {
