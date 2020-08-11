@@ -25,6 +25,7 @@ $(document).ready(function(){
 // Add an event listener for filter clicks
 		$(function() {
 			$('body').on('click', '.wish-list-link', onWishListClick);
+			$('body').on('click', '.wish-list-link', onWishListClick);
 		});
     var form = $('#add-to-wishlist');
     form.submit(function(e) {
@@ -38,13 +39,14 @@ $(document).ready(function(){
             dataType: 'html',
 			data: form.serialize()
 		});
-		$.ajax({
-			url: form.attr('wishListURL'),
-			dataType: 'html',
-			success: function(response) {
-				refreshWishList(response);
-			}
-		});
+		var $addToWishList = $(e.currentTarget);
+			var href = '/wish-list';
+			$.ajax($addToWishList.attr('href'), {
+				dataType: 'html',
+				success: function(response) {
+					refreshWishList(response);
+				}
+			});
 	});
 	
 
