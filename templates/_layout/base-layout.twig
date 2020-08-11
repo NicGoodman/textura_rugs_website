@@ -25,9 +25,10 @@ $(document).ready(function(){
 // Add an event listener for filter clicks
 		$(function() {
 			$('body').on('click', '.wish-list-link', onWishListClick);
+			$('body').on('submit', '#add-to-wishlist', addToWishList)
 		});
-    var form = $('#add-to-wishlist');
-    form.submit(function(e) {
+
+    function addToWishList(e) {
         // prevent form submission
         e.preventDefault();
 
