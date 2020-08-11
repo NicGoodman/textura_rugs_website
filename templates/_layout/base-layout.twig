@@ -31,7 +31,7 @@ $(document).ready(function(){
     function addToWishList(e) {
         // prevent form submission
         e.preventDefault();
-
+var $form = $(e.currentTarget);
         // submit the form via Ajax
         $.ajax({
             url: form.attr('action'),
