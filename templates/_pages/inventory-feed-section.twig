@@ -1,7 +1,7 @@
 <section id="inventory-feed" class="section-wrapper">
-{% set inventoryQuery = craft.entries().section('inventory').all() %}
+{% set inventoryQuery = craft.entries().section('inventory') %}
 {% set list = craft.wishlist.lists().default(true).one() %}
-{% for entry in inventoryQuery %}
+{% for entry in inventoryQuery.all() %}
 {% set name = entry.productTitle %}
 {% set thumbnail = entry.primaryImage.one().optimizedImages %}
     {% include "_content/rug-block" %}
