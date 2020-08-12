@@ -26,14 +26,14 @@ $(document).ready(function(){
 		$(function() {
 			$('body').on('click', '.wish-list-link', onWishListClick);
 			$('body').on('submit', '#add-to-wishlist', addToWishList);
-			$('body').on('click', '.wish-list-button', toggleButtonText);
 		});
 
     function addToWishList(e) {
         // prevent form submission
         e.preventDefault();
 var form = $(e.currentTarget);
-        // submit the form via Ajax
+		// submit the form via Ajax
+		$(form).text($(form).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
@@ -42,12 +42,7 @@ var form = $(e.currentTarget);
 		});
 		
 	}
-	function toggleButtonText(e) {
-		var button = $(e.currentTarget);
-		$(button).click(function(){
-            $(this).text($(this).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
-        });
-	}
+
 
 	
 
