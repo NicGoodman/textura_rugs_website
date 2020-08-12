@@ -12,5 +12,7 @@
 	{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 	{% include "_content/social-media-list" %}
 </header>
-<div id="wish-list" class="absolute right-0 z-50 flex flex-col w-full max-w-screen-md min-h-screen shadow-lg wishListContent bg-rug-light-blue" x-show="show">
+<div class="fixed top-0 left-0 flex flex-row items-end justify-end w-screen h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-bind:class="{ 'overflow-hidden': show }">
+<div id="wish-list" class="absolute right-0 z-50 flex flex-col w-full max-w-screen-md min-h-screen shadow-2xl wishListContent bg-rug-light-blue" x-show="show" @click.away="show = false" x-bind:class="{ 'overflow-hidden': show }">
+</div>
 </div>
