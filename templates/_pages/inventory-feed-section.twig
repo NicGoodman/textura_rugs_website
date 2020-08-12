@@ -1,4 +1,4 @@
-<section id="inventory-feed" class="flex flex-row flex-wrap section-wrapper justify-evenly">
+<section id="inventory-feed" class="">
 {% set inventoryQuery = craft.entries().section('inventory') %}
 {% set list = craft.wishlist.lists().default(true).one() %}
 {% for entry in inventoryQuery.all() %}
