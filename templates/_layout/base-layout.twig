@@ -45,8 +45,8 @@ var form = $(e.currentTarget);
 	function toggleButtonText(e) {
 		var button = $(e.currentTarget);
 		$(button).click(function(){
-   			$(button).val("Remove from Wish List");
-  		});
+            $(this).text($(this).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
+        });
 	}
 
 	
