@@ -40,7 +40,9 @@ var button = form.attr('button');
             dataType: 'html',
 			data: form.serialize()
 		});
-		$(button).val($(button).val() == 'Add to Wish List' ? 'Remove from Wish List' : 'Add to Wish List');
+		$(button).click(function(){
+    $(button).val("Remove from Wish List");
+  });
 	}
 	
 
