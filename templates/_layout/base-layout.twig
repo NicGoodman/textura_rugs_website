@@ -25,7 +25,7 @@ $(document).ready(function(){
 // Add an event listener for filter clicks
 		$(function() {
 			$('body').on('click', '.wish-list-link', onWishListClick);
-			$('body').on('submit', '#add-to-wishlist', addToWishList)
+			$('body').on('submit', '#add-to-wishlist', addToWishList);
 		});
 
     function addToWishList(e) {
@@ -39,6 +39,7 @@ var form = $(e.currentTarget);
             dataType: 'html',
 			data: form.serialize()
 		});
+		$(form.attr('button')).text($(form.attr('button').text() == 'Add to Wish List' ? 'Remove from Wish List' : 'Add to Wish List');
 	}
 	
 
@@ -53,6 +54,7 @@ var form = $(e.currentTarget);
 					refreshWishList(response);
 				}
 			});
+			
 		}
 
 		function refreshWishList(html) {
@@ -60,6 +62,7 @@ var form = $(e.currentTarget);
 			var $html = $('<div />').append(html);
 			$('.wishListContent').html($html.find('.wishListContent').html());
 		}
+
 });
 </script>
 	</head>
