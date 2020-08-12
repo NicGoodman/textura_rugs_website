@@ -1,7 +1,7 @@
 <article id="" class="">
 	<h2>{{ name }}</h2>
 	<picture>
-		<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-20 h-20">
+		<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-64 h-64">
 	</picture>
 	<form method="POST" id="add-to-wishlist">
 		<input type="hidden" name="action" value="wishlist/items/toggle">
