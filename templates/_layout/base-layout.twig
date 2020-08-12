@@ -32,6 +32,7 @@ $(document).ready(function(){
         // prevent form submission
         e.preventDefault();
 var form = $(e.currentTarget);
+var button = form.attr('button');
         // submit the form via Ajax
         $.ajax({
             url: form.attr('action'),
@@ -39,7 +40,7 @@ var form = $(e.currentTarget);
             dataType: 'html',
 			data: form.serialize()
 		});
-		$(form.attr('button')).text($(form.attr('button').text() == 'Add to Wish List' ? 'Remove from Wish List' : 'Add to Wish List');
+		$(button).text($(button.text() == 'Add to Wish List' ? 'Remove from Wish List' : 'Add to Wish List');
 	}
 	
 
