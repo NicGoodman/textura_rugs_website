@@ -1,4 +1,4 @@
-<div id="wish-list" class="wishListContent">
+<div id="wish-list" class="flex flex-col w-full max-w-screen-md min-h-screen wishListContent bg-rug-light-blue">
 {# Get the list #}
 {% set list = craft.wishlist.lists().default(true).one() %}
 {% if list|length %}
