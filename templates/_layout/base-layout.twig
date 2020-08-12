@@ -32,7 +32,6 @@ $(document).ready(function(){
         // prevent form submission
         e.preventDefault();
 var form = $(e.currentTarget);
-var button = form.attr('button');
         // submit the form via Ajax
         $.ajax({
             url: form.attr('action'),
@@ -40,10 +39,11 @@ var button = form.attr('button');
             dataType: 'html',
 			data: form.serialize()
 		});
-		$(button).click(function(){
-    $(button).val("Remove from Wish List");
-  });
+		
 	}
+	$('.wish-list-button').click(function(){
+    $('.wish-list-button').val("Remove from Wish List");
+  });
 	
 
 		// Event handler for the filter click
