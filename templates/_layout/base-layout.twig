@@ -26,6 +26,7 @@ $(document).ready(function(){
 		$(function() {
 			$('body').on('click', '.wish-list-link', onWishListClick);
 			$('body').on('submit', '#add-to-wishlist', addToWishList);
+			$('body').on('click', '.wish-list-button', toggleButtonText);
 		});
 
     function addToWishList(e) {
@@ -39,12 +40,14 @@ var form = $(e.currentTarget);
             dataType: 'html',
 			data: form.serialize()
 		});
+		
+	}
+	function toggleButtonText(e) {
 		var button = $(e.currentTarget);
 		$(button).click(function(){
             $(this).text($(this).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
         });
 	}
-
 
 	
 
