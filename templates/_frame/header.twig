@@ -1,7 +1,7 @@
 <header id="main-header" class="flex flex-row items-end justify-between w-full p-10 bg-rug-dark-blue">
-{% set homeEntry = craft.entries().section('home').one() %}
-{% set logo = homeEntry.logo.one().optimizedImages %}
-{% set logoAltText = homeEntry.logo.one().title %}
+	{% set homeEntry = craft.entries().section('home').one() %}
+	{% set logo = homeEntry.logo.one().optimizedImages %}
+	{% set logoAltText = homeEntry.logo.one().title %}
 	{% include "_snippets/logo" %}
 	<nav id="main-site-navigation" class="text-rug-white">
 		{% set navLinks = homeEntry.navigationItems.all() %}
@@ -12,7 +12,6 @@
 	{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 	{% include "_content/social-media-list" %}
 </header>
-<div class="fixed top-0 left-0 flex flex-row items-end justify-end w-screen h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-bind:class="{ 'overflow-hidden': show }">
-<div id="wish-list" class="absolute right-0 z-50 flex flex-col w-full max-w-screen-md min-h-screen shadow-2xl wishListContent bg-rug-light-blue" x-show="show" @click.away="show = false" x-bind:class="{ 'overflow-hidden': show }">
-</div>
+<div class="fixed top-0 left-0 z-50 flex flex-row items-end justify-end w-screen h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-bind:class="{ 'overflow-hidden': show }">
+	<div id="wish-list" class="absolute right-0 z-50 flex flex-col w-full max-w-screen-md min-h-screen shadow-2xl wishListContent bg-rug-light-blue" x-show="show" @click.away="show = false" x-bind:class="{ 'overflow-hidden': show }"></div>
 </div>
