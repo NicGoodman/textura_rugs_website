@@ -1,4 +1,15 @@
-<section>
-Featured Collections will go here
-
-</section>
+<article id="" class="flex flex-col flex-wrap section-wrapper">
+	<section id="" class="flex flex-row flex-wrap w-full">
+		{% set collections = craft.categories.group('collections') %}
+		{% for collection in collections.all() %}
+			{% set thumbnail = collection.collectionThumbnail.optimizedImages %}
+			<picture>
+				<a href="{{ collection.getUrl }}">
+					<img src="{{ thumbnail.src() }}" alt="{{ thumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
+					<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
+				</a>
+			</picture>
+		{% endfor %}
+	</section>
+	<section id="" class=""></section>
+</article>
