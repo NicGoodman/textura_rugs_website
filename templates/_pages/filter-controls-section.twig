@@ -1,6 +1,6 @@
 <section id="" class="w-full h-64 p-4 section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
 	<h3>Filters</h3>
-	<div id="" class="pt-4 filter-ui-group">
+	<div id="" class="pt-4 space-x-4 filter-ui-group">
 		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
 			<h2>Origin</h2>
 		</button>
@@ -19,7 +19,7 @@
 	</div>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'origin'">
 		<div id="" class="">
-			<label class="control control-checkbox">Turkey
+			<label class="control control-checkbox font-quicksand">Turkey
 				<input type="checkbox" value=".Turkey" />
 				<div class="control_indicator"></div>
 			</label>
@@ -27,7 +27,7 @@
 	</fieldset>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'age'">
 		<div id="" class="">
-			<label class="control control-checkbox">
+			<label class="control control-checkbox font-quicksand">
 				<input type="checkbox" value="" />
 				<div class="control_indicator"></div>
 			</label>
@@ -35,7 +35,7 @@
 	</fieldset>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'color'">
 		<div id="" class="">
-			<label class="control control-checkbox">
+			<label class="control control-checkbox font-quicksand">
 				<input type="checkbox" value="" />
 				<div class="control_indicator"></div>
 			</label>
@@ -43,7 +43,7 @@
 	</fieldset>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'collection'">
 		<div id="" class="">
-			<label class="control control-checkbox">
+			<label class="control control-checkbox font-quicksand">
 				<input type="checkbox" value="" />
 				<div class="control_indicator"></div>
 			</label>
@@ -51,7 +51,7 @@
 	</fieldset>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'size'">
 		<div id="" class="">
-			<label class="control control-checkbox">
+			<label class="control control-checkbox font-quicksand">
 				<input type="checkbox" value="" />
 				<div class="control_indicator"></div>
 			</label>
