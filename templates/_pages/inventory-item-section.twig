@@ -1,18 +1,18 @@
-<article id="" class="">
+<article id="" class="flex flex-col flex-wrap w-full md:flex-row">
 	<h1>{{ entry.title }}</h1>
-	<section id="" class="">
+	<section id="" class="px-4 text-left md:text-right">
 		<h2>{{ entry.productDescription }}</h2>
 		<ul>
 			<li>
 				<p>
 					Length:
-					{{ entry.physicalLength }}
+					<strong>{{ entry.physicalLength }}</strong>
 				</p>
 			</li>
 			<li>
 				<p>
 					Width:
-					{{ entry.physicalWidth }}
+					<strong>{{ entry.physicalWidth }}</strong>
 				</p>
 			</li>
 			<li>
@@ -20,38 +20,53 @@
 					Origin:
 					{% set origins = entry.origin.all() %}
 					{% for tag in origins %}
-						{{ tag.title }}
+						<strong>{{ tag.title }}</strong>
 					{% endfor %}
 				</p>
 			</li>
 			<li>
 				<p>
 					Primary Color:
-					{{ entry.colors.title }}
+                    {% set colors = entry.colors.all() %}
+					{% for tag in colors %}
+						<strong>{{ tag.title }}</strong>
+					{% endfor %}
 				</p>
 			</li>
 			<li>
 				<p>
 					Secondary Color:
-					{{ entry.colors.title }}
+                    {% set colors = entry.colors.all() %}
+					{% for tag in colors %}
+						<strong>{{ tag.title }}</strong>
+					{% endfor %}
 				</p>
 			</li>
 			<li>
 				<p>
 					Materials:
-					{{ entry.material.title }}
+                    {% set materials = entry.material.all() %}
+					{% for tag in materials %}
+						<strong>{{ tag.title }}</strong>
+					{% endfor %}
 				</p>
 			</li>
 			<li>
 				<p>
 					Construction:
-					{{ entry.construction.title }}
+                    {% set construction = entry.construction.all() %}
+					{% for tag in construction %}
+						<strong>{{ tag.title }}</strong>
+					{% endfor %}
 				</p>
 			</li>
 			<li>
 				<p>
 					Age:
-					{{ entry.age.title }}
+                    {% set age = entry.age.all() %}
+					{% for tag in age %}
+						<strong>{{ tag.title }}</strong>
+					{% endfor %}
 				</p>
 			</li>
 		</ul>
@@ -64,7 +79,7 @@
 			<button type="submit" name="button" class="wish-list-button btn-main">Add to Wishlist</button>
 		</form>
 	</section>
-	<section id="" class="">
+	<section id="" class="flex flex-row flex-wrap px-4 justify-evenly">
 		{% for image in entry.productImages.all() %}
 			{% set thumbnail = image.optimizedImages %}
 			<picture>
