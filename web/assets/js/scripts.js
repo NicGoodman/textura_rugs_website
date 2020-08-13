@@ -53,7 +53,7 @@ $(document).ready(function () {
     var chevronPrice = document.getElementById("chevron-price");
     $(function () {
         var sortOrder = 'asc',
-        $toggleSortYear = $('.toggle-sort-year');
+            $toggleSortYear = $('.toggle-sort-year');
         $toggleSortHours = $('.toggle-sort-hours');
         $toggleSortPrice = $('.toggle-sort-price');
 
@@ -114,5 +114,6 @@ $(document).ready(function () {
             mixer.sort('sort', 'price:' + sortOrder);
         });
     });
+
 
 });
