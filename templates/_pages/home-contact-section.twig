@@ -1,4 +1,4 @@
-<section id="" class="section-wrapper">
+<section id="" class="relative bg-rug-white">
 	{% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
 	{% set contactBackgroundImageAltText = entry.contactBackgroundImage.one().title %}
 	<picture id="contact-image">
@@ -21,10 +21,10 @@
 				</span>
 				{% include "_content/contact-form" %}
 			</article>
-			<picture id="contact-intro-image" class="flex-grow mb-12 border-2 border-rug-light-blue">
-				<img src="{{ contactImage.src }}" alt="" data-srcset="{{ contactImage.srcset}}" class="object-cover w-full h-full">
-				<section id="contact-contact-block" class="flex flex-col p-4 text-right bg-rug-dark-blue text-rug-white">
-					{% set contactStyles = "text-left text-rug-white text-base font-bioRhyme" %}
+			<picture id="contact-intro-image" class="flex flex-col flex-grow mb-12">
+				<img src="{{ contactImage.src }}" alt="" data-srcset="{{ contactImage.srcset}}" class="object-cover w-full h-full border-2 border-rug-light-blue">
+				<section id="contact-contact-block" class="flex flex-col p-4 text-right text-rug-dark-blue">
+					{% set contactStyles = "text-left text-base font-bioRhyme" %}
 					{% include "_snippets/contact-info" %}
 				</section>
 			</picture>
