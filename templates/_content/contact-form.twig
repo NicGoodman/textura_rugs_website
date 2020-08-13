@@ -1,1 +1,50 @@
-FORMS HERE
+<section class="flex flex-col items-center w-full">
+		{% macro errorList(errors) %}
+			{% if errors %}
+				<ul class="errors">
+					{% for error in errors %}
+						<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endmacro %}
+
+		{% from _self import errorList %}
+
+		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full">
+			{{ csrfInput() }}
+			<input type="hidden" name="toEmail" value="{{ entry.contactUsSectionContent.contactFormEmailAddress|hash }}">
+			<input type="hidden" name="action" value="contact-form/send">
+			<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
+			{{ redirectInput('#contact-us') }}
+			{% if craft.app.session.hasFlash('notice') %}
+				<p class="mb-2 font-bold text-center message notice">{{ craft.app.session.getFlash('notice') }}</p>
+			{% elseif craft.app.session.hasFlash('error') %}
+				<p class="mb-2 font-bold text-center message error">{{ craft.app.session.getFlash('error') }}</p>
+			{% endif %}
+			<div class="flex flex-row items-center mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+					<label for="from-name">Full Name</label>
+				</p>
+				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+				{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+			</div>
+
+			<div class="flex flex-row items-center mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+					<label for="from-email">Email</label>
+				</p>
+				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+				{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+			</div>
+			<div class="flex flex-col mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+					<label for="message">Comment</label>
+				</p>
+				<textarea rows="10" cols="40" id="message" name="message[body]" class="w-full p-4 border-4 rounded-none border-rug-light-blue">{{ message.message ?? '' }}</textarea>
+				{{ message is defined and message ? errorList(message.getErrors('message')) }}
+			</div>
+
+			<input type="submit" value="Get In Touch" class="self-center w-64 rounded-none btn-main ">
+		</form>
+</section>
