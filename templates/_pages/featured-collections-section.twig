@@ -3,7 +3,7 @@
 		{% set collections = craft.categories.group('collections') %}
 		{% for collection in collections.all() %}
 			{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
-			<picture>
+			<picture class="p-4">
 				<a href="{{ collection.getUrl }}">
 					<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
 					<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
