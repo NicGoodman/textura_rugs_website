@@ -6,12 +6,7 @@
 		{# Display list items #}
 		<section class="flex flex-row flex-wrap w-full">
 			{% for item in list.items.all() %}
-            {% set entry = item.id %}
-				{% set thumbnail = entry.primaryImage.one().optimizedImages %}
-				<picture class="p-4">
-					<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48 mb-2">
-					<p>{{ item.title }}</p>
-				</picture>
+            {{ item.id }}
 			{% endfor %}
 		</section>
 	{% endif %}
