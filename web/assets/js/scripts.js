@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     function toggleButtonText(e) {
         var button = $(e.currentTarget);
-        $(button).text($(button).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
+        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     }
     // Event handler for the filter click
     function onWishListClick(e) {
@@ -43,5 +43,99 @@ $(document).ready(function () {
         var $html = $('<div />').append(html);
         $('.wishListContent').html($html.find('.wishListContent').html());
     }
+
+
+
+
+
+    var chevronYear = document.getElementById("chevron-year");
+    var chevronHour = document.getElementById("chevron-hour");
+    var chevronPrice = document.getElementById("chevron-price");
+    $(function () {
+        var sortOrder = 'asc',
+            $toggleSortYear = $('.toggle-sort-year');
+        $toggleSortHours = $('.toggle-sort-hours');
+        $toggleSortPrice = $('.toggle-sort-price');
+
+        var mixer = mixitup('.inventoryList', {
+            multifilter: {
+                enable: true // enable the multifilter extension for the mixer
+            },
+            pagination: {
+                limit: 25 // impose a limit of 8 targets per page
+            },
+            load: {
+                sort: 'price:desc'
+            }
+        });
+        $toggleSortYear.on('click', function () {
+            $('button').removeClass('text-wz-yellow');
+            $(this).addClass('text-wz-yellow');
+            switch (sortOrder) {
+                case 'asc':
+                    sortOrder = 'desc';
+                    chevronYear.classList.add("rotate-180");
+                    break;
+                case 'desc':
+                    sortOrder = 'asc';
+                    chevronYear.classList.remove("rotate-180");
+                    break;
+            }
+            mixer.sort('sort', 'year:' + sortOrder);
+        });
+        $toggleSortHours.on('click', function () {
+            $('button').removeClass('text-wz-yellow');
+            $(this).addClass('text-wz-yellow');
+            switch (sortOrder) {
+                case 'asc':
+                    sortOrder = 'desc';
+                    chevronHour.classList.add("rotate-180");
+                    break;
+                case 'desc':
+                    sortOrder = 'asc';
+                    chevronHour.classList.remove("rotate-180");
+                    break;
+            }
+            mixer.sort('sort', 'hours:' + sortOrder);
+        });
+        $toggleSortPrice.on('click', function () {
+            $('button').removeClass('text-wz-yellow');
+            $(this).addClass('text-wz-yellow');
+            switch (sortOrder) {
+                case 'asc':
+                    sortOrder = 'desc';
+                    chevronPrice.classList.remove("rotate-180");
+                    break;
+                case 'desc':
+                    sortOrder = 'asc';
+                    chevronPrice.classList.add("rotate-180");
+                    break;
+            }
+            mixer.sort('sort', 'price:' + sortOrder);
+        });
+    });
+		// Add an event listener for filter clicks
+            $(function() {
+                $('body').on('click', '.inventory-item', onInventoryClick);
+		});
+
+		// Event handler for the filter click
+		function onInventoryClick(e) {
+                e.preventDefault();
+			var $inventoryItem = $(e.currentTarget);
+			var href = $inventoryItem.attr('href');
+			$.ajax($inventoryItem.attr('href'), {
+                dataType: 'html',
+				success: function(response) {
+                refreshInventory(response);
+				}
+			});
+		}
+
+		function refreshInventory(html) {
+			// Update the .inventoryItemContent DOM element with new HTML
+			var $html = $('<div />').append(html);
+			$('.inventoryItemContent').html($html.find('.inventoryItemContent').html());
+		}
 
 });

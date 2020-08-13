@@ -1,0 +1,61 @@
+<section id="" class="w-full section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
+	{% set subheadingText = "Filters" %}
+	{% include "_snippets/subheading.twig" %}
+	<div id="" class="filter-ui-group">
+		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
+			<h3>Origin</h3>
+		</button>
+        <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
+			<h3>Age</h3>
+		</button>
+        <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
+			<h3>Color</h3>
+		</button>
+        <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
+			<h3>Collection</h3>
+		</button>
+        <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
+			<h3>Size</h3>
+		</button>
+	</div>
+	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'origin'">
+		<div id="" class="">
+			<label for="" id="" class="">
+				<input type="text" value="" />
+				<div id="" class=""></div>
+			</label>
+		</div>
+	</fieldset>
+	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'age'">
+		<div id="" class="">
+			<label for="" id="" class="">
+				<input type="text" value="" />
+				<div id="" class=""></div>
+			</label>
+		</div>
+	</fieldset>
+	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'color'">
+		<div id="" class="">
+			<label for="" id="" class="">
+				<input type="text" value="" />
+				<div id="" class=""></div>
+			</label>
+		</div>
+	</fieldset>
+	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'collection'">
+		<div id="" class="">
+			<label for="" id="" class="">
+				<input type="text" value="" />
+				<div id="" class=""></div>
+			</label>
+		</div>
+	</fieldset>
+	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'size'">
+		<div id="" class="">
+			<label for="" id="" class="">
+				<input type="text" value="" />
+				<div id="" class=""></div>
+			</label>
+		</div>
+	</fieldset>
+</section>
