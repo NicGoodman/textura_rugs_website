@@ -1,0 +1,59 @@
+<article id="" class="">
+	<h1>{{ entry.title }}</h1>
+	<section id="" class="">
+		<h2>{{ entry.description }}</h2>
+		<ul>
+			<li>
+				Length:
+				{{ entry.physicalLength }}
+			</li>
+			<li>
+				Width:
+				{{ entry.physicalWidth }}
+			</li>
+			<li>
+				Origin:
+				{{ entry.origin.title }}
+			</li>
+			<li>
+				Primary Color:
+				{{ entry.colors.title }}
+			</li>
+			<li>
+				Secondary Color:
+				{{ entry.colors.title }}
+			</li>
+			<li>
+				Materials:
+				{{ entry.materials.title }}
+			</li>
+			<li>
+				Construction:
+				{{ entry.construction.title }}
+			</li>
+			<li>
+				Age:
+				{{ entry.age.title }}
+			</li>
+		</ul>
+		<form method="POST" id="add-to-wishlist">
+			<input type="hidden" name="action" value="wishlist/items/toggle">
+			{{ csrfInput() }}
+			<input type="hidden" name="wishListURL" value="/wish-list">
+			<input type="hidden" name="elementId" value="{{ entry.id }}">
+
+			<button type="submit" name="button" class="wish-list-button">Add to Wishlist</button>
+		</form>
+	</section>
+	<section id="" class="">
+		{% for image in entry.productImages.all() %}
+			{% set image = image.optimizedImages %}
+			<picture>
+				<a href="#" data-featherlight="{{ image.getUrl }}">
+					<img src="{{ image.src() }}" alt="{{ image.title }}" data-srcset "{{ image.srcset() }}" class="object-cover w-64 h-64 ">
+				</a>
+			</picture>
+
+		{% endfor %}
+	</section>
+</article>
