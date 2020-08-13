@@ -2,7 +2,7 @@
 	<section id="" class="flex flex-row flex-wrap w-full">
 		{% set collections = craft.categories.group('collections') %}
 		{% for collection in collections.all() %}
-			{% set thumbnail = collection.collectionThumbnail.optimizedImages %}
+			{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 			<picture>
 				<a href="{{ collection.getUrl }}">
 					<img src="{{ thumbnail.src() }}" alt="{{ thumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
