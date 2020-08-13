@@ -72,11 +72,13 @@
 			</li>
 		</ul>
 		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-end pt-2">
+		{% set primaryImage = entry.primaryImage.one().optimizedImages %}
 			<input type="hidden" name="action" value="wishlist/items/toggle">
 			{{ csrfInput() }}
 			<input type="hidden" name="wishListURL" value="/wish-list">
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
-			<input type="text" name="fields[primaryImage]" value="{{ entry.primaryImage.optimizedImages.src }}">
+			<input type="text" name="fields[primaryImageSrc]" value="{{ primaryImage.src() }}">
+			<input type="text" name="fields[primaryImageSrcSet]" value="{{ primaryImage.srcset() }}">
 
 			<button type="submit" name="button" class="wish-list-button btn-main">Add to Wishlist</button>
 		</form>
