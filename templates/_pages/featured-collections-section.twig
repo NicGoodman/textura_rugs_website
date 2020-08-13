@@ -5,7 +5,7 @@
 			{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 			<picture>
 				<a href="{{ collection.getUrl }}">
-					<img src="{{ thumbnail.src() }}" alt="{{ thumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
+					<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
 					<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
 				</a>
 			</picture>
