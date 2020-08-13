@@ -1,0 +1,10 @@
+<article id="" class="flex flex-col flex-wrap w-full md:flex-row section-wrapper md:mt-48">
+	<section id="" class="">
+		<h1>{{ entry.collectionName}}</h1>
+		<h2>{{ entry.collectionDescription }}</h2>
+	</section>
+	<section id="" class="">
+    {% set inventoryQuery = craft.entries().section('inventory').relatedTo(entry.title) %}
+		{% include "_pages/inventory-feed-section" %}
+	</section>
+</article>
