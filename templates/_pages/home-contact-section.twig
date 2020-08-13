@@ -14,9 +14,9 @@
 	{% endfor %}
 	<header id="contact-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-around w-full h-full p-16">
 		<section id="contact-intro-wrapper" class="flex flex-row h-full max-w-3xl flex-shrink-1">
-			<article id="contact-intro-text" class="flex flex-col justify-between flex-shrink-0 w-1/2 px-4 pt-4 pb-6 mt-20 ml-4 bg-rug-dark-blue text-rug-white">
+			<article id="contact-intro-text" class="flex flex-col justify-between flex-shrink-0 w-1/2 px-4 pt-4 pb-6 mt-20 mr-4 text-right bg-rug-dark-blue text-rug-white">
 				<span id="text-wrapper" class="">
-					<h1>{{ contactIntroHeader }}</h1>
+					<h1 class="text-rug-grey">{{ contactIntroHeader }}</h1>
 					<h2 class="mb-6">{{ contactIntroBodyText|nl2br }}</h2>
 				</span>
 				{% include "_content/contact-form" %}
