@@ -7,7 +7,7 @@
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
 	{% set contactIntroBodyText = "" %}
-	{% for block in entry.contactIntro.all() %}
+	{% for block in entry.contactUsContent.all() %}
 		{% set contactImage = block.contactImage.one().optimizedImages %}
 		{% set contactIntroHeader = block.contactIntroHeader %}
 		{% set contactIntroBodyText = block.contactIntroBodyText %}
