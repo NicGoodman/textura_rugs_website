@@ -20,6 +20,12 @@ $(document).ready(function () {
             dataType: 'html',
             data: form.serialize()
         });
+        $.ajax({
+            dataType: 'html',
+            success: function (response) {
+                refreshWishList(response);
+            }
+        });
     }
 
     function toggleButtonText(e) {
