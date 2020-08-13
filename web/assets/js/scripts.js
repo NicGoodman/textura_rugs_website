@@ -53,11 +53,11 @@ $(document).ready(function () {
     var chevronPrice = document.getElementById("chevron-price");
     $(function () {
         var sortOrder = 'asc',
-            $toggleSortYear = $('.toggle-sort-year');
+        $toggleSortYear = $('.toggle-sort-year');
         $toggleSortHours = $('.toggle-sort-hours');
         $toggleSortPrice = $('.toggle-sort-price');
 
-        var mixer = mixitup('.inventoryList', {
+        var mixer = mixitup('#inventory-feed', {
             multifilter: {
                 enable: true // enable the multifilter extension for the mixer
             },
@@ -114,28 +114,5 @@ $(document).ready(function () {
             mixer.sort('sort', 'price:' + sortOrder);
         });
     });
-		// Add an event listener for filter clicks
-            $(function() {
-                $('body').on('click', '.inventory-item', onInventoryClick);
-		});
-
-		// Event handler for the filter click
-		function onInventoryClick(e) {
-                e.preventDefault();
-			var $inventoryItem = $(e.currentTarget);
-			var href = $inventoryItem.attr('href');
-			$.ajax($inventoryItem.attr('href'), {
-                dataType: 'html',
-				success: function(response) {
-                refreshInventory(response);
-				}
-			});
-		}
-
-		function refreshInventory(html) {
-			// Update the .inventoryItemContent DOM element with new HTML
-			var $html = $('<div />').append(html);
-			$('.inventoryItemContent').html($html.find('.inventoryItemContent').html());
-		}
 
 });
