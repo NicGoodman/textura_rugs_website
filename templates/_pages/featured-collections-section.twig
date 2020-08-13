@@ -5,10 +5,10 @@
 			{% set collections = craft.categories.group('size') %}
 			{% for collection in collections.all() %}
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
-				<picture class="p-4">
+				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
 						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
-						<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
+						<p class="absolute right-0 p-4 bg-rug-light-blue bottom-4">{{ collection.title }}</p>
 					</a>
 				</picture>
 			{% endfor %}
@@ -20,10 +20,10 @@
 			{% set collections = craft.categories.group('collections') %}
 			{% for collection in collections.all() %}
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
-				<picture class="p-4">
+				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
 						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
-						<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
+						<p class="absolute right-0 p-4 bg-rug-light-blue bottom-4">{{ collection.title }}</p>
 					</a>
 				</picture>
 			{% endfor %}
