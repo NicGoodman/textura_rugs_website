@@ -76,6 +76,7 @@
 			{{ csrfInput() }}
 			<input type="hidden" name="wishListURL" value="/wish-list">
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
+			<input type="text" name="fields[primaryImage]" value="{{ entry.primaryImage }}">
 
 			<button type="submit" name="button" class="wish-list-button btn-main">Add to Wishlist</button>
 		</form>
