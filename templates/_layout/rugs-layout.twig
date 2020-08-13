@@ -4,13 +4,13 @@
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
-	<main class="flex flex-col flex-grow w-full bg-rug-white">
+	<main class="flex flex-col items-center flex-grow w-full bg-rug-white">
 		{% set heroOpacity = "opacity-25" %}
 		{% set headingText = "All Rugs" %}
 		{% set inventoryQuery = craft.entries().section('inventory') %}
 		{% include "_pages/hero-section" %}
 
-		<section id="" class="section-wrapper">
+		<section id="" class="w-full section-wrapper">
 			{% include "_snippets/heading" %}
 			{% include "_pages/filter-controls-section" %}
 			{% include "_pages/inventory-feed-section" %}
