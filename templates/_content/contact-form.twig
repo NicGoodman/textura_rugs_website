@@ -13,7 +13,7 @@
 
 		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full">
 			{{ csrfInput() }}
-			<input type="hidden" name="toEmail" value="{{ entry.contactUsSectionContent.contactFormEmailAddress|hash }}">
+
 			<input type="hidden" name="action" value="contact-form/send">
 			<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 			{{ redirectInput('#contact-us') }}
