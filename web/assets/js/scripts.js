@@ -22,6 +22,7 @@ $(document).ready(function () {
     }
 
     function toggleButtonText(e) {
+        e.preventDefault();
         var button = $(e.currentTarget);
         $(button).click(function () {
             $(this).text($(this).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
