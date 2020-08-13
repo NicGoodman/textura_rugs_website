@@ -514,16 +514,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.2",
+            "version": "3.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "f19638130a2619c579437fcb6f8db9d232c58b42"
+                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/f19638130a2619c579437fcb6f8db9d232c58b42",
-                "reference": "f19638130a2619c579437fcb6f8db9d232c58b42",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b43974522c8a29f2e6406e8c7dde999c037df39b",
+                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b",
                 "shasum": ""
             },
             "require": {
@@ -607,7 +607,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2020-08-09T14:12:47+00:00"
+            "time": "2020-08-11T23:21:59+00:00"
         },
         {
             "name": "craftcms/feed-me",
