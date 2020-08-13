@@ -79,14 +79,14 @@
 							</p>
 						</li>
 					</ul>
-					<form id="remove-link" method="POST">
+					{# <form id="remove-link" method="POST">
 						<input type="hidden" name="action" value="wishlist/items/remove">
 						{{ csrfInput() }}
 
 						<input type="hidden" name="elementId" value="{{ entry.id }}">
 
 						<button type="submit" class="">Remove from List</button>
-					</form>
+					</form> #}
 				</div>
 			{% endfor %}
 		</section>
