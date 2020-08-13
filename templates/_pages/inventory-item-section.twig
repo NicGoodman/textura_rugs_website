@@ -4,36 +4,55 @@
 		<h2>{{ entry.productDescription }}</h2>
 		<ul>
 			<li>
-				Length:
-				{{ entry.physicalLength }}
+				<p>
+					Length:
+					{{ entry.physicalLength }}
+				</p>
 			</li>
 			<li>
-				Width:
-				{{ entry.physicalWidth }}
+				<p>
+					Width:
+					{{ entry.physicalWidth }}
+				</p>
 			</li>
 			<li>
-				Origin:
-				{{ entry.origin.title }}
+				<p>
+					Origin:
+					{% set origins = entry.origin.all() %}
+					{% for tag in origins %}
+						{{ tag.title }}
+					{% endfor %}
+				</p>
 			</li>
 			<li>
-				Primary Color:
-				{{ entry.colors.title }}
+				<p>
+					Primary Color:
+					{{ entry.colors.title }}
+				</p>
 			</li>
 			<li>
-				Secondary Color:
-				{{ entry.colors.title }}
+				<p>
+					Secondary Color:
+					{{ entry.colors.title }}
+				</p>
 			</li>
 			<li>
-				Materials:
-				{{ entry.material.title }}
+				<p>
+					Materials:
+					{{ entry.material.title }}
+				</p>
 			</li>
 			<li>
-				Construction:
-				{{ entry.construction.title }}
+				<p>
+					Construction:
+					{{ entry.construction.title }}
+				</p>
 			</li>
 			<li>
-				Age:
-				{{ entry.age.title }}
+				<p>
+					Age:
+					{{ entry.age.title }}
+				</p>
 			</li>
 		</ul>
 		<form method="POST" id="add-to-wishlist">
