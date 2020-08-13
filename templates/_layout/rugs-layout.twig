@@ -5,15 +5,17 @@
 {% endblock %}
 {% block main %}
 	<main class="flex flex-col flex-grow w-full bg-rug-white">
-	{% set heroOpacity = "opacity-25" %}
-	{% set headingText = "All Rugs" %}
-	{% set inventoryQuery = craft.entries().section('inventory') %}
+		{% set heroOpacity = "opacity-25" %}
+		{% set headingText = "All Rugs" %}
+		{% set inventoryQuery = craft.entries().section('inventory') %}
 		{% include "_pages/hero-section" %}
-		{% include "_snippets/heading" %}
-		{% include "_pages/filter-controls-section" %}
-		{% include "_pages/inventory-feed-section" %}
-		<div id="wish-list" class="wishListContent">
-</div>
+
+		<section id="" class="section-wrapper">
+			{% include "_snippets/heading" %}
+			{% include "_pages/filter-controls-section" %}
+			{% include "_pages/inventory-feed-section" %}
+		</section>
+
 	</main>
 {% endblock %}
 {% block footer %}
