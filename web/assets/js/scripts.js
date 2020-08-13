@@ -22,7 +22,6 @@ $(document).ready(function () {
     }
 
     function toggleButtonText(e) {
-        e.preventDefault();
         var button = $(e.currentTarget);
         $(button).text($(button).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
     }
