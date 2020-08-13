@@ -1,5 +1,19 @@
 <article id="" class="flex flex-col flex-wrap section-wrapper">
-	<section id="" class="flex flex-row flex-wrap w-full">
+	<section id="" class="flex flex-row flex-wrap w-full my-20">
+		<h3 class="text-rug-grey">Rugs By Size</h3>
+		{% set collections = craft.categories.group('size') %}
+		{% for collection in collections.all() %}
+			{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
+			<picture class="p-4">
+				<a href="{{ collection.getUrl }}">
+					<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-64 h-64">
+					<p class="p-4 bg-rug-light-blue">{{ collection.title }}</p>
+				</a>
+			</picture>
+		{% endfor %}
+	</section>
+	<section id="" class="flex flex-row flex-wrap w-full my-20">
+		<h3 class="text-rug-grey">Rugs By Design</h3>
 		{% set collections = craft.categories.group('collections') %}
 		{% for collection in collections.all() %}
 			{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
@@ -11,5 +25,4 @@
 			</picture>
 		{% endfor %}
 	</section>
-	<section id="" class=""></section>
 </article>
