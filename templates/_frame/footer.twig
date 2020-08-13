@@ -1,5 +1,5 @@
 <footer id="main-footer" class="flex flex-row items-center justify-between w-full p-10 bg-rug-black">
-{% set homeEntry = craft.entries().section('home').one() %}
+	{% set homeEntry = craft.entries().section('home').one() %}
 	<nav id="site-navigation" class="text-rug-white" style="column-count: 2;">
 		{% set navLinks = homeEntry.navigationItems.all() %}
 		{% set listStyles = "" %}
@@ -11,5 +11,7 @@
 	{% set logoAltText = homeEntry.logo.one().title %}
 	{% include "_snippets/logo" %}
 	{% set contactStyles = "text-right text-rug-white text-lg font-bioRhyme" %}
-	{% include "_snippets/contact-info" %}
+	<section id="contact-info" class="{{ contactStyles }}">
+		{{ homeEntry.contactInfo|nl2br }}
+	</section>
 </footer>
