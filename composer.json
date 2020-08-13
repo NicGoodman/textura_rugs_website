@@ -1,7 +1,10 @@
 {
   "require": {
     "craftcms/cms": "^3.4.0",
+    "craftcms/contact-form": "^2.2",
+    "craftcms/contact-form-honeypot": "^1.0",
     "craftcms/feed-me": "^4.2",
+    "craftcms/mailgun": "^1.4",
     "craftcms/redactor": "^2.6",
     "nystudio107/craft-imageoptimize": "^1.6",
     "nystudio107/craft-seomatic": "^3.3",
