@@ -1,14 +1,7 @@
 <article id="" class="mix">
-	<h2>{{ name }}</h2>
-	<picture>
-		<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-56 h-56">
-	</picture>
-	<form method="POST" id="add-to-wishlist">
-		<input type="hidden" name="action" value="wishlist/items/toggle">
-		{{ csrfInput() }}
-		<input type="hidden" name="wishListURL" value="/wish-list">
-		<input type="hidden" name="elementId" value="{{ entry.id }}">
-
-		<button type="submit" name="button" class="wish-list-button">Add to Wishlist</button>
-	</form>
+	<a href="{{ entry.getUrl() }}">
+		<picture>
+			<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-56 h-56">
+		</picture>
+	</a>
 </article>

@@ -1,21 +1,20 @@
-<section id="" class="w-full h-64 section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
-	{% set subheadingText = "Filters" %}
-	{% include "_snippets/subheading.twig" %}
-	<div id="" class="filter-ui-group">
+<section id="" class="w-full h-64 p-4 section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
+	<h3>Filters</h3>
+	<div id="" class="pt-4 filter-ui-group">
 		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
-			<h3>Origin</h3>
+			<h2>Origin</h2>
 		</button>
         <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
-			<h3>Age</h3>
+			<h2>Age</h2>
 		</button>
         <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
-			<h3>Color</h3>
+			<h2>Color</h2>
 		</button>
         <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
-			<h3>Collection</h3>
+			<h2>Collection</h2>
 		</button>
         <button id="" class="" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
-			<h3>Size</h3>
+			<h2>Size</h2>
 		</button>
 	</div>
 	<fieldset data-filter-group class="flex flex-row" x-show="filter === 'origin'">
