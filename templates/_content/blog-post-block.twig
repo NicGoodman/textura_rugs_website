@@ -1,3 +1,16 @@
 <article id="" class="w-full p-4 md:w-1/2">
-
+{% set thumbnail = post.thumbnail.optimizedImages %}
+	<a href="{{ post.getUrl }}" class="flex flex-row">
+		<picture>
+			<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48">
+		</picture>
+		<section id="" class="flex flex-col">
+			<h2>{{ post.title }}
+				•
+				{{ post.date }}</h2>
+			<div>
+				{{ post.intro }}
+			</div>
+		</section>
+	</a>
 </article>
