@@ -24,9 +24,7 @@ $(document).ready(function () {
     function toggleButtonText(e) {
         e.preventDefault();
         var button = $(e.currentTarget);
-
-            $(this).text($(this).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
-
+        $(button).text($(button).text() == 'Add to Wish List' ? 'Remove From Wish List' : 'Add to Wish List');
     }
     // Event handler for the filter click
     function onWishListClick(e) {
