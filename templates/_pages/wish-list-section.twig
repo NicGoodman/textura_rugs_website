@@ -6,7 +6,7 @@
 		{# Display list items #}
 		<section class="flex flex-row flex-wrap w-full">
 			{% for item in list.items.all() %}
-				<p>{{ item.title }}</p>
+				<p>{{ item.productDescription }}</p>
 			{% endfor %}
 		</section>
 	{% endif %}
