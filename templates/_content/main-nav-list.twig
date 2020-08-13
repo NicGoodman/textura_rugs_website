@@ -1,4 +1,7 @@
 <ul class="{{ listStyles }}">
+	<li>
+	<a href="#featured-collections" class="hover:text-rug-light-blue">Collections</a>
+	</li>
 	{% for link in navLinks %}
 		<li>
 			{% include "_snippets/nav-item" %}
@@ -6,8 +9,5 @@
 	{% endfor %}
 	<li>
 	<a href="#contact-us" class="hover:text-rug-light-blue">Contact Us</a>
-	</li>
-	<li>
-	<a href="#featured-collections" class="hover:text-rug-light-blue">Collections</a>
 	</li>
 </ul>

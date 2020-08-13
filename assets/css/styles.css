@@ -137,3 +137,7 @@ p {
   .control-checkbox input:disabled~.control_indicator:after {
     border-color: #7b7b7b;
   }
+
+  input#contactFormHoneypot {
+    display: none;
+  }

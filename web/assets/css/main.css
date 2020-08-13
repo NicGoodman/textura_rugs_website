@@ -36404,6 +36404,10 @@ p {
   border-color: #7b7b7b;
 }
 
+input#contactFormHoneypot {
+  display: none;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
