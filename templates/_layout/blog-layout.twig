@@ -5,6 +5,7 @@
 {% endblock %}
 {% block main %}
 	<main class="flex flex-col items-center flex-grow w-full">
+		{% set heroOpacity = "opacity-25" %}
 		{% include "_pages/hero-section" %}
 		{% include "_pages/blog-feed-section.twig" %}
 	</main>

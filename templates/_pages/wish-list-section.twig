@@ -6,12 +6,80 @@
 		{# Display list items #}
 		<section class="flex flex-row flex-wrap w-full">
 			{% for item in list.items.all() %}
-              {% set entry = craft.entries().id(item.elementId).one() %}
-                {% set thumbnail = entry.primaryImage.one().optimizedImages %}
-                <picture class="p-4">
-                    <img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48 mb-2">
-                    <p>{{ item.title }}</p>
-                </picture>
+				{% set entry = craft.entries().id(item.elementId).one() %}
+				{% set thumbnail = entry.primaryImage.one().optimizedImages %}
+				<div class="p-4">
+					<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48 mb-2">
+					<h2>{{ item.title }}</h2>
+					<ul>
+						<li>
+							<p>
+								Length:
+								<strong>{{ entry.physicalLength }}'</strong>
+							</p>
+						</li>
+						<li>
+							<p>
+								Width:
+								<strong>{{ entry.physicalWidth }}'</strong>
+							</p>
+						</li>
+						<li>
+							<p>
+								Origin:
+								{% set origins = entry.origin.all() %}
+								{% for tag in origins %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+						<li>
+							<p>
+								Primary Color:
+								{% set colors = entry.colors.all() %}
+								{% for tag in colors %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+						<li>
+							<p>
+								Secondary Color:
+								{% set colors = entry.colors.all() %}
+								{% for tag in colors %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+						<li>
+							<p>
+								Materials:
+								{% set materials = entry.material.all() %}
+								{% for tag in materials %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+						<li>
+							<p>
+								Construction:
+								{% set construction = entry.construction.all() %}
+								{% for tag in construction %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+						<li>
+							<p>
+								Age:
+								{% set age = entry.age.all() %}
+								{% for tag in age %}
+									<strong>{{ tag.title }}</strong>
+								{% endfor %}
+							</p>
+						</li>
+					</ul>
+				</div>
 			{% endfor %}
 		</section>
 	{% endif %}
