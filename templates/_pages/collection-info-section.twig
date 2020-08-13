@@ -4,7 +4,7 @@
 		<h2>{{ category.collectionDescription }}</h2>
 	</section>
 	<section id="" class="">
-    {% set inventoryQuery = craft.entries().section('inventory').relatedTo(category.title) %}
+    {% set inventoryQuery = craft.entries().section('inventory').relatedTo(category) %}
 		{% include "_pages/inventory-feed-section" %}
 	</section>
 </article>
