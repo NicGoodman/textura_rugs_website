@@ -72,7 +72,6 @@
 			</li>
 		</ul>
 		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-end pt-2">
-		{% set primaryImage = entry.primaryImage.one().optimizedImages %}
 			<input type="hidden" name="action" value="wishlist/items/toggle">
 			{{ csrfInput() }}
 			<input type="hidden" name="wishListURL" value="/wish-list">
