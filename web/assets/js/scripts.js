@@ -3,6 +3,7 @@ $(document).ready(function () {
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
+        $('body').on('click', '.remove-link', removeFromList);
         $('body').on('submit', '#add-to-wishlist', addToWishList);
         $('body').on('click', '.wish-list-button', toggleButtonText);
     });
@@ -31,6 +32,16 @@ $(document).ready(function () {
         var $wishListIcon = $(e.currentTarget);
         var href = $wishListIcon.attr('href');
         $.ajax($wishListIcon.attr('href'), {
+            dataType: 'html',
+            success: function (response) {
+                refreshWishList(response);
+            }
+        });
+    }
+
+    function removeFromList(e) {
+        e.preventDefault();
+        $.ajax({
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
