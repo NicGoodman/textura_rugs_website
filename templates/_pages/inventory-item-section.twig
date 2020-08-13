@@ -77,7 +77,7 @@
 			<input type="hidden" name="wishListURL" value="/wish-list">
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
 
-			<button type="submit" name="button" class="wish-list-button btn-main">Add to Wishlist</button>
+			<button type="submit" name="button" class="wish-list-button btn-main">{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add To{% endif %} Wishlist</button>
 		</form>
 	</section>
 	<section id="" class="flex flex-row flex-wrap justify-start w-full px-4 md:w-2/3">
