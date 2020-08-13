@@ -5129,16 +5129,16 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.6.0.4",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/super-table.git",
-                "reference": "12da996dcabb5aa98895f5615aeaeb0fe3222265"
+                "reference": "6cc1edb284c08ad8fe73fa279911e1b66db707bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/12da996dcabb5aa98895f5615aeaeb0fe3222265",
-                "reference": "12da996dcabb5aa98895f5615aeaeb0fe3222265",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/6cc1edb284c08ad8fe73fa279911e1b66db707bc",
+                "reference": "6cc1edb284c08ad8fe73fa279911e1b66db707bc",
                 "shasum": ""
             },
             "require": {
@@ -5177,7 +5177,7 @@
                 "craftcms",
                 "super table"
             ],
-            "time": "2020-08-11T03:32:24+00:00"
+            "time": "2020-08-13T01:12:44+00:00"
         },
         {
             "name": "verbb/wishlist",
