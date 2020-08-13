@@ -47,10 +47,11 @@
 	</section>
 	<section id="" class="">
 		{% for image in entry.productImages.all() %}
-			{% set image = image.optimizedImages %}
+			{% set thumbnail = image.optimizedImages %}
+            {% set image = image.one() %}
 			<picture>
 				<a href="#" data-featherlight="{{ image.getUrl }}">
-					<img src="{{ image.src() }}" alt="{{ image.title }}" data-srcset "{{ image.srcset() }}" class="object-cover w-64 h-64 ">
+					<img src="{{ thumbnail.src() }}" alt="{{ image.title }}" data-srcset "{{ thumbnail.srcset() }}" class="object-cover w-64 h-64 ">
 				</a>
 			</picture>
 
