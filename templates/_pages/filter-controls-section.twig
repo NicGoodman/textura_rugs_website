@@ -6,14 +6,14 @@
 				<h2>Origin</h2>
 			</button>
 			<fieldset data-filter-group>
-			<div id="" class="flex flex-row">
-				{% set tags = craft.tags().group('origin') %}
-				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title }}
-						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
+				<div id="" class="flex flex-row space-x-4">
+					{% set tags = craft.tags().group('origin') %}
+					{% for tag in tags.all() %}
+						<label class="control control-checkbox font-quicksand">{{ tag.title }}
+							<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
+							<div class="control_indicator"></div>
+						</label>
+					{% endfor %}
 				</div>
 			</fieldset>
 		</div>
@@ -21,20 +21,22 @@
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
 				<h2>Age</h2>
 			</button>
-			<fieldset data-filter-group class="flex flex-row">
-				{% set tags = craft.tags().group('age') %}
-				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title }}
-						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
+			<fieldset data-filter-group>
+				<div id="" class="flex flex-row space-x-4">
+					{% set tags = craft.tags().group('age') %}
+					{% for tag in tags.all() %}
+						<label class="control control-checkbox font-quicksand">{{ tag.title }}
+							<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
+							<div class="control_indicator"></div>
+						</label>
+					{% endfor %}
+				</div>
 			</fieldset>
 		</div>
 		{% set colors = [] %}
 		{% set tags = craft.tags().group(['primaryColors','secondaryColors']) %}
 		{% for tag in tags.all() %}
-		{% set color = tag.title %}
+			{% set color = tag.title %}
 			{% if color not in colors %}
 				{% set colors = colors|merge([color]) %}
 			{% endif %}
@@ -43,42 +45,48 @@
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
 				<h2>Color</h2>
 			</button>
-			<fieldset data-filter-group class="flex flex-row">
-				{% set tags = colors %}
-				{% for tag in tags %}
-					<label class="control control-checkbox font-quicksand">{{ tag }}
-						<input type="checkbox" value=".{{ tag|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
+			<fieldset data-filter-group>
+				<div id="" class="flex flex-row space-x-4">
+					{% set tags = colors %}
+					{% for tag in tags %}
+						<label class="control control-checkbox font-quicksand">{{ tag }}
+							<input type="checkbox" value=".{{ tag|replace(' ', '') }}"/>
+							<div class="control_indicator"></div>
+						</label>
+					{% endfor %}
+				</div>
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
 				<h2>Collection</h2>
 			</button>
-			<fieldset data-filter-group class="flex flex-row">
-				{% set categories = craft.categories().group('collections') %}
-				{% for category in categories.all() %}
-					<label class="control control-checkbox font-quicksand">{{ category.title }}
-						<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
+			<fieldset data-filter-group>
+				<div id="" class="flex flex-row space-x-4">
+					{% set categories = craft.categories().group('collections') %}
+					{% for category in categories.all() %}
+						<label class="control control-checkbox font-quicksand">{{ category.title }}
+							<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
+							<div class="control_indicator"></div>
+						</label>
+					{% endfor %}
+				</div>
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
 				<h2>Size</h2>
 			</button>
-			<fieldset data-filter-group class="flex flex-row">
-				{% set categories = craft.categories().group('size') %}
-				{% for category in categories.all() %}
-					<label class="control control-checkbox font-quicksand">{{ category.title }}
-						<input type="checkbox" value=".size{{ category.title|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
+			<fieldset data-filter-group>
+				<div id="" class="flex flex-row space-x-4">
+					{% set categories = craft.categories().group('size') %}
+					{% for category in categories.all() %}
+						<label class="control control-checkbox font-quicksand">{{ category.title }}
+							<input type="checkbox" value=".size{{ category.title|replace(' ', '') }}"/>
+							<div class="control_indicator"></div>
+						</label>
+					{% endfor %}
+				</div>
 			</fieldset>
 		</div>
 	</div>
