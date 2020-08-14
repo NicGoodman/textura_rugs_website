@@ -1,16 +1,16 @@
-<article id="{{ loop.index }}" class="p-4 mix" data-origin="{% for tag in entry.origin.all() %}
+<article id="{{ loop.index }}" class="p-4 mix" data-origin="{% if origin|length %}{% for tag in entry.origin.all() %}
 	{{ tag.title }} 
-{% endfor %}" data-age="{% for tag in entry.age.all() %}
+{% endfor %}{% endif %}" data-age="{% if age|length %}{% for tag in entry.age.all() %}
 	{{ tag.title }} 
-{% endfor %}" data-primarycolor="{% for tag in entry.primaryColor.all() %}
+{% endfor %}{% endif %}" data-primarycolor="{% if primaryColor|length %}{% for tag in entry.primaryColor.all() %}
 	{{ tag.title }} 
-{% endfor %}" data-secondarycolor="{% for tag in entry.secondaryColor.all() %}
+{% endfor %}{% endif %}" data-secondarycolor="{% if secondaryColor|length %}{% for tag in entry.secondaryColor.all() %}
 	{{ tag.title }} 
-{% endfor %}" data-collection="{% for category in entry.collection.all() %}
+{% endfor %}{% endif %}" data-collection="{% if collection|length %}{% for category in entry.collection.all() %}
 	{{ category.title }} 
-{% endfor %}" data-size="{% for category in entry.size.all() %}
+{% endfor %}{% endif %}" data-size="{% if size|length %}{% for category in entry.size.all() %}
 	{{ category.title }} 
-{% endfor %}">
+{% endfor %}{% endif %}">
 	<a href="{{ entry.getUrl() }}">
 		<picture>
 			<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-56 h-56 hover:border-rug-yellow hover:border-2">
