@@ -49,7 +49,7 @@
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
 				{% set tags = colors %}
-				{% for tag in tags.all() %}
+				{% for tag in tags %}
 					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
