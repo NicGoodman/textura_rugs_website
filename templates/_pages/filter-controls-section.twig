@@ -8,7 +8,7 @@
 			<fieldset data-filter-group class="flex flex-row">
 				{% set tags = craft.tags().group('origin') %}
 				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
@@ -22,7 +22,7 @@
 			<fieldset data-filter-group class="flex flex-row">
 				{% set tags = craft.tags().group('age') %}
 				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
@@ -36,14 +36,14 @@
 			<fieldset data-filter-group class="flex flex-row">
 				{% set tags = craft.tags().group('primaryColors') %}
 				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
 				{% endfor %}
 				{% set tags = craft.tags().group('secondaryColors') %}
 				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
@@ -57,7 +57,7 @@
 			<fieldset data-filter-group class="flex flex-row">
 				{% set categories = craft.categories().group('collections') %}
 				{% for category in categories.all() %}
-					<label class="control control-checkbox font-quicksand">{{ category.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ category.title }}
 						<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
@@ -71,7 +71,7 @@
 			<fieldset data-filter-group class="flex flex-row">
 				{% set categories = craft.categories().group('size') %}
 				{% for category in categories.all() %}
-					<label class="control control-checkbox font-quicksand">{{ category.title|replace(' ', '') }}
+					<label class="control control-checkbox font-quicksand">{{ category.title }}
 						<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
