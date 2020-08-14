@@ -566,16 +566,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b"
+                "reference": "97d7c8184c17f99f0e001fef90a416ded16a5acd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/b43974522c8a29f2e6406e8c7dde999c037df39b",
-                "reference": "b43974522c8a29f2e6406e8c7dde999c037df39b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/97d7c8184c17f99f0e001fef90a416ded16a5acd",
+                "reference": "97d7c8184c17f99f0e001fef90a416ded16a5acd",
                 "shasum": ""
             },
             "require": {
@@ -659,7 +659,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2020-08-11T23:21:59+00:00"
+            "time": "2020-08-13T20:24:36+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -967,16 +967,16 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.7.0",
+            "version": "2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/redactor.git",
-                "reference": "068c75549bbf23d148cf0172ee4fbb3355096e7c"
+                "reference": "cff8b01a831f852ccbde5db9967f3aef26054fc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/068c75549bbf23d148cf0172ee4fbb3355096e7c",
-                "reference": "068c75549bbf23d148cf0172ee4fbb3355096e7c",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/cff8b01a831f852ccbde5db9967f3aef26054fc8",
+                "reference": "cff8b01a831f852ccbde5db9967f3aef26054fc8",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1011,7 @@
                 "html",
                 "yii2"
             ],
-            "time": "2020-08-09T13:55:21+00:00"
+            "time": "2020-08-14T14:09:12+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -3138,16 +3138,16 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.14",
+            "version": "3.3.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-seomatic.git",
-                "reference": "6ce35679818730067c47696f58d574f5f249cb15"
+                "reference": "bbff01439e610485be43091bd4639167a5c2a75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/6ce35679818730067c47696f58d574f5f249cb15",
-                "reference": "6ce35679818730067c47696f58d574f5f249cb15",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/bbff01439e610485be43091bd4639167a5c2a75c",
+                "reference": "bbff01439e610485be43091bd4639167a5c2a75c",
                 "shasum": ""
             },
             "require": {
@@ -3212,7 +3212,7 @@
                 "tags",
                 "twitter"
             ],
-            "time": "2020-08-11T02:17:54+00:00"
+            "time": "2020-08-14T15:23:34+00:00"
         },
         {
             "name": "opis/closure",
@@ -4443,16 +4443,16 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.8.0",
+            "version": "1.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1"
+                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
-                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/3d5eb71705adfa34bd34b993400622932b2f62fd",
+                "reference": "3d5eb71705adfa34bd34b993400622932b2f62fd",
                 "shasum": ""
             },
             "require": {
@@ -4488,7 +4488,17 @@
                 "parser",
                 "validator"
             ],
-            "time": "2020-04-30T19:05:18+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/seld/jsonlint",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-08-13T09:07:59+00:00"
         },
         {
             "name": "seld/phar-utils",
