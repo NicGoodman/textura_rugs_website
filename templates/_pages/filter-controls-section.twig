@@ -29,19 +29,26 @@
 				{% endfor %}
 			</fieldset>
 		</div>
+
+		{% set colors = [] %}
+		{% set tags = craft.tags().group('primaryColors') %}
+		{% for tag in tags.all() %}
+			{% if tag not in colors %}
+				{% set colors = colors|merge([tag]) %}
+			{% endif %}
+		{% endfor %}
+		{% set tags = craft.tags().group('secondaryColors') %}
+		{% for tag in tags.all() %}
+			{% if tag not in colors %}
+				{% set colors = colors|merge([tag]) %}
+			{% endif %}
+		{% endfor %}
 		<div id="" class="flex flex-col mb-4">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
 				<h2>Color</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-				{% set tags = craft.tags().group('primaryColors') %}
-				{% for tag in tags.all() %}
-					<label class="control control-checkbox font-quicksand">{{ tag.title }}
-						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
-						<div class="control_indicator"></div>
-					</label>
-				{% endfor %}
-				{% set tags = craft.tags().group('secondaryColors') %}
+				{% set tags = colors %}
 				{% for tag in tags.all() %}
 					<label class="control control-checkbox font-quicksand">{{ tag.title }}
 						<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
