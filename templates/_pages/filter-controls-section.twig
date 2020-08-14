@@ -5,7 +5,8 @@
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
 				<h2>Origin</h2>
 			</button>
-			<fieldset data-filter-group class="flex flex-row">
+			<fieldset data-filter-group>
+			<div id="" class="flex flex-row">
 				{% set tags = craft.tags().group('origin') %}
 				{% for tag in tags.all() %}
 					<label class="control control-checkbox font-quicksand">{{ tag.title }}
@@ -13,6 +14,7 @@
 						<div class="control_indicator"></div>
 					</label>
 				{% endfor %}
+				</div>
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
