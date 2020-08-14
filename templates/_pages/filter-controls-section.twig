@@ -6,12 +6,13 @@
 				<h2>Origin</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-
-				<label class="control control-checkbox font-quicksand">Turkey
-					<input type="checkbox" value=".Turkey"/>
-					<div class="control_indicator"></div>
-				</label>
-
+				{% set tags = craft.tags().group('origin') %}
+				{% for tag in tags.all() %}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
+						<input type="checkbox" value=".{{ tag.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
@@ -19,12 +20,13 @@
 				<h2>Age</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-
-				<label class="control control-checkbox font-quicksand">
-					<input type="checkbox" value=""/>
-					<div class="control_indicator"></div>
-				</label>
-
+				{% set tags = craft.tags().group('age') %}
+				{% for tag in tags.all() %}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
+						<input type="checkbox" value=".{{ tag.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
@@ -32,12 +34,20 @@
 				<h2>Color</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-
-				<label class="control control-checkbox font-quicksand">
-					<input type="checkbox" value=""/>
-					<div class="control_indicator"></div>
-				</label>
-
+				{% set tags = craft.tags().group('primaryColors') %}
+				{% for tag in tags.all() %}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
+						<input type="checkbox" value=".{{ tag.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
+				{% set tags = craft.tags().group('secondaryColors') %}
+				{% for tag in tags.all() %}
+					<label class="control control-checkbox font-quicksand">{{ tag.title }}
+						<input type="checkbox" value=".{{ tag.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
@@ -45,12 +55,13 @@
 				<h2>Collection</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-
-				<label class="control control-checkbox font-quicksand">
-					<input type="checkbox" value=""/>
-					<div class="control_indicator"></div>
-				</label>
-
+				{% set categories = craft.categories().group('collections') %}
+				{% for category in categories.all() %}
+					<label class="control control-checkbox font-quicksand">{{ category.title }}
+						<input type="checkbox" value=".{{ category.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
 			</fieldset>
 		</div>
 		<div id="" class="flex flex-col mb-4">
@@ -58,12 +69,13 @@
 				<h2>Size</h2>
 			</button>
 			<fieldset data-filter-group class="flex flex-row">
-
-				<label class="control control-checkbox font-quicksand">
-					<input type="checkbox" value=""/>
-					<div class="control_indicator"></div>
-				</label>
-
+				{% set categories = craft.categories().group('size') %}
+				{% for category in categories.all() %}
+					<label class="control control-checkbox font-quicksand">{{ category.title }}
+						<input type="checkbox" value=".{{ category.title }}"/>
+						<div class="control_indicator"></div>
+					</label>
+				{% endfor %}
 			</fieldset>
 		</div>
 	</div>
