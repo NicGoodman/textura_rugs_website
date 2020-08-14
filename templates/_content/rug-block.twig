@@ -1,4 +1,16 @@
-<article id="{{ loop.index }}" class="p-4 mix" data-origin="{% if entry.origin|length %}{% for tag in entry.origin.all() %}
+<article id="{{ loop.index }}" class="p-4 mix {% if entry.origin|length %}{% for tag in entry.origin.all() %}
+	{{ tag.title }} 
+{% endfor %}{% endif %}{% if entry.age|length %}{% for tag in entry.age.all() %}
+	{{ tag.title }} 
+{% endfor %}{% endif %}{% if entry.primaryColor|length %}{% for tag in entry.primaryColor.all() %}
+	{{ tag.title }} 
+{% endfor %}{% endif %}{% if entry.secondaryColor|length %}{% for tag in entry.secondaryColor.all() %}
+	{{ tag.title }} 
+{% endfor %}{% endif %}{% if entry.collection|length %}{% for category in entry.collection.all() %}
+	{{ category.title }} 
+{% endfor %}{% endif %}{% if entry.size|length %}{% for category in entry.size.all() %}
+	{{ category.title }} 
+{% endfor %}{% endif %}" data-origin="{% if entry.origin|length %}{% for tag in entry.origin.all() %}
 	{{ tag.title }} 
 {% endfor %}{% endif %}" data-age="{% if entry.age|length %}{% for tag in entry.age.all() %}
 	{{ tag.title }} 
