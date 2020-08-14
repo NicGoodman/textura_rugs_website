@@ -1,14 +1,14 @@
-<article id="{{ loop.index }}" class="p-4 mix" data-origin="{% if origin|length %}{% for tag in entry.origin.all() %}
+<article id="{{ loop.index }}" class="p-4 mix" data-origin="{% if entry.origin|length %}{% for tag in entry.origin.all() %}
 	{{ tag.title }} 
-{% endfor %}{% endif %}" data-age="{% if age|length %}{% for tag in entry.age.all() %}
+{% endfor %}{% endif %}" data-age="{% if entry.age|length %}{% for tag in entry.age.all() %}
 	{{ tag.title }} 
-{% endfor %}{% endif %}" data-primarycolor="{% if primaryColor|length %}{% for tag in entry.primaryColor.all() %}
+{% endfor %}{% endif %}" data-primarycolor="{% if entry.primaryColor|length %}{% for tag in entry.primaryColor.all() %}
 	{{ tag.title }} 
-{% endfor %}{% endif %}" data-secondarycolor="{% if secondaryColor|length %}{% for tag in entry.secondaryColor.all() %}
+{% endfor %}{% endif %}" data-secondarycolor="{% if entry.secondaryColor|length %}{% for tag in entry.secondaryColor.all() %}
 	{{ tag.title }} 
-{% endfor %}{% endif %}" data-collection="{% if collection|length %}{% for category in entry.collection.all() %}
+{% endfor %}{% endif %}" data-collection="{% if entry.collection|length %}{% for category in entry.collection.all() %}
 	{{ category.title }} 
-{% endfor %}{% endif %}" data-size="{% if size|length %}{% for category in entry.size.all() %}
+{% endfor %}{% endif %}" data-size="{% if entry.size|length %}{% for category in entry.size.all() %}
 	{{ category.title }} 
 {% endfor %}{% endif %}">
 	<a href="{{ entry.getUrl() }}">
