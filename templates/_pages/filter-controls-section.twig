@@ -1,7 +1,7 @@
 <section id="" class="w-full h-full p-4 section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
 	<h3>Filters</h3>
 	<div id="" class="flex flex-col items-start pt-4 filter-ui-group">
-		<div id="" class="flex flex-col mb-4">
+		<div id="" class="flex flex-col mb-10">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
 				<h2>Origin</h2>
 			</button>
@@ -17,7 +17,7 @@
 				</div>
 			</fieldset>
 		</div>
-		<div id="" class="flex flex-col mb-4">
+		<div id="" class="flex flex-col mb-10">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
 				<h2>Age</h2>
 			</button>
@@ -41,7 +41,7 @@
 				{% set colors = colors|merge([color]) %}
 			{% endif %}
 		{% endfor %}
-		<div id="" class="flex flex-col mb-4">
+		<div id="" class="flex flex-col mb-10">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
 				<h2>Color</h2>
 			</button>
@@ -57,7 +57,7 @@
 				</div>
 			</fieldset>
 		</div>
-		<div id="" class="flex flex-col mb-4">
+		<div id="" class="flex flex-col mb-10">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
 				<h2>Collection</h2>
 			</button>
@@ -73,7 +73,7 @@
 				</div>
 			</fieldset>
 		</div>
-		<div id="" class="flex flex-col mb-4">
+		<div id="" class="flex flex-col mb-10">
 			<button id="" class="mb-2 text-left" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
 				<h2>Size</h2>
 			</button>
