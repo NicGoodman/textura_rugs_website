@@ -73,7 +73,7 @@
 				{% set categories = craft.categories().group('size') %}
 				{% for category in categories.all() %}
 					<label class="control control-checkbox font-quicksand">{{ category.title }}
-						<input type="checkbox" value=".{{ category.title|replace(' ', '')|lower }}"/>
+						<input type="checkbox" value=".size{{ category.title|replace(' ', '') }}"/>
 						<div class="control_indicator"></div>
 					</label>
 				{% endfor %}
