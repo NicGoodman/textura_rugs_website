@@ -29,17 +29,10 @@
 				{% endfor %}
 			</fieldset>
 		</div>
-
 		{% set colors = [] %}
-		{% set primaryColors = craft.tags().group('primaryColors') %}
-		{% set secondaryColors = craft.tags().group('secondaryColors') %}
-		{% for tag in primaryColors.all() %}
-			{% if tag not in secondaryColors %}
-				{% set colors = colors|merge([tag]) %}
-			{% endif %}
-		{% endfor %}
-		{% for tag in secondaryColors.all() %}
-			{% if tag not in primaryColors %}
+		{% set tags = craft.tags().group(['primaryColors','secondaryColors']) %}
+		{% for tag in tags.all() %}
+			{% if tag not in colors %}
 				{% set colors = colors|merge([tag]) %}
 			{% endif %}
 		{% endfor %}
