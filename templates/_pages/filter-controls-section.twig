@@ -1,62 +1,70 @@
 <section id="" class="w-full h-full p-4 section-wrapper bg-rug-grey" x-data="{ filter: 'origin' }">
 	<h3>Filters</h3>
-	<div id="" class="flex flex-col items-start pt-4 space-y-2 filter-ui-group">
-		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
-			<h2>Origin</h2>
-		</button>
-		<fieldset data-filter-group class="flex flex-row" >
-			<div id="" class="">
+	<div id="" class="flex flex-col items-start pt-4 filter-ui-group">
+		<div id="" class="flex flex-col mb-4">
+			<button id="" class="mb-2" :class="{ 'text-rug-light-blue': filter === 'origin' }" @click="filter = 'origin'">
+				<h2>Origin</h2>
+			</button>
+			<fieldset data-filter-group class="flex flex-row">
+
 				<label class="control control-checkbox font-quicksand">Turkey
 					<input type="checkbox" value=".Turkey"/>
 					<div class="control_indicator"></div>
 				</label>
-			</div>
-		</fieldset>
-		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
-			<h2>Age</h2>
-		</button>
-		<fieldset data-filter-group class="flex flex-row" >
-			<div id="" class="">
+
+			</fieldset>
+		</div>
+		<div id="" class="flex flex-col mb-4">
+			<button id="" class="mb-2" :class="{ 'text-rug-light-blue': filter === 'age' }" @click="filter = 'age'">
+				<h2>Age</h2>
+			</button>
+			<fieldset data-filter-group class="flex flex-row">
+
 				<label class="control control-checkbox font-quicksand">
 					<input type="checkbox" value=""/>
 					<div class="control_indicator"></div>
 				</label>
-			</div>
-		</fieldset>
-		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
-			<h2>Color</h2>
-		</button>
-		<fieldset data-filter-group class="flex flex-row" >
-			<div id="" class="">
+
+			</fieldset>
+		</div>
+		<div id="" class="flex flex-col mb-4">
+			<button id="" class="mb-2" :class="{ 'text-rug-light-blue': filter === 'color' }" @click="filter = 'color'">
+				<h2>Color</h2>
+			</button>
+			<fieldset data-filter-group class="flex flex-row">
+
 				<label class="control control-checkbox font-quicksand">
 					<input type="checkbox" value=""/>
 					<div class="control_indicator"></div>
 				</label>
-			</div>
-		</fieldset>
-		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
-			<h2>Collection</h2>
-		</button>
-		<fieldset data-filter-group class="flex flex-row" >
-			<div id="" class="">
+
+			</fieldset>
+		</div>
+		<div id="" class="flex flex-col mb-4">
+			<button id="" class="mb-2" :class="{ 'text-rug-light-blue': filter === 'collection' }" @click="filter = 'collection'">
+				<h2>Collection</h2>
+			</button>
+			<fieldset data-filter-group class="flex flex-row">
+
 				<label class="control control-checkbox font-quicksand">
 					<input type="checkbox" value=""/>
 					<div class="control_indicator"></div>
 				</label>
-			</div>
-		</fieldset>
-		<button id="" class="" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
-			<h2>Size</h2>
-		</button>
-		<fieldset data-filter-group class="flex flex-row" >
-			<div id="" class="">
+
+			</fieldset>
+		</div>
+		<div id="" class="flex flex-col mb-4">
+			<button id="" class="mb-2" :class="{ 'text-rug-light-blue': filter === 'size' }" @click="filter = 'size'">
+				<h2>Size</h2>
+			</button>
+			<fieldset data-filter-group class="flex flex-row">
+
 				<label class="control control-checkbox font-quicksand">
 					<input type="checkbox" value=""/>
 					<div class="control_indicator"></div>
 				</label>
-			</div>
-		</fieldset>
+
+			</fieldset>
+		</div>
 	</div>
-
-
 </section>
