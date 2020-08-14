@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f4e1f41fb1d5db2a08cec785b488307",
+    "content-hash": "2cee8a67ea487bf6a62b4de9d23b8a4c",
     "packages": [
         {
             "name": "cakephp/core",
@@ -1460,6 +1460,55 @@
             ],
             "description": "An SVG sanitizer for PHP",
             "time": "2020-01-20T01:34:17+00:00"
+        },
+        {
+            "name": "ether/tags",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ethercreative/tags.git",
+                "reference": "ce4155b2fe53e436b5b13b51472d0154991843d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ethercreative/tags/zipball/ce4155b2fe53e436b5b13b51472d0154991843d1",
+                "reference": "ce4155b2fe53e436b5b13b51472d0154991843d1",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC17"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Tags",
+                "handle": "tag-manager",
+                "changelogUrl": "https://raw.githubusercontent.com/ethercreative/tags/master/CHANGELOG.md",
+                "class": "ether\\tagManager\\TagManager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ether\\tagManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ether Creative",
+                    "homepage": "https://ethercreative.co.uk"
+                }
+            ],
+            "description": "A tag manager for Craft 3",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "tags"
+            ],
+            "time": "2020-04-15T12:16:13+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",

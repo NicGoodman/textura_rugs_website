@@ -6,6 +6,7 @@
     "craftcms/feed-me": "^4.2",
     "craftcms/mailgun": "^1.4",
     "craftcms/redactor": "^2.6",
+    "ether/tags": "^1.0",
     "nystudio107/craft-imageoptimize": "^1.6",
     "nystudio107/craft-seomatic": "^3.3",
     "venveo/craft-bulkedit": "^2.0",
