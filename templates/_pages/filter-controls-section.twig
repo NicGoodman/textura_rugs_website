@@ -32,8 +32,9 @@
 		{% set colors = [] %}
 		{% set tags = craft.tags().group(['primaryColors','secondaryColors']) %}
 		{% for tag in tags.all() %}
-			{% if tag not in colors %}
-				{% set colors = colors|merge([tag]) %}
+		{% set color = tag.title %}
+			{% if color not in colors %}
+				{% set colors = colors|merge([color]) %}
 			{% endif %}
 		{% endfor %}
 		<div id="" class="flex flex-col mb-4">
