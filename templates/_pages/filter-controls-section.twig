@@ -34,12 +34,12 @@
 		{% set primaryColors = craft.tags().group('primaryColors') %}
 		{% set secondaryColors = craft.tags().group('secondaryColors') %}
 		{% for tag in primaryColors.all() %}
-			{% if tag not in secondaryColors.all() %}
+			{% if tag not in secondaryColors %}
 				{% set colors = colors|merge([tag]) %}
 			{% endif %}
 		{% endfor %}
 		{% for tag in secondaryColors.all() %}
-			{% if tag not in primaryColors.all() %}
+			{% if tag not in primaryColors %}
 				{% set colors = colors|merge([tag]) %}
 			{% endif %}
 		{% endfor %}
