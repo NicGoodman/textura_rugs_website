@@ -31,15 +31,15 @@
 		</div>
 
 		{% set colors = [] %}
-		{% set tags = craft.tags().group('primaryColors') %}
-		{% for tag in tags.all() %}
-			{% if tag not in colors %}
+		{% set primaryColors = craft.tags().group('primaryColors') %}
+		{% set secondaryColors = craft.tags().group('secondaryColors') %}
+		{% for tag in primaryColors.all() %}
+			{% if tag not in secondaryColors.all() %}
 				{% set colors = colors|merge([tag]) %}
 			{% endif %}
 		{% endfor %}
-		{% set tags = craft.tags().group('secondaryColors') %}
-		{% for tag in tags.all() %}
-			{% if tag not in colors %}
+		{% for tag in secondaryColors.all() %}
+			{% if tag not in primaryColors.all() %}
 				{% set colors = colors|merge([tag]) %}
 			{% endif %}
 		{% endfor %}
