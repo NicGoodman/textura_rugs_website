@@ -5,8 +5,8 @@
 
 		{# Display list items #}
 		<section class="flex flex-row flex-wrap w-full">
-		<i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-dark-blue" @click="show = false"></i>
-			<h1 class="w-full">Wishlist for Designer</h1>
+		<i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-grey" @click="show = false"></i>
+			<h1 class="w-full text-right bg-rug-grey">Your Wishlist {% if list|length %}Includes the Following Products:{% else %}is Empty.{% endif %}</h1>
 				{% if list|length %}
 			{% for item in list.items.all() %}
 				{% set entry = craft.entries().id(item.elementId).one() %}
@@ -94,7 +94,7 @@
 			{% endfor %}
 		</section>
 	{% endif %}
-	<section id="" class="">
+	<section id="" class="w-full">
 		<h2>Send to your Designer</h2>
 		{% include "_content/wishlist-form" %}
 	</section>
