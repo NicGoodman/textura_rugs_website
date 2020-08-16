@@ -38,7 +38,7 @@
 						<li>
 							<p>
 								Primary Color:
-								{% set colors = entry.primaryColors.all() %}
+								{% set colors = entry.primaryColor.all() %}
 								{% for tag in colors %}
 									<strong>{{ tag.title }}</strong>
 								{% endfor %}
@@ -47,7 +47,7 @@
 						<li>
 							<p>
 								Secondary Color:
-								{% set colors = entry.secondaryColors.all() %}
+								{% set colors = entry.secondaryColor.all() %}
 								{% for tag in colors %}
 									<strong>{{ tag.title }}</strong>
 								{% endfor %}
