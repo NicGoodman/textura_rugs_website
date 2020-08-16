@@ -1,5 +1,5 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
-	<a href="/wish-list" class="wish-list-link {% if list|length %}text-rug-yellow{% else %}text-rug-light-blue{% endif %}" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
+	<a href="/wish-list" class="wish-list-link font-quicksand" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
 		<i class="fas fa-clipboard-list"></i> Wishlist
 	</a>
 
