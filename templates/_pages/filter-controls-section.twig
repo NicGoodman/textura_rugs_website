@@ -1,6 +1,6 @@
 <section id="" class="w-full h-full p-4 section-wrapper bg-rug-grey">
 	<div id="" class="flex flex-row items-start pt-4 filter-ui-group">
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Origin</h2>
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Age</h2>
@@ -43,7 +43,7 @@
 					<div class="overflow-hidden shadow-xs">
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
-								<div id="" class="flex flex-row space-x-4">
+								<div id="" class="flex flex-col space-y-4">
 									{% set tags = craft.tags().group('age') %}
 									{% for tag in tags.all() %}
 										<label class="control control-checkbox font-quicksand">{{ tag.title }}
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Primary Color</h2>
@@ -73,7 +73,7 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 
 							<fieldset data-filter-group>
-								<div id="" class="flex flex-row space-x-4">
+								<div id="" class="flex flex-col space-y-4">
 									{% set tags = craft.tags().group('primaryColors') %}
 									{% for tag in tags.all() %}
 										<label class="control control-checkbox font-quicksand">{{ tag.title }}
@@ -88,7 +88,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Secondary Color</h2>
@@ -103,7 +103,7 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 
 							<fieldset data-filter-group>
-								<div id="" class="flex flex-row space-x-4">
+								<div id="" class="flex flex-col space-y-4">
 									{% set tags = craft.tags().group('secondaryColors') %}
 									{% for tag in tags.all() %}
 										<label class="control control-checkbox font-quicksand">{{ tag.title }}
@@ -118,7 +118,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Collection</h2>
@@ -132,7 +132,7 @@
 					<div class="overflow-hidden shadow-xs">
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
-								<div id="" class="flex flex-row space-x-4">
+								<div id="" class="flex flex-col space-y-4">
 									{% set categories = craft.categories().group('collections') %}
 									{% for category in categories.all() %}
 										<label class="control control-checkbox font-quicksand">{{ category.title }}
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: true }">
+		<div id="" class="relative flex flex-col items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
 					<h2>Size</h2>
@@ -161,7 +161,7 @@
 					<div class="overflow-hidden shadow-xs">
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
-								<div id="" class="flex flex-row space-x-4">
+								<div id="" class="flex flex-col space-y-4">
 									{% set categories = craft.categories().group('size') %}
 									{% for category in categories.all() %}
 										<label class="control control-checkbox font-quicksand">{{ category.title }}
