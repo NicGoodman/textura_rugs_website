@@ -1,5 +1,5 @@
 {% set heroImage = entry.heroImage.one().optimizedImages %}
-<section id="hero-section" class="flex flex-col w-full bg-rug-white" style="background-image: url('{{ heroImage.src() }}');">
+<section id="hero-section" class="flex flex-col w-full bg-opacity-25 bg-rug-white" style="background: url('{{ heroImage.src() }}') no-repeat cover;">
 	{% if entry.heroIntro|length %}
 		{% set introImage = "" %}
 		{% set introHeader = "" %}
@@ -24,7 +24,7 @@
 						<h2 class="mb-6">{{ introBodyText|nl2br }}</h2>
 					</span>
 					{% include "_snippets/btn-main" %}
-					<section id="hero-contact-block" class="flex flex-col mt-10 text-left lg:hidden text-rug-white">
+					<section id="hero-contact-block" class="flex-col hidden mt-10 text-left md:flex lg:hidden text-rug-white">
 						<h3>GET IN TOUCH</h3>
 						{% set contactStyles = "text-left text-rug-white text-base font-bioRhyme" %}
 						{% include "_snippets/contact-info" %}

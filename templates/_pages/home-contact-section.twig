@@ -1,5 +1,5 @@
-	{% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
-<section id="contact-us-section" class="flex flex-col w-full bg-rug-white" style="background-image: url('{{ contactBackgroundImage.src() }}');">
+{% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
+<section id="contact-us-section" class="flex flex-col w-full bg-opacity-25 bg-rug-white" style="background: url('{{ contactBackgroundImage.src() }}') no-repeat cover;">
 
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
@@ -10,8 +10,8 @@
 		{% set contactIntroBodyText = block.contactIntroBodyText %}
 	{% endfor %}
 	<header id="contact-intro-container" class="flex flex-row items-end justify-around w-full h-full p-16 flex-grow-1">
-		<section id="contact-intro-wrapper" class="flex flex-row h-full max-w-3xl flex-shrink-1">
-			<article id="contact-intro-text" class="flex flex-col justify-between flex-shrink-0 w-1/2 px-4 pt-4 pb-6 mt-20 mr-4 text-right bg-rug-dark-blue text-rug-white">
+		<section id="contact-intro-wrapper" class="flex flex-col h-full max-w-3xl md:flex-row flex-shrink-1">
+			<article id="contact-intro-text" class="flex flex-col justify-between flex-shrink-0 w-full px-4 pt-4 pb-6 mb-20 mr-4 text-right md:mt-20 md:w-1/2 bg-rug-dark-blue text-rug-white">
 				<span id="text-wrapper" class="">
 					<h1 class="text-rug-grey">{{ contactIntroHeader }}</h1>
 					<h2 class="mb-6">{{ contactIntroBodyText|nl2br }}</h2>
@@ -20,7 +20,7 @@
 			</article>
 			<picture id="contact-intro-image" class="flex flex-col flex-grow mb-12">
 				<img src="{{ contactImage.src }}" alt="" data-srcset="{{ contactImage.srcset}}" class="object-cover w-full h-full border-2 border-rug-dark-blue">
-				<section id="contact-contact-block" class="flex flex-col p-4 text-right text-rug-dark-blue">
+				<section id="contact-contact-block" class="flex-col hidden p-4 text-right md:flex text-rug-dark-blue">
 					{% set contactStyles = "text-left text-base font-bioRhyme" %}
 					{% include "_snippets/contact-info" %}
 				</section>
