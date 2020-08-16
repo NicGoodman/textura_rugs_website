@@ -1,5 +1,5 @@
 	{% set heroImage = entry.heroImage.one().optimizedImages %}
-<section id="hero-section" class="flex flex-col w-full bg-rug-white" style="background-image: url('{{ heroImage.getUrl }}');">
+<section id="hero-section" class="flex flex-col w-full bg-rug-white" style="background-image: url('{{ heroImage.url }}');">
 	{% if entry.heroIntro|length %}
 		{% set introImage = "" %}
 		{% set introHeader = "" %}
