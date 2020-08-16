@@ -1,9 +1,6 @@
-<section id="contact-us" class="relative bg-rug-white">
 	{% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
-	{% set contactBackgroundImageAltText = entry.contactBackgroundImage.one().title %}
-	<picture id="contact-image">
-		<img src="{{ contactBackgroundImage.src() }}" alt="{{ contactBackgroundImageAltText }}" data-srcset="{{ contactBackgroundImage.srcset() }}" class="object-cover w-screen max-h-2/3-screen {{ contactOpacity }}">
-	</picture>
+<section id="contact-us-section" class="flex flex-col w-full bg-rug-white" style="background-image: url('{{ contactBackgroundImage.src() }}');">
+
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
 	{% set contactIntroBodyText = "" %}
@@ -12,7 +9,7 @@
 		{% set contactIntroHeader = block.contactIntroHeader %}
 		{% set contactIntroBodyText = block.contactIntroBodyText %}
 	{% endfor %}
-	<header id="contact-intro-container" class="absolute top-0 left-0 flex flex-row items-end justify-around w-full h-full p-16">
+	<header id="contact-intro-container" class="flex flex-row items-end justify-around w-full h-full p-16 flex-grow-1">
 		<section id="contact-intro-wrapper" class="flex flex-row h-full max-w-3xl flex-shrink-1">
 			<article id="contact-intro-text" class="flex flex-col justify-between flex-shrink-0 w-1/2 px-4 pt-4 pb-6 mt-20 mr-4 text-right bg-rug-dark-blue text-rug-white">
 				<span id="text-wrapper" class="">
