@@ -1,5 +1,5 @@
 {% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
-<section id="contact-us-section" class="flex flex-col w-full bg-opacity-25 bg-rug-white" style="background: url('{{ contactBackgroundImage.src() }}') no-repeat cover;">
+<section id="contact-us-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ contactBackgroundImage.src() }}');">
 
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
