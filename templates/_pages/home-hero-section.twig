@@ -1,5 +1,5 @@
 {% set heroImage = entry.heroImage.one().optimizedImages %}
-<section id="hero-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ heroImage.src() }}'); background-color: rgba(255, 255, 255, 0.4);
+<section id="hero-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ heroImage.src() }}'); background-color: rgba(255, 255, 255, 0.66);
     background-blend-mode: lighten;">
 	{% if entry.heroIntro|length %}
 		{% set introImage = "" %}
