@@ -34,11 +34,16 @@ $(document).ready(function () {
             url: form.attr('action'),
             type: form.attr('method'),
             dataType: 'html',
-            data: form.serialize()
+            data: form.serialize(),
+            success: function (response) {
+                $.ajax(form.attr('wishListLink'), {
+                    dataType: 'html',
+                    success: function (response) {
+                        refreshWishList(response);
+                    }
+                });
+            }
         });
-
-
-  
     }
 
 
