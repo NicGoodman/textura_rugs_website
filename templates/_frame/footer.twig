@@ -1,6 +1,6 @@
 <footer id="main-footer" class="flex flex-col items-center justify-between w-full p-4 space-y-8 md:p-6 lg:p-10 md:flex-row bg-rug-black md:space-y-0">
 	{% set homeEntry = craft.entries().section('home').one() %}
-	<nav id="site-navigation" class="w-full text-center md:text-right text-rug-white md:w-auto" style="column-count: 2;">
+	<nav id="site-navigation" class="w-full text-center md:text-left text-rug-white md:w-auto font-quicksand" style="column-count: 2;">
 		{% set navLinks = homeEntry.navigationItems.all() %}
 		{% set listStyles = "" %}
 		{% include "_content/main-nav-list" %}
@@ -10,7 +10,7 @@
 	{% set logo = homeEntry.logo.one().optimizedImages %}
 	{% set logoAltText = homeEntry.logo.one().title %}
 	{% include "_snippets/logo" %}
-	{% set contactStyles = "text-center md:text-right text-rug-white text-lg font-bioRhyme md:w-auto w-full" %}
+	{% set contactStyles = "text-center md:text-right text-rug-white text-lg font-bioRhyme md:w-auto w-full " %}
 	<section id="contact-info" class="{{ contactStyles }}">
 		{{ homeEntry.contactInfo|nl2br }}
 	</section>
