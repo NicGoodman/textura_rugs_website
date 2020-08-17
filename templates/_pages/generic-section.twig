@@ -14,7 +14,7 @@
 							</div>
 
 						{% case "break" %}
-							<div class="flex-shrink-0 w-full"></div>
+							<div class="flex-shrink-0 w-full h-8 {% if block.appearance == "line" %}border-2 border-rug-dark-blue{% endif %}"></div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
 							{% set imageHeight = "" %}
