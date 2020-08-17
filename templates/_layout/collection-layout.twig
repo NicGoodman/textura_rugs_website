@@ -6,7 +6,7 @@
 {% endblock %}
 {% block main %}
 {% set entry = craft.entries().section('collections').one() %}
-	<main class="flex flex-col items-center flex-grow w-full bg-rug-white">
+	<main class="flex flex-col items-center flex-grow w-full p-4 bg-rug-white md:p-8">
 	{% include "_pages/collection-info-section" %}
 	</main>
 {% endblock %}
