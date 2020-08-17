@@ -12,6 +12,9 @@
 							<div id="" class="flex-1 p-4">
 								{{ block.bodyText  | nl2br }}
 							</div>
+
+						{% case "break" %}
+							<div class="flex-shrink-0 w-full"></div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
 							{% set imageHeight = "" %}
