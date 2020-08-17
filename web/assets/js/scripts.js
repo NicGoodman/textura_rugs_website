@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
-        $('body').on('submit', '#remove-button', addToWishList)
+        $('body').on('submit', '#remove-button', removeFromWishList)
         $('body').on('submit', '#add-to-wishlist', addToWishList);
         $('body').on('click', '.wish-list-button', toggleButtonText);
     });
@@ -20,7 +20,26 @@ $(document).ready(function () {
             dataType: 'html',
             data: form.serialize()
         });
+    }
+
+    function toggleButtonText(e) {
+        var button = $(e.currentTarget);
+        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+    }
+
+    function removeFromWishList(e) {
+        e.preventDefault();
+        var form = $(e.currentTarget);
+        var href = form.attr('data-wishListLink');
         $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            dataType: 'html',
+            data: form.serialize()
+        });
+
+
+        $.ajax(form.attr('href'), {
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
@@ -28,10 +47,7 @@ $(document).ready(function () {
         });
     }
 
-    function toggleButtonText(e) {
-        var button = $(e.currentTarget);
-        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
-    }
+
     // Event handler for the filter click
     function onWishListClick(e) {
         e.preventDefault();
