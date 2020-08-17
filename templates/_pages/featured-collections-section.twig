@@ -7,7 +7,7 @@
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
-						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-48 md:h-48 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 						<p class="absolute right-0 p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 					</a>
 				</picture>
@@ -22,7 +22,7 @@
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
-						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-48 md:h-48 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 						<p class="absolute right-0 p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 					</a>
 				</picture>
