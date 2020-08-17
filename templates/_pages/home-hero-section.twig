@@ -14,12 +14,12 @@
 			{% set ctaText = block.introCtaText %}
 			{% set ctaLink = block.introCtaLink.one().getUrl() %}
 		{% endfor %}
-		<header id="hero-intro-container" class="flex flex-row items-end justify-around w-full h-full p-16 flex-grow-1">
+		<header id="hero-intro-container" class="flex flex-row items-end justify-around w-full h-full p-4 md:p-16 flex-grow-1">
 			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl flex-shrink-1">
 				<picture id="hero-intro-image" class="flex-grow hidden mb-12 border-2 md:block border-rug-light-blue">
 					<img src="{{ introImage.src }}" alt="" data-srcset="{{ introImage.srcset}}" class="object-cover w-full h-full">
 				</picture>
-				<article id="hero-intro-text" class="flex flex-col justify-between flex-shrink-0 w-full px-4 pt-4 pb-6 mx-4 mt-20 md:w-1/2 bg-rug-dark-blue text-rug-white">
+				<article id="hero-intro-text" class="flex flex-col justify-between flex-shrink-0 w-full px-4 pt-4 pb-6 mt-20 md:mx-4 md:w-1/2 bg-rug-dark-blue text-rug-white">
 					<span id="text-wrapper" class="">
 						<h1>{{ introHeader }}</h1>
 						<h2 class="mb-6">{{ introBodyText|nl2br }}</h2>
