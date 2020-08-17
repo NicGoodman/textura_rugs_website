@@ -38,7 +38,7 @@ $(document).ready(function () {
         });
 
 
-        $.ajax(form.attr('data-wishListLink'), {
+        $.ajax(form.attr('wishListLink'), {
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
