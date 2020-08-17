@@ -12,7 +12,7 @@
 				{% set entry = craft.entries().id(item.elementId).one() %}
 				{% set thumbnail = entry.primaryImage.one().optimizedImages %}
 				<div class="p-4">
-					<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48 mb-2">
+					<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 mb-2 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 					<h2>{{ item.title }}</h2>
 					<ul>
 						<li>
