@@ -89,8 +89,8 @@ html.with-featherlight {
 	/* position: centering vertical and horizontal */
 	position: absolute;
 	z-index: 9999;
-	top: -35px;
-	right: -35px;
+	top: -28px;
+	right: -28px;
 
 	/* dimensions: 25px x 25px */
 	line-height: 35px;
@@ -101,7 +101,7 @@ html.with-featherlight {
 	text-align: center;
 	font-family: Arial, sans-serif;
 
-	color: #fffdfd;
+	color: #bde3ef;
 	border: none;
 	padding: 0;
 }
@@ -135,6 +135,9 @@ html.with-featherlight {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+.fa, .fas {
+    font-size: 20pt;
 
 /* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
