@@ -1,8 +1,8 @@
-<article id="" class="w-full p-4 md:w-1/2">
+<article id="" class="w-full p-4 lg:w-1/2">
 {% set thumbnail = post.thumbnail.one().optimizedImages %}
-	<a href="{{ post.getUrl }}" class="flex flex-row">
+	<a href="{{ post.getUrl }}" class="flex flex-col md:flex-row">
 		<picture class="flex-shrink-0 pt-2 pr-4">
-			<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-48 h-48">
+			<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-full h-48 border-2 md:w-36 border-rug-grey hover:border-rug-light-blue">
 		</picture>
 		<section id="" class="flex flex-col">
 			<h2>{{ post.title }}
