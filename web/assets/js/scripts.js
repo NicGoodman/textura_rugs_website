@@ -35,14 +35,12 @@ $(document).ready(function () {
             type: form.attr('method'),
             dataType: 'html',
             data: form.serialize(),
+        });
+        $.ajax({
+            url: '/wish-list',
+            dataType: 'html',
             success: function (response) {
-                $.ajax({
-                    url: '/wish-list',
-                    dataType: 'html',
-                    success: function (response) {
-                        refreshWishList(response);
-                    }
-                });
+                refreshWishList(response);
             }
         });
     }
