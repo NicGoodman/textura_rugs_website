@@ -55,9 +55,9 @@ html.with-featherlight {
 	display: inline-block;
 
 	/* dimensions: cut off images */
-	overflow: auto;
-	padding: 25px 25px 0;
-	border-bottom: 25px solid transparent;
+
+	padding: 3px 3px 0;
+	border-bottom: 3px solid transparent;
 
 	/* dimensions: handling large content */
 	margin-left: 5%;
@@ -65,7 +65,7 @@ html.with-featherlight {
 	max-height: 95%;
 
 	/* styling */
-	background: #fff;
+	background: #bde3ef;
 	cursor: auto;
 
 	/* reset white-space wrapping */
@@ -89,20 +89,19 @@ html.with-featherlight {
 	/* position: centering vertical and horizontal */
 	position: absolute;
 	z-index: 9999;
-	top: 0;
-	right: 0;
+	top: -35px;
+	right: -35px;
 
 	/* dimensions: 25px x 25px */
-	line-height: 25px;
-	width: 25px;
+	line-height: 35px;
+	width: 35px;
 
 	/* styling */
 	cursor: pointer;
 	text-align: center;
 	font-family: Arial, sans-serif;
-	background: #fff; /* Set the background in case it overlaps the content */
-	background: rgba(255, 255, 255, 0.3);
-	color: #000;
+
+	color: #fffdfd;
 	border: none;
 	padding: 0;
 }
