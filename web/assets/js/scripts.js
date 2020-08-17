@@ -30,7 +30,6 @@ $(document).ready(function () {
     function removeFromWishList(e) {
         e.preventDefault();
         var form = $(e.currentTarget);
-        var href = form.attr('data-wishListLink');
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
@@ -39,7 +38,7 @@ $(document).ready(function () {
         });
 
 
-        $.ajax(form.attr('href'), {
+        $.ajax(form.attr('data-wishListLink'), {
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
