@@ -90,7 +90,7 @@
 						<input type="hidden" name="action" value="wishlist/items/remove">
 						{{ csrfInput() }}
 
-						<input type="text" name="elementId" value="{{ entry.id }}">
+						<input type="hidden" name="elementId" value="{{ entry.id }}">
 
 						<input type="submit" value="Remove from List" wishListLink="/wish-list">
 					</form>
