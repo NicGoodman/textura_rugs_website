@@ -36,7 +36,8 @@ $(document).ready(function () {
             dataType: 'html',
             data: form.serialize(),
             success: function (response) {
-                $.ajax(form.attr('wishListLink'), {
+                $.ajax({
+                    url: '/wish-list',
                     dataType: 'html',
                     success: function (response) {
                         refreshWishList(response);
