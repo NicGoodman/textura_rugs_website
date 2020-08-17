@@ -1,13 +1,17 @@
-<div id="wish-list" class="wishListContent">
-	
+<div
+	id="wish-list" class="wishListContent">
+
 	{# Get the list #}
 	{% set list = craft.wishlist.lists().default(true).one() %}
 
-		{# Display list items #}
-		<section class="flex flex-row flex-wrap w-full">
+	{# Display list items #}
+	<section class="flex flex-row flex-wrap w-full">
 		<i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-light-blue" @click="show = false"></i>
-			<h2 class="w-full p-4 my-8 text-right bg-rug-grey text-rug-dark-blue">Your Wishlist {% if list is not empty %}Includes the Following Products:{% else %}is Empty.{% endif %}</h2>
-				{% if list is not empty %}
+		<h2 class="w-full p-4 my-8 text-right bg-rug-grey text-rug-dark-blue">Your Wishlist
+			{% if list is not empty %}Includes the Following Products:{% else %}is Empty.
+			{% endif %}
+		</h2>
+		{% if list is not empty %}
 			{% for item in list.items.all() %}
 				{% set entry = craft.entries().id(item.elementId).one() %}
 				{% set thumbnail = entry.primaryImage.one().optimizedImages %}
@@ -82,14 +86,14 @@
 							</p>
 						</li>
 					</ul>
-					{# <form id="remove-link" method="POST">
-																																									<input type="hidden" name="action" value="wishlist/items/remove">
-																																									{{ csrfInput() }}
-																																			
-																																									<input type="hidden" name="elementId" value="{{ entry.id }}">
-																																			
-																																									<button type="submit" class="">Remove from List</button>
-																																								</form> #}
+					<form id="remove-button" method="POST">
+						<input type="hidden" name="action" value="wishlist/items/remove">
+						{{ csrfInput() }}
+
+						<input type="text" name="elementId" value="{{ entry.id }}">
+
+						<input type="submit" value="Remove from List">
+					</form>
 				</div>
 			{% endfor %}
 		</section>

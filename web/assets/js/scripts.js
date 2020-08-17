@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
-
+        $('body').on('submit', '#remove-button', addToWishList)
         $('body').on('submit', '#add-to-wishlist', addToWishList);
         $('body').on('click', '.wish-list-button', toggleButtonText);
     });
