@@ -21,6 +21,12 @@
 					<ul>
 						<li>
 							<p>
+								Product Number:
+								<strong>{{ entry.productNumber }}'</strong>
+							</p>
+						</li>
+						<li>
+							<p>
 								Length:
 								<strong>{{ entry.physicalLength }}'</strong>
 							</p>
@@ -92,7 +98,7 @@
 
 						<input type="hidden" name="elementId" value="{{ entry.id }}">
 
-						<input type="submit" value="Remove from List" wishListLink="/wish-list">
+						<input type="submit" value="Remove from List" wishlistlink="/wish-list">
 					</form>
 				</div>
 			{% endfor %}
