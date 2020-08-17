@@ -85,7 +85,7 @@
 			{% set thumbnail = image.optimizedImages %}
 			<picture class="p-2">
 				<a href="#" data-featherlight="{{ image.getUrl }}">
-					<img src="{{ thumbnail.src() }}" alt="{{ image.title }}" data-srcset "{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+					<img src="{{ thumbnail.src() }}" alt="{{ image.title }}" data-srcset "{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 				</a>
 			</picture>
 
