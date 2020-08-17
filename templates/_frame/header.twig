@@ -1,28 +1,25 @@
-<header id="main-header" class="flex flex-row items-end justify-between w-full p-10 bg-rug-dark-blue">
+<header id="main-header" class="flex flex-row items-end justify-between w-full p-10 bg-rug-dark-blue" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
 	{% set homeEntry = craft.entries().section('home').one() %}
 	{% set logo = homeEntry.logo.one().optimizedImages %}
 	{% set logoAltText = homeEntry.logo.one().title %}
 	{% include "_snippets/logo" %}
-	<nav id="main-site-navigation" class="text-rug-white">
+	<button @click="isOpen = !isOpen" type="button" class="block px-2 md:hidden text-tag-yellow hover:text-tag-red focus:outline-none" :class="{ 'transition transform-180': isOpen }">
+		<svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+			<path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+			<path x-show="!isOpen" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+		</svg>
+	</button>
+	<nav id="main-site-navigation" class="justify-between text-rug-white" :class="{ 'hidden md:flex': !isOpen }" @click.away="isOpen = false" x-show="true" x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 transform" x-transition:enter-end="opacity-100 transform" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform">
 		{% set navLinks = homeEntry.navigationItems.all() %}
 		{% set listStyles = "flex flex-col md:flex-row flex-wrap items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4 md:mb-0" %}
 		{% include "_content/main-nav-list" %}
+		{% include "_snippets/wish-list-icon" %}
+		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
+		{% include "_content/social-media-list" %}
 	</nav>
-	{% include "_snippets/wish-list-icon" %}
-	{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
-	{% include "_content/social-media-list" %}
+
+
 </header>
-<div class="fixed top-0 left-0 z-50 flex flex-row items-end justify-end w-screen min-h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 transform"
-    x-transition:enter-end="opacity-100 transform"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100 transform"
-    x-transition:leave-end="opacity-0 transform">
-	<div id="wish-list" class="absolute right-0 z-50 flex flex-col justify-between w-full max-w-screen-md min-h-screen p-8 shadow-2xl wishListContent bg-rug-dark-blue text-rug-grey" x-show="show" @click.away="show = false" 
-x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 transform translate-x-full"
-    x-transition:enter-end="opacity-100 transform"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100 transform"
-    x-transition:leave-end="opacity-0 transform translate-x-full"></div>
+<div class="fixed top-0 left-0 z-50 flex flex-row items-end justify-end w-screen min-h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform">
+	<div id="wish-list" class="absolute right-0 z-50 flex flex-col justify-between w-full max-w-screen-md min-h-screen p-8 shadow-2xl wishListContent bg-rug-dark-blue text-rug-grey" x-show="show" @click.away="show = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-x-full" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform translate-x-full"></div>
 </div>
