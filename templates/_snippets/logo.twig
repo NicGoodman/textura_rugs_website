@@ -1,7 +1,7 @@
 <a href="{{ siteUrl }}">
 	<h1 class="text-rug-white">
 		{% if logo|length %}
-			<img src="{{ logo.src() }}" alt="{{ logoAltText }}" data-srcset="{{ logo.srcset() }}" class="h-16 ">
+			<img src="{{ logo.src() }}" alt="{{ logoAltText }}" data-srcset="{{ logo.srcset() }}" class="h-12 lg:h-16">
 		{% else %}
 			{{ siteName }}
 		{% endif %}

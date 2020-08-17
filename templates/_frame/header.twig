@@ -1,4 +1,4 @@
-<header id="main-header" class="flex flex-col items-center justify-between w-full p-10 md:flex-row md:items-end bg-rug-dark-blue" @keydown.escape="isOpen = false">
+<header id="main-header" class="flex flex-col items-center justify-between w-full p-4 md:p-6 lg:p-10 md:flex-row md:items-end bg-rug-dark-blue" @keydown.escape="isOpen = false">
 	{% set homeEntry = craft.entries().section('home').one() %}
 	{% set logo = homeEntry.logo.one().optimizedImages %}
 	{% set logoAltText = homeEntry.logo.one().title %}
