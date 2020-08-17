@@ -6,7 +6,7 @@
 		{# Display list items #}
 		<section class="flex flex-row flex-wrap w-full">
 		<i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-light-blue" @click="show = false"></i>
-			<h1 class="w-full p-4 my-8 text-right bg-rug-grey text-rug-dark-blue">Your Wishlist {% if list is not empty %}Includes the Following Products:{% else %}is Empty.{% endif %}</h1>
+			<h2 class="w-full p-4 my-8 text-right bg-rug-grey text-rug-dark-blue">Your Wishlist {% if list is not empty %}Includes the Following Products:{% else %}is Empty.{% endif %}</h2>
 				{% if list is not empty %}
 			{% for item in list.items.all() %}
 				{% set entry = craft.entries().id(item.elementId).one() %}
