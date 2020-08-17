@@ -1,4 +1,4 @@
-<header id="main-header" class="flex flex-row items-end justify-between w-full p-10 bg-rug-dark-blue" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
+<header id="main-header" class="flex flex-row items-end justify-between w-full p-10 bg-rug-dark-blue" >
 	{% set homeEntry = craft.entries().section('home').one() %}
 	{% set logo = homeEntry.logo.one().optimizedImages %}
 	{% set logoAltText = homeEntry.logo.one().title %}
@@ -17,8 +17,6 @@
 		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% include "_content/social-media-list" %}
 	</nav>
-
-
 </header>
 <div class="fixed top-0 left-0 z-50 flex flex-row items-end justify-end w-screen min-h-screen" style="background-color: rgba(33, 42, 48, 0.33);" x-show="show" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform">
 	<div id="wish-list" class="absolute right-0 z-50 flex flex-col justify-between w-full max-w-screen-md min-h-screen p-8 shadow-2xl wishListContent bg-rug-dark-blue text-rug-grey" x-show="show" @click.away="show = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-x-full" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform translate-x-full"></div>
