@@ -86,8 +86,8 @@ $(document).ready(function () {
             }
         });
         $toggleSortSize.on('click', function () {
-            $('button').removeClass('text-rug-yellow');
-            $(this).addClass('text-rug-yellow');
+            $('button').removeClass('text-rug-grey');
+            $(this).addClass('text-rug-grey');
             switch (sortOrder) {
                 case 'asc':
                     sortOrder = 'desc';
