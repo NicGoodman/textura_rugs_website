@@ -54,7 +54,7 @@
 								<span :class="selected == {{ loop.index }} ? 'fa-minus-circle' : 'fa-plus-circle'" class="text-2xl far "></span>
 							</div>
 							<div class="w-full" x-show="selected == {{ loop.index }}">
-								{{ block.text | nl2br }}
+								{{ block.text|nl2br }}
 							</div>
 
 					{% endswitch %}
