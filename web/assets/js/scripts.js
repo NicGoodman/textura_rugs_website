@@ -19,8 +19,8 @@ function addToWishList(e) {
     });
 }
 
-function toggleButtonText() {
-    preventDefault();
+function toggleButtonText(e) {
+    e.preventDefault();
     var button = document.getElementById("wish-list-button");
     $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     var form = document.getElementById("add-to-wishlist");
