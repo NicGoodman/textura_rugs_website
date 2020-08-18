@@ -133,5 +133,5 @@ function hideContactButton() {
     contactButton.style.display = "none";
 }
 
-observerIn.observe();
+observerIn.observe(featuredCollections);
 
