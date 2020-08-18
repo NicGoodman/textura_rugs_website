@@ -4,7 +4,6 @@ $(document).ready(function () {
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
         $('body').on('submit', '#remove-button', removeFromWishList);
-
         $('body').on('submit', '#add-to-wishlist', addToWishList);
     });
 
@@ -12,15 +11,18 @@ $(document).ready(function () {
         // prevent form submission
         e.preventDefault();
         var form = $(e.currentTarget);
-        var button = document.getElementById("wish-list-button");
-        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
         // submit the form via Ajax
 
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
             dataType: 'html',
-            data: form.serialize()
+            data: form.serialize(),
+            success: function (response) {
+                var button = document.getElementById("wish-list-button");
+                $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+            }
+
         });
     }
 
@@ -80,7 +82,7 @@ $(document).ready(function () {
                 enable: true // enable the multifilter extension for the mixer
             },
             pagination: {
-                limit: 24 
+                limit: 24
             },
             load: {
                 sort: 'size:asc'
