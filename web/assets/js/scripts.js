@@ -108,18 +108,19 @@ $(function () {
 //Get the button
 var contactButton = document.getElementById("contact-button");
 var featuredCollections = document.getElementById("featured-collections");
+var contactUs = document.getElementById("contact-us-section");
 
 
 let optionsIn = {
     root: null, // relative to document viewport 
     rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: 0.1 // visible amount of item shown in relation to root
+    threshold: 0 // visible amount of item shown in relation to root
 };
 
 let optionsOut = {
     root: null, // relative to document viewport 
     rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: .01 // visible amount of item shown in relation to root
+    threshold: 0 // visible amount of item shown in relation to root
 };
 
 let observerIn = new IntersectionObserver(showContactButton, optionsIn);
