@@ -13,13 +13,21 @@
 			<li>
 				<p>
 					Length:
-					<strong>{{ entry.physicalLengthFt }}' {% if entry.physicalLengthIn|length %}{{ entry.physicalLengthIn }}"{% endif %}</strong>
+					<strong>{{ entry.physicalLengthFt }}'
+						{% if entry.physicalLengthIn|length %}
+							{{ entry.physicalLengthIn }}"
+						{% endif %}
+					</strong>
 				</p>
 			</li>
 			<li>
 				<p>
 					Width:
-					<strong>{{ entry.physicalWidthFt }}' {% if entry.physicalWidthIn|length %}{{ entry.physicalWidthIn }}"{% endif %}</strong>
+					<strong>{{ entry.physicalWidthFt }}'
+						{% if entry.physicalWidthIn|length %}
+							{{ entry.physicalWidthIn }}"
+						{% endif %}
+					</strong>
 				</p>
 			</li>
 			<li>
@@ -81,11 +89,11 @@
 			<input type="hidden" name="action" value="wishlist/items/toggle">
 			{{ csrfInput() }}
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
-
-			<button type="submit" id="wish-list-button" name="button" class="btn-main" onclick="toggleButtonText();">
-				{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
-				{% endif %} Wishlist</button>
 		</form>
+		<button type="submit" id="wish-list-button" name="button" form="add-to-wishlist" class="btn-main" onclick="toggleButtonText();">
+			{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
+			{% endif %}
+			Wishlist</button>
 	</section>
 	<section id="" class="flex flex-row flex-wrap justify-start w-full px-4 md:w-2/3">
 		{% for image in entry.productImages.all() %}
