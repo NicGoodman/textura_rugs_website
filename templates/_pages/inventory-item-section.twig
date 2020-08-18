@@ -13,13 +13,13 @@
 			<li>
 				<p>
 					Length:
-					<strong>{{ entry.physicalLengthFt }}' {{ entry.physicalLengthIn }}"</strong>
+					<strong>{{ entry.physicalLengthFt }}' {% if entry.physicalLengthIn|length %}{{ entry.physicalLengthIn }}"{% endif %}</strong>
 				</p>
 			</li>
 			<li>
 				<p>
 					Width:
-					<strong>{{ entry.physicalWidthFt }}' {{ entry.physicalWidthIn }}"</strong>
+					<strong>{{ entry.physicalWidthFt }}' {% if entry.physicalWidthIn|length %}{{ entry.physicalWidthIn }}"{% endif %}</strong>
 				</p>
 			</li>
 			<li>
