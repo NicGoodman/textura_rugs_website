@@ -19,7 +19,8 @@ $(document).ready(function () {
             async: false,
             dataType: 'html',
             data: form.serialize(),
-            success: function () {
+            success: function (response) {
+                alert(response);
                 toggleButtonText();
             }
         });
