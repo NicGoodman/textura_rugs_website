@@ -5,7 +5,7 @@
 	<a href="{{ post.getUrl }}" class="flex flex-col md:flex-row">
 		{% if post.thumbnail|length %}
 			<picture class="flex-shrink-0 pt-2 pr-4">
-				<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-full h-48 border-2 md:w-36 border-rug-grey hover:border-rug-light-blue">
+				<img src="{{ thumbnail.src() }}" alt="" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-full h-64 border-2 md:w-36 border-rug-grey hover:border-rug-light-blue">
 			</picture>
 		{% endif %}
 		<section id="" class="flex flex-col">
