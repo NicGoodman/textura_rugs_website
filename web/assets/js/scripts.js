@@ -113,7 +113,7 @@ var featuredCollections = document.getElementById("featured-collections");
 let optionsIn = {
     root: null, // relative to document viewport 
     rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: .01 // visible amount of item shown in relation to root
+    threshold: 0.1 // visible amount of item shown in relation to root
 };
 
 let optionsOut = {
