@@ -1,5 +1,4 @@
 
-$(document).ready(function () {
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
@@ -108,6 +107,3 @@ $(document).ready(function () {
             mixer.sort('sort', 'size:' + sortOrder);
         });
     });
-
-
-});
