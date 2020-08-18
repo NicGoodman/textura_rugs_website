@@ -69,14 +69,10 @@ $(document).ready(function () {
 
 
 
-    var chevronYear = document.getElementById("chevron-year");
-    var chevronHour = document.getElementById("chevron-hour");
-    var chevronPrice = document.getElementById("chevron-price");
+    var chevronSize = document.getElementById("chevron-size");
     $(function () {
         var sortOrder = 'asc',
-            $toggleSortYear = $('.toggle-sort-year');
-        $toggleSortHours = $('.toggle-sort-hours');
-        $toggleSortPrice = $('.toggle-sort-price');
+            $toggleSortSize = $('.toggle-sort-size');
 
         var mixer = mixitup('#inventory-feed', {
             multifilter: {
@@ -86,53 +82,23 @@ $(document).ready(function () {
                 limit: 24 
             },
             load: {
-                sort: 'price:desc'
+                sort: 'size:asc'
             }
         });
-        $toggleSortYear.on('click', function () {
-            $('button').removeClass('text-wz-yellow');
-            $(this).addClass('text-wz-yellow');
+        $toggleSortSize.on('click', function () {
+            $('button').removeClass('text-rug-yellow');
+            $(this).addClass('text-rug-yellow');
             switch (sortOrder) {
                 case 'asc':
                     sortOrder = 'desc';
-                    chevronYear.classList.add("rotate-180");
+                    chevronSize.classList.add("rotate-180");
                     break;
                 case 'desc':
                     sortOrder = 'asc';
-                    chevronYear.classList.remove("rotate-180");
+                    chevronSize.classList.remove("rotate-180");
                     break;
             }
-            mixer.sort('sort', 'year:' + sortOrder);
-        });
-        $toggleSortHours.on('click', function () {
-            $('button').removeClass('text-wz-yellow');
-            $(this).addClass('text-wz-yellow');
-            switch (sortOrder) {
-                case 'asc':
-                    sortOrder = 'desc';
-                    chevronHour.classList.add("rotate-180");
-                    break;
-                case 'desc':
-                    sortOrder = 'asc';
-                    chevronHour.classList.remove("rotate-180");
-                    break;
-            }
-            mixer.sort('sort', 'hours:' + sortOrder);
-        });
-        $toggleSortPrice.on('click', function () {
-            $('button').removeClass('text-wz-yellow');
-            $(this).addClass('text-wz-yellow');
-            switch (sortOrder) {
-                case 'asc':
-                    sortOrder = 'desc';
-                    chevronPrice.classList.remove("rotate-180");
-                    break;
-                case 'desc':
-                    sortOrder = 'asc';
-                    chevronPrice.classList.add("rotate-180");
-                    break;
-            }
-            mixer.sort('sort', 'price:' + sortOrder);
+            mixer.sort('sort', 'size:' + sortOrder);
         });
     });
 
