@@ -1,24 +1,24 @@
 <article id="featured-collections" class="flex flex-col flex-wrap section-wrapper">
 	<section id="" class="flex flex-col flex-wrap w-full my-16">
-		<article id="" class="self-center w-full mb-6 text-center md:w-2/3 text-rug-white">
+		<article id="" class="self-center w-full px-4 mb-6 text-center md:w-2/3 text-rug-white">
 	{{ entry.featuredCollectionsIntro|nl2br }}
 	</article>
 		<h3 class="m-4 text-rug-grey">Rugs By Size</h3>
-		<section class="flex flex-row flex-wrap w-full">
+		<section class="flex flex-row flex-wrap items-center w-full">
 		{% set entries = craft.entries.section('inventory').limit(null) %}
 			{% set collections = craft.categories.group('size').relatedTo(entries) %}
 			{% for collection in collections.all() %}
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
-						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 						<p class="absolute right-0 p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 					</a>
 				</picture>
 			{% endfor %}
 		</section>
 	</section>
-	<section id="" class="flex flex-col flex-wrap w-full my-16">
+	<section id="" class="flex flex-col flex-wrap w-full my-16 item-center">
 		<h3 class="m-4 text-rug-grey">Rugs By Design</h3>
 		<section class="flex flex-row flex-wrap w-full">
 			{% set collections = craft.categories.group('collections').relatedTo(entries) %}
@@ -26,7 +26,7 @@
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 				<picture class="relative p-4">
 					<a href="{{ collection.getUrl }}">
-						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover border-2 w-36 h-36 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+						<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 						<p class="absolute right-0 p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 					</a>
 				</picture>

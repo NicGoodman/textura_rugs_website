@@ -45,7 +45,7 @@ p {
 }
 
 .social-item:hover {
-    @apply text-rug-yellow;
+    @apply text-rug-grey;
 }
 
 .btn-main {

@@ -640,8 +640,8 @@ p {
 
 .social-item:hover {
   --text-opacity: 1;
-  color: #feba40;
-  color: rgba(254, 186, 64, var(--text-opacity));
+  color: #c6c6c6;
+  color: rgba(198, 198, 198, var(--text-opacity));
 }
 
 .btn-main {

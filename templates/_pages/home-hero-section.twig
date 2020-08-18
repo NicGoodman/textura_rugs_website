@@ -16,10 +16,10 @@
 		{% endfor %}
 		<header id="hero-intro-container" class="flex flex-row items-end justify-around w-full h-full p-4 md:p-16 flex-grow-1">
 			<section id="hero-intro-wrapper" class="flex flex-row max-w-3xl flex-shrink-1">
-				<picture id="hero-intro-image" class="flex-grow hidden mb-12 border-2 md:block border-rug-light-blue">
+				<picture id="hero-intro-image" class="flex-grow hidden mb-12 border-2 md:block border-rug-grey">
 					<img src="{{ introImage.src }}" alt="" data-srcset="{{ introImage.srcset}}" class="object-cover w-full h-full">
 				</picture>
-				<article id="hero-intro-text" class="flex flex-col justify-between flex-shrink-0 w-full px-4 pt-4 pb-6 mt-20 md:mx-4 md:w-1/2 bg-rug-dark-blue text-rug-white">
+				<article id="hero-intro-text" class="flex flex-col justify-between flex-shrink-0 w-full px-4 pt-4 pb-6 mt-20 md:mx-4 md:w-1/2 bg-rug-dark-blue text-rug-white border-rug-grey">
 					<span id="text-wrapper" class="">
 						<h1>{{ introHeader }}</h1>
 						<h2 class="mb-6">{{ introBodyText|nl2br }}</h2>
@@ -42,7 +42,7 @@
 				</article>
 
 			</section>
-			<section id="hero-contact-block" class="flex-col hidden p-4 text-right lg:flex bg-rug-dark-blue text-rug-white">
+			<section id="hero-contact-block" class="flex-col hidden p-4 text-right lg:flex bg-rug-dark-blue text-rug-white border-rug-grey">
 				<h3>GET IN TOUCH</h3>
 				{% set contactStyles = "text-right text-rug-white text-base font-bioRhyme" %}
 				{% include "_snippets/contact-info" %}
