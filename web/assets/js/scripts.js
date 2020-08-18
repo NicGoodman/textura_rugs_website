@@ -17,7 +17,6 @@ function addToWishList(e) {
         dataType: 'html',
         data: form.serialize()
     });
-    toggleButtonText();
 }
 
 function toggleButtonText() {
