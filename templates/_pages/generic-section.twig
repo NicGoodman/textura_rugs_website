@@ -39,13 +39,13 @@
 							{% if block.height == "fullHeight" %}
 								{% set imageHeight = "h-full" %}
 							{% elseif block.height =="uniformShort" %}
-								{% set imageHeight = "h-36 md:h-48 lg:h-64" %}
+								{% set imageHeight = "h-64 md:h-48 lg:h-64" %}
 							{% elseif block.height =="uniformTall" %}
-								{% set imageHeight = "h-64 md:h-72 lg:h-96" %}
+								{% set imageHeight = "h-96 md:h-72 lg:h-96" %}
 							{% endif %}
 
 
-							<picture id="" class="{{ imageWidth }} text-center flex flex-col items-center px-4">
+							<picture id="" class="{{ imageWidth }} text-center flex flex-col items-center p-4">
 								<img src="{{ image.src() }}" alt="" data-srcset="{{ image.srcset() }}" class="{{ imageSize }} {{ imageHeight }} object-cover border-2 border-rug-grey">
 								<p>{{ imageCaption }}</p>
 							</picture>
