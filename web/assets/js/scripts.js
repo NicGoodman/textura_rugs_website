@@ -1,8 +1,10 @@
 
+
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
         $('body').on('submit', '#remove-button', removeFromWishList);
+        $('body').on('click', '.wish-list-button', toggleButtonText);
         $('body').on('submit', '#add-to-wishlist', addToWishList);
     });
 
@@ -10,25 +12,22 @@
         // prevent form submission
         e.preventDefault();
         var form = $(e.currentTarget);
+        var button = document.getElementById("chevron-size");
+        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
         // submit the form via Ajax
 
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
-            async: false,
             dataType: 'html',
-            data: form.serialize(),
-            success: function (response) {
-                alert(response);
-                toggleButtonText();
-            }
+            data: form.serialize()
         });
     }
-    function toggleButtonText() {
-        var button = document.getElementById("wish-list-button");
+
+    function toggleButtonText(e) {
+        var button = $(e.currentTarget);
         $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     }
-
 
     function removeFromWishList(e) {
         e.preventDefault();
@@ -36,17 +35,14 @@
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
-            async: false,
             dataType: 'html',
             data: form.serialize(),
-            success: function () {
-                $.ajax({
-                    url: '/wish-list',
-                    dataType: 'html',
-                    success: function (response) {
-                        alert(response);
-                    }
-                });
+        });
+        $.ajax({
+            url: '/wish-list',
+            dataType: 'html',
+            success: function (response) {
+                refreshWishList(response);
             }
         });
     }
@@ -85,7 +81,7 @@
                 enable: true // enable the multifilter extension for the mixer
             },
             pagination: {
-                limit: 24
+                limit: 24 
             },
             load: {
                 sort: 'size:asc'
@@ -107,3 +103,6 @@
             mixer.sort('sort', 'size:' + sortOrder);
         });
     });
+
+
+
