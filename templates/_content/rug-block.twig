@@ -2,7 +2,7 @@
 	<a href="{{ entry.getUrl() }}">
 		{% if entry.primaryImage|length %}
 			<picture>
-				<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+				<img src="{{ thumbnail.src() }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }} sizes="320px"" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 			</picture>
 		{% endif %}
 		<h2 class="mt-2">{{ entry.title }}</h2>
