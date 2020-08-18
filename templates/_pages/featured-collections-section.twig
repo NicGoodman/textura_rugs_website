@@ -4,7 +4,7 @@
 	{{ entry.featuredCollectionsIntro|nl2br }}
 	</article>
 		<h3 class="m-4 text-rug-grey">Rugs By Size</h3>
-		<section class="flex flex-row flex-wrap items-center w-full">
+		<section class="flex flex-row flex-wrap justify-center w-full">
 		{% set entries = craft.entries.section('inventory').limit(null) %}
 			{% set collections = craft.categories.group('size').relatedTo(entries) %}
 			{% for collection in collections.all() %}
@@ -18,7 +18,7 @@
 			{% endfor %}
 		</section>
 	</section>
-	<section id="" class="flex flex-col flex-wrap w-full my-16 item-center">
+	<section id="" class="flex flex-col flex-wrap justify-center w-full my-16">
 		<h3 class="m-4 text-rug-grey">Rugs By Design</h3>
 		<section class="flex flex-row flex-wrap w-full">
 			{% set collections = craft.categories.group('collections').relatedTo(entries) %}
