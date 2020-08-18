@@ -21,9 +21,9 @@ function addToWishList(e) {
 
 function toggleButtonText() {
     var button = document.getElementById("wish-list-button");
+    button.preventDefault();
     $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     var form = document.getElementById("add-to-wishlist");
-    form.preventDefault();
     // submit the form via Ajax
 
     $.ajax({
