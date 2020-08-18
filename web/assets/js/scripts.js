@@ -105,34 +105,14 @@ $(function () {
     });
 });
 
-//Get the button
-var contactButton = document.getElementById("contact-button");
-var featuredCollections = document.getElementById("featured-collections");
-var contactUs = document.getElementById("contact-us-section");
-
-
-let optionsIn = {
-    root: null, // relative to document viewport 
-    rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: 1.0 // visible amount of item shown in relation to root
-};
-
-let optionsOut = {
-    root: null, // relative to document viewport 
-    rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
-    threshold: 0 // visible amount of item shown in relation to root
-};
-
-let observerIn = new IntersectionObserver(showContactButton, optionsIn);
-let observerOut = new IntersectionObserver(hideContactButton, optionsOut);
-
-function showContactButton() {
-    contactButton.style.display = "block";
+// Declare the callback function for the IntersectionObserver
+const onIntersectionChange = () => {
+    console.log('I have observed an intersection change')
 }
+// Instantiate an IntersectionObserver
+const observer = new IntersectionObserver(onIntersectionChange)
 
-function hideContactButton() {
-    contactButton.style.display = "none";
-}
-
-observerIn.observe(featuredCollections);
-
+// Assign the target element to a variable
+const targetElement = document.getElementById('featured-collections')
+// Observe the target element using the IntersectionObserver instance
+observer.observe(targetElement)
