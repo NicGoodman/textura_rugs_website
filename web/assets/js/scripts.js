@@ -121,7 +121,7 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  document.body.scrollBottom = 0;
+  document.documentElement.scrollBottom = 0;
 }
 
