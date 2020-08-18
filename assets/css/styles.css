@@ -27,7 +27,7 @@ h4 {
 
 p {
     @apply font-bioRhyme;
-    @apply text-sm;
+    @apply text-base;
 }
 
 .section-wrapper {

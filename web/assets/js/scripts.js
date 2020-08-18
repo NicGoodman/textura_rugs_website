@@ -4,9 +4,12 @@ $(function () {
     $('body').on('click', '#add-to-wishlist', addToWishList);
 });
 
+
+
 function addToWishList(e) {
     // prevent form submission
-    toggleButtonText();
+    var button = document.getElementById("wish-list-button");
+    $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     e.preventDefault();
     var form = $(e.currentTarget);
     // submit the form via Ajax
