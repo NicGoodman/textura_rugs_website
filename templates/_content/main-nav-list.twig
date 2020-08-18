@@ -1,13 +1,16 @@
 <ul class="{{ listStyles }}">
-	<li>
-	<a href="{{siteUrl}}#featured-collections" class="hover:text-rug-light-blue">Collections</a>
+	<li class="pb-2">
+		<a href="{{siteUrl}}#featured-collections" class="hover:text-rug-light-blue">Collections</a>
 	</li>
 	{% for link in navLinks %}
-		<li>
+		<li class="pb-2">
 			{% include "_snippets/nav-item" %}
 		</li>
 	{% endfor %}
-	<li>
-	<a href="{{siteUrl}}#contact-us-section" class="hover:text-rug-light-blue">Contact Us</a>
+	<li class="pb-2">
+		<a href="{{siteUrl}}#contact-us-section" class="hover:text-rug-light-blue">Contact Us</a>
+	</li>
+	<li class="pb-2 pl-2">
+		{% include "_snippets/wish-list-icon" %}
 	</li>
 </ul>
