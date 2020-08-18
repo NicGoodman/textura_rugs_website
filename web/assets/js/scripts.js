@@ -112,7 +112,7 @@ var contactButton = document.getElementById("contact-button");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
     contactButton.style.display = "block";
   } else {
     contactButton.style.display = "none";
