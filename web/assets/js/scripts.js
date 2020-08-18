@@ -16,14 +16,10 @@ $(document).ready(function () {
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
+            async: false,
             dataType: 'html',
             data: form.serialize(),
-        });
-        $.ajax({
-            url: '/wish-list',
-            dataType: 'html',
             success: function (response) {
-                refreshWishList(response);
                 var button = document.getElementById("wish-list-button");
                 $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
             }
@@ -38,14 +34,12 @@ $(document).ready(function () {
         $.ajax({
             url: form.attr('action'),
             type: form.attr('method'),
+            async: false,
             dataType: 'html',
             data: form.serialize(),
-        });
-        $.ajax({
-            url: '/wish-list',
-            dataType: 'html',
             success: function (response) {
-                refreshWishList(response);
+                var href = '/wish-list';
+                refreshWishList(href);
                 var button = document.getElementById("wish-list-button");
                 $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
             }
