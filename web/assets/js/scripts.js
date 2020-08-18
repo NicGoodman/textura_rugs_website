@@ -6,8 +6,8 @@ $(function () {
 
 function addToWishList(e) {
     // prevent form submission
-    e.preventDefault();
     toggleButtonText();
+    e.preventDefault();
     var form = $(e.currentTarget);
     // submit the form via Ajax
 
