@@ -122,8 +122,8 @@ let optionsOut = {
     threshold: .01 // visible amount of item shown in relation to root
 };
 
-let observerIn = new IntersectionObserver(showContactButton, options);
-let observerOut = new IntersectionObserver(hideContactButton, options);
+let observerIn = new IntersectionObserver(showContactButton, optionsIn);
+let observerOut = new IntersectionObserver(hideContactButton, optionsOut);
 
 function showContactButton() {
     contactButton.style.display = "block";
