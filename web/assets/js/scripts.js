@@ -1,7 +1,7 @@
 $(function () {
     $('body').on('click', '.wish-list-link', onWishListClick);
     $('body').on('submit', '#remove-button', removeFromWishList);
-    $('body').on('submit', '#add-to-wishlist', addToWishList);
+    // $('body').on('submit', '#add-to-wishlist', addToWishList);
 });
 
 function addToWishList(e) {
@@ -22,6 +22,17 @@ function addToWishList(e) {
 function toggleButtonText() {
     var button = document.getElementById("wish-list-button");
     $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+    var form = document.getElementById("add-to-wishlist");
+    form.preventDefault();
+    // submit the form via Ajax
+
+    $.ajax({
+        url: form.attr('action'),
+        type: form.attr('method'),
+        async: false,
+        dataType: 'html',
+        data: form.serialize()
+    });
 }
 
 function removeFromWishList(e) {
