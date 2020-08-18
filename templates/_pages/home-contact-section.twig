@@ -1,6 +1,6 @@
 {% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
 <section id="contact-us-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ contactBackgroundImage.src() }}'); background-color: rgba(255, 255, 255, 0.66);
-    background-blend-mode: lighten;">
+		    background-blend-mode: lighten;">
 
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
@@ -24,6 +24,7 @@
 				<section id="contact-contact-block" class="flex-col hidden p-4 text-right md:flex text-rug-dark-blue">
 					{% set contactStyles = "text-left text-base font-bioRhyme" %}
 					{% include "_snippets/contact-info" %}
+					<a href="mailto:texturarugs@gmail.com"><p>texturarugs@gmail.com</p></a>
 				</section>
 			</picture>
 		</section>
