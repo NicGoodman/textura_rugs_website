@@ -20,12 +20,14 @@ $(document).ready(function () {
             dataType: 'html',
             data: form.serialize(),
             success: function () {
-                var button = document.getElementById("wish-list-button");
-                $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+                toggleButtonText();
             }
         });
     }
-
+    function toggleButtonText() {
+        var button = document.getElementById("wish-list-button");
+        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+    }
 
 
     function removeFromWishList(e) {
@@ -38,10 +40,14 @@ $(document).ready(function () {
             dataType: 'html',
             data: form.serialize(),
             success: function () {
-                var href = '/wish-list';
-                refreshWishList(href);
-                var button = document.getElementById("wish-list-button");
-                $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+                $.ajax({
+                    url: '/wish-list',
+                    dataType: 'html',
+                    success: function (response) {
+                        refreshWishList(response);
+                        toggleButtonText();
+                    }
+                });
             }
         });
     }
