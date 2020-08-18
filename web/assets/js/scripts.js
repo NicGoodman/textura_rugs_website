@@ -3,9 +3,9 @@ $(document).ready(function () {
     // Add an event listener for filter clicks
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
-        $('body').on('submit', '#remove-button', removeFromWishList)
-        $('body').on('submit', '#add-to-wishlist', addToWishList);
+        $('body').on('submit', '#remove-button', removeFromWishList);
         $('body').on('click', '.wish-list-button', toggleButtonText);
+        $('body').on('submit', '#add-to-wishlist', addToWishList);
     });
 
     function addToWishList(e) {
