@@ -112,8 +112,8 @@
 			{% endfor %}
 		</section>
 	{% endif %}
-	<section id="" class="w-full">
-		<p>{{ entry.wishlistFormMessage}}</p>
+	<section id="wishlistForm" class="w-full">
+		<p>{{ entry.wishlistFormMessage|nl2br }}</p>
 		{% include "_content/wishlist-form" %}
 	</section>
 
