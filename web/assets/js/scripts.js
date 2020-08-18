@@ -44,8 +44,7 @@ $(document).ready(function () {
                     url: '/wish-list',
                     dataType: 'html',
                     success: function (response) {
-                        refreshWishList(response);
-                        toggleButtonText();
+                        alert(response);
                     }
                 });
             }
