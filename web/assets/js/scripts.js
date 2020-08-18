@@ -107,12 +107,15 @@ $(function () {
 
 //Get the button
 var contactButton = document.getElementById("contact-button");
+var scrollTop     = $(window).scrollTop(),
+    elementOffset = $('#featured-collections').offset().top,
+    distance      = (elementOffset - scrollTop);
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+  if (document.body.scrollTop > distance || document.documentElement.scrollTop > distance) {
     contactButton.style.display = "block";
   } else {
     contactButton.style.display = "none";
