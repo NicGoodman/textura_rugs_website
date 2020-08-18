@@ -5,13 +5,15 @@
 {% endblock %}
 {% block main %}
 	<main class="flex flex-col items-center flex-grow w-full bg-rug-dark-blue">
-	{% set heroOpacity = "opacity-25" %}
+		{% set heroOpacity = "opacity-25" %}
 		{% include "_pages/home-hero-section" %}
+		<button onclick="topFunction()" id="contact-button" title="Get In Touch!">Get In Touch!
+		</button>
 		{% include "_pages/featured-collections-section" %}
 		{% set contactOpacity = "opacity-25" %}
 		{% include "_pages/home-contact-section" %}
 	</main>
-	
+
 {% endblock %}
 {% block footer %}
 	{% include "_frame/footer.twig" %}
