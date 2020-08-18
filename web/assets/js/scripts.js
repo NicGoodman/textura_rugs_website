@@ -110,14 +110,8 @@ $(function () {
 const onIntersectionChange = () => {
     console.log('I have observed an intersection change')
 }
-
-const options = {
-    root: document.getElementById('tracking-pixel'),
-    rootMargin: '0px',
-    threshold: 0.5,
-  }
 // Instantiate an IntersectionObserver
-const observer = new IntersectionObserver(onIntersectionChange, options)
+const observer = new IntersectionObserver(onIntersectionChange)
 
 // Assign the target element to a variable
 const targetElement = document.getElementById('featured-collections')
