@@ -107,29 +107,31 @@ $(function () {
 
 //Get the button
 var contactButton = document.getElementById("contact-button");
-var scrollTop = $(window).scrollTop(),
-    elementOffset = $('#featured-collections').offset().top,
-    distance = (elementOffset - scrollTop);
+var featuredCollections = document.getElementById("featured-collections");
 
-var scrollTop= $(window).scrollTop(),
-    elementOffset = $('#featured-collections').offset().top,
-    distance2 = (elementOffset - scrollTop);
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () { scrollFunction() };
+let optionsIn = {
+    root: null, // relative to document viewport 
+    rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
+    threshold: .01 // visible amount of item shown in relation to root
+};
 
-function scrollFunction() {
-    if (document.body.scrollTop > distance || document.documentElement.scrollTop > distance) {
-        contactButton.style.display = "block";
-    }
-   else if (document.body.scrollTop > distance2 || document.documentElement.scrollTop > distance2) {
-        contactButton.style.display = "none";
-    }
+let optionsOut = {
+    root: null, // relative to document viewport 
+    rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
+    threshold: .01 // visible amount of item shown in relation to root
+};
+
+let observerIn = new IntersectionObserver(showContactButton, options);
+let observerOut = new IntersectionObserver(hideContactButton, options);
+
+function showContactButton() {
+    contactButton.style.display = "block";
 }
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollBottom = 0;
-    document.documentElement.scrollBottom = 0;
+function hideContactButton() {
+    contactButton.style.display = "none";
 }
+
+observerIn.observe();
 
