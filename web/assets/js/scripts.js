@@ -38,7 +38,7 @@
         $.ajax({
             url: '/wish-list',
             dataType: 'html',
-            success: function (response) {
+            complete: function (response) {
                 refreshWishList(response);
                 toggleButtonText();
             }
