@@ -19,7 +19,7 @@ $(document).ready(function () {
             async: false,
             dataType: 'html',
             data: form.serialize(),
-            success: function (response) {
+            success: function () {
                 var button = document.getElementById("wish-list-button");
                 $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
             }
@@ -37,7 +37,7 @@ $(document).ready(function () {
             async: false,
             dataType: 'html',
             data: form.serialize(),
-            success: function (response) {
+            success: function () {
                 var href = '/wish-list';
                 refreshWishList(href);
                 var button = document.getElementById("wish-list-button");
