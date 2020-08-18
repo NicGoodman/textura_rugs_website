@@ -80,10 +80,9 @@
 		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-start pt-2 md:justify-end">
 			<input type="hidden" name="action" value="wishlist/items/toggle">
 			{{ csrfInput() }}
-			<input type="hidden" name="wishListURL" value="/wish-list">
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
 
-			<button type="submit" id="wish-list-button" name="button" class="wish-list-button btn-main">
+			<button type="submit" id="wish-list-button" name="button" class="btn-main">
 				{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
 				{% endif %}
 				Wishlist</button>

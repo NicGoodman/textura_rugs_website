@@ -48,7 +48,6 @@ function removeFromWishList(e) {
 function onWishListClick(e) {
     e.preventDefault();
     var $wishListIcon = $(e.currentTarget);
-    var href = $wishListIcon.attr('href');
     $.ajax($wishListIcon.attr('href'), {
         dataType: 'html',
         success: function (response) {
