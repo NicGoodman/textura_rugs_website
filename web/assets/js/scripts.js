@@ -83,7 +83,7 @@ $(document).ready(function () {
                 enable: true // enable the multifilter extension for the mixer
             },
             pagination: {
-                limit: 25 // impose a limit of 8 targets per page
+                limit: 24 
             },
             load: {
                 sort: 'price:desc'
