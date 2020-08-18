@@ -13,6 +13,7 @@ function addToWishList(e) {
     $.ajax({
         url: form.attr('action'),
         type: form.attr('method'),
+        async: false,
         dataType: 'html',
         data: form.serialize()
     });
@@ -30,11 +31,13 @@ function removeFromWishList(e) {
     $.ajax({
         url: form.attr('action'),
         type: form.attr('method'),
+        async: false,
         dataType: 'html',
         data: form.serialize(),
     });
     $.ajax({
         url: '/wish-list',
+        async: false,
         dataType: 'html',
         success: function (response) {
             refreshWishList(response);
