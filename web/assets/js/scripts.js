@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
         $('body').on('submit', '#remove-button', removeFromWishList);
-        $('body').on('click', '.wish-list-button', toggleButtonText);
+
         $('body').on('submit', '#add-to-wishlist', addToWishList);
     });
 
@@ -12,6 +12,8 @@ $(document).ready(function () {
         // prevent form submission
         e.preventDefault();
         var form = $(e.currentTarget);
+        var button = document.getElementById("wish-list-button");
+        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
         // submit the form via Ajax
 
         $.ajax({
@@ -22,10 +24,7 @@ $(document).ready(function () {
         });
     }
 
-    function toggleButtonText(e) {
-        var button = $(e.currentTarget);
-        $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
-    }
+
 
     function removeFromWishList(e) {
         e.preventDefault();
@@ -41,6 +40,8 @@ $(document).ready(function () {
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
+                var button = document.getElementById("wish-list-button");
+                $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
             }
         });
     }
