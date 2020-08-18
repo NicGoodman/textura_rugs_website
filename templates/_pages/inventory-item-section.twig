@@ -85,11 +85,11 @@
 				</p>
 			</li>
 		</ul>
-		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-start pt-2 pointer-events-none md:justify-end">
+		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-start pt-2 md:justify-end">
 			<input type="hidden" name="action" value="wishlist/items/toggle">
 			{{ csrfInput() }}
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
-			<button type="submit" id="wish-list-button" name="button" form="add-to-wishlist" class="btn-main" onclick="toggleButtonText(event);">
+			<button type="submit" id="wish-list-button" name="button" form="add-to-wishlist" class="btn-main">
 				{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
 				{% endif %}
 				Wishlist</button>
