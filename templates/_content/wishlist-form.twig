@@ -39,7 +39,7 @@
 		</div>
 		<div class="flex flex-col mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
-				<label for="message">Special Requests</label>
+				<label class="text-center" for="message">Special Requests</label>
 			</p>
 			<textarea rows="4" cols="40" id="message" name="message[body]" class="w-full p-4 border-4 rounded-none border-rug-light-blue">{{ message.message ?? '' }}</textarea>
 			{{ message is defined and message ? errorList(message.getErrors('message')) }}
