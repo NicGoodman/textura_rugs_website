@@ -105,25 +105,21 @@ $(function () {
     });
 });
 
-function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-    }
-}  
-docReady(function() {
+
 // Declare the callback function for the IntersectionObserver
 const onIntersectionChange = () => {
     console.log('I have observed an intersection change')
 }
+
+const options = {
+    root: document.getElementById('tracking-pixel'),
+    rootMargin: '0px',
+    threshold: 0.5,
+  }
 // Instantiate an IntersectionObserver
-const observer = new IntersectionObserver(onIntersectionChange)
+const observer = new IntersectionObserver(onIntersectionChange, options)
 
 // Assign the target element to a variable
 const targetElement = document.getElementById('featured-collections')
 // Observe the target element using the IntersectionObserver instance
 observer.observe(targetElement)
-});
