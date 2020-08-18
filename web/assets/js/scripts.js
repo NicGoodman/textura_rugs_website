@@ -18,11 +18,15 @@ $(document).ready(function () {
             type: form.attr('method'),
             dataType: 'html',
             data: form.serialize(),
+        });
+        $.ajax({
+            url: '/wish-list',
+            dataType: 'html',
             success: function (response) {
+                refreshWishList(response);
                 var button = document.getElementById("wish-list-button");
                 $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
             }
-
         });
     }
 
