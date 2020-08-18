@@ -21,8 +21,8 @@
         });
     }
 
-    function toggleButtonText(e) {
-        var button = $(e.currentTarget);
+    function toggleButtonText() {
+        var button = document.getElementById("wish-list-button");
         $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     }
 
@@ -40,6 +40,7 @@
             dataType: 'html',
             success: function (response) {
                 refreshWishList(response);
+                toggleButtonText();
             }
         });
     }
