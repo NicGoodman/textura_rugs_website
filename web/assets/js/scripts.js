@@ -20,8 +20,8 @@ function addToWishList(e) {
 }
 
 function toggleButtonText() {
+    preventDefault();
     var button = document.getElementById("wish-list-button");
-    button.preventDefault();
     $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
     var form = document.getElementById("add-to-wishlist");
     // submit the form via Ajax
