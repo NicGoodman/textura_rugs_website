@@ -113,7 +113,7 @@ var scrollTop = $(window).scrollTop(),
 
 var scrollTop= $(window).scrollTop(),
     elementOffset = $('#featured-collections').offset().top,
-    distance2 = (elementOffset - scrollBottom);
+    distance2 = (elementOffset - scrollTop);
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () { scrollFunction() };
