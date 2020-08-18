@@ -105,6 +105,16 @@ $(function () {
     });
 });
 
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}  
+docReady(function() {
 // Declare the callback function for the IntersectionObserver
 const onIntersectionChange = () => {
     console.log('I have observed an intersection change')
@@ -116,3 +126,4 @@ const observer = new IntersectionObserver(onIntersectionChange)
 const targetElement = document.getElementById('featured-collections')
 // Observe the target element using the IntersectionObserver instance
 observer.observe(targetElement)
+});
