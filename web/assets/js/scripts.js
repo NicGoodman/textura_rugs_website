@@ -4,7 +4,6 @@
     $(function () {
         $('body').on('click', '.wish-list-link', onWishListClick);
         $('body').on('submit', '#remove-button', removeFromWishList);
-        $('body').on('click', '.wish-list-button', toggleButtonText);
         $('body').on('submit', '#add-to-wishlist', addToWishList);
     });
 

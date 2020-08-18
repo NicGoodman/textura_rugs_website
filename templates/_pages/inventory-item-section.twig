@@ -83,7 +83,7 @@
 			<input type="hidden" name="wishListURL" value="/wish-list">
 			<input type="hidden" name="elementId" value="{{ entry.id }}">
 
-			<button type="submit" id="wish-list-button" name="button" class="wish-list-button btn-main">
+			<button type="submit" id="wish-list-button" name="button" class="wish-list-button btn-main" onclick="return toggleButtonText()">
 				{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
 				{% endif %}
 				Wishlist</button>
