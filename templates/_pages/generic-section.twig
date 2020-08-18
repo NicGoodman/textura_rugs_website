@@ -38,8 +38,10 @@
 
 							{% if block.height == "fullHeight" %}
 								{% set imageHeight = "h-full" %}
-							{% elseif block.height =="uniform" %}
+							{% elseif block.height =="uniformShort" %}
 								{% set imageHeight = "h-36 md:h-48 lg:h-64" %}
+							{% elseif block.height =="uniformTall" %}
+								{% set imageHeight = "h-64 md:h-72 lg:h-96" %}
 							{% endif %}
 
 
@@ -49,7 +51,7 @@
 							</picture>
 
 						{% case "accordion" %}
-							<div id="" class="flex flex-row justify-between w-full my-4 border-b-2 border-rug-light-blue" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === {{ loop.index }}, 'text-rug-dark-blue': selected !== {{ loop.index }} }">
+							<div id="" class="flex flex-row justify-between w-full my-4 border-b-2 h- border-rug-light-blue" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === {{ loop.index }}, 'text-rug-dark-blue': selected !== {{ loop.index }} }">
 								<h2>{{ block.heading }}</h2>
 								<span :class="selected == {{ loop.index }} ? 'fa-minus-circle' : 'fa-plus-circle'" class="text-2xl far "></span>
 							</div>
