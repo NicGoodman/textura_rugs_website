@@ -110,11 +110,12 @@
 					</form>
 				</div>
 			{% endfor %}
+		{% endif %}
+		<section id="wishlistForm" class="w-full">
+			<div class="my-8">{{ entry.wishlistFormMessage|nl2br }}</div>
+			{% include "_content/wishlist-form" %}
 		</section>
-	{% endif %}
-	<section id="wishlistForm" class="w-full">
-		<div class="my-8">{{ entry.wishlistFormMessage|nl2br }}</div>
-		{% include "_content/wishlist-form" %}
 	</section>
+
 
 </div>
