@@ -5,7 +5,7 @@
 	{% set list = craft.wishlist.lists().default(true).one() %}
 
 	{# Display list items #}
-	<section class="flex flex-row flex-wrap w-full">
+	<section class="flex flex-row flex-wrap flex-1 w-full">
 		<i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-light-blue" @click="show = false"></i>
 		<h2 class="w-full p-4 my-8 text-right bg-rug-grey text-rug-dark-blue">Your Wishlist
 			{% if list is not empty %}Includes the Following Products:{% else %}is Empty.

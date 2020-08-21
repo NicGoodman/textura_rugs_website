@@ -1,6 +1,6 @@
 {% set heroImage = entry.heroImage.one().optimizedImages %}
 <section id="hero-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ heroImage.src() }}'); background-color: rgba(255, 255, 255, 0.66);
-    background-blend-mode: lighten;">
+		    background-blend-mode: lighten;">
 	{% if entry.heroIntro|length %}
 		{% set introImage = "" %}
 		{% set introHeader = "" %}
@@ -31,8 +31,7 @@
 						{% include "_snippets/contact-info" %}
 						<br/>
 						{% set ctaText = "EMAIL US" %}
-						{% set ctaLink = "mailto:texturarugs@gmail.com
-" %}
+						{% set ctaLink = "mailto:texturarugs@gmail.com" %}
 						{% include "_snippets/btn-main" %}
 						<br/>
 						{% set ctaText = "828.519.9066" %}
@@ -48,8 +47,7 @@
 				{% include "_snippets/contact-info" %}
 				<br/>
 				{% set ctaText = "EMAIL US" %}
-				{% set ctaLink = "mailto:texturarugs@gmail.com
-" %}
+				{% set ctaLink = "mailto:texturarugs@gmail.com" %}
 				{% include "_snippets/btn-main" %}
 				<br/>
 				{% set ctaText = "828.519.9066" %}
