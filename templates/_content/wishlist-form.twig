@@ -32,7 +32,7 @@
 
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
-				<label for="from-email">Email</label>
+				<label for="from-email">E-Mail</label>
 			</p>
 			<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
