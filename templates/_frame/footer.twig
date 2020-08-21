@@ -1,8 +1,8 @@
 <footer id="main-footer" class="flex flex-col items-center justify-between w-full p-4 space-y-8 md:p-6 lg:p-10 md:flex-row bg-rug-black md:space-y-0">
 	{% set homeEntry = craft.entries().section('home').one() %}
-	<nav id="site-navigation" class="w-full text-center md:text-left text-rug-white md:w-auto font-quicksand" style="column-count: 2;">
+	<nav id="site-navigation" class="w-full col-gap-8 text-base text-center md:text-left text-rug-white md:w-auto font-quicksand" style="column-count: 2;">
 		{% set navLinks = homeEntry.navigationItems.all() %}
-		{% set listStyles = "" %}
+		{% set listStyles = "space-y-1" %}
 		{% include "_content/main-nav-list" %}
 		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% include "_content/social-media-list" %}
