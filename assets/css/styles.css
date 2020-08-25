@@ -1,162 +1,171 @@
 @tailwind base;
 
 @font-face {
-    font-family: 'NexaRustSans-Book';
-    src: url('../fonts/nexa-rust-sans-book.woff2') format('woff2'), url('..//fonts/nexa-rust-sans-book.woff') format('woff');
-  }
+  font-family: "NexaRustSans-Book";
+  src: url("../fonts/nexa-rust-sans-book.woff2") format("woff2"),
+    url("..//fonts/nexa-rust-sans-book.woff") format("woff");
+}
 
 h1 {
-    @apply font-nexa-rust-sans;
-    @apply text-3xl;
+  @apply font-nexa-rust-sans;
+  @apply text-3xl;
 }
 
 h2 {
-    @apply font-bioRhyme;
-    @apply text-xl;
+  @apply font-bioRhyme;
+  @apply text-xl;
 }
 
 h3 {
-    @apply font-nexa-rust-sans;
-    @apply text-xl;
+  @apply font-nexa-rust-sans;
+  @apply text-xl;
 }
 
 h4 {
-    @apply font-quicksand;
-    @apply text-xl;
+  @apply font-quicksand;
+  @apply text-xl;
 }
 
 p {
-    @apply font-bioRhyme;
-    @apply text-base;
+  @apply font-bioRhyme;
+  @apply text-base;
 }
 
 .section-wrapper {
-    @apply max-w-screen-xl;
-    @apply flex;
-    @apply flex-col;
-    @apply my-16;
-    @apply flex-grow;
+  @apply max-w-screen-xl;
+  @apply flex;
+  @apply flex-col;
+  @apply my-16;
+  @apply flex-grow;
 }
 
 .social-item {
-    @apply text-xl;
-    @apply font-medium;
-    @apply text-rug-light-blue;
+  @apply text-xl;
+  @apply font-medium;
+  @apply text-rug-light-blue;
 }
 
 .social-item:hover {
-    @apply text-rug-grey;
+  @apply text-rug-grey;
 }
 
 .btn-main {
-    @apply bg-rug-light-blue;
-    @apply text-rug-black;
-    @apply py-2;
-    @apply px-6;
-    @apply font-nexa-rust-sans;
-    @apply text-xl;
-    @apply block;
-    @apply text-center;
+  @apply bg-rug-light-blue;
+  @apply text-rug-black;
+  @apply py-2;
+  @apply px-6;
+  @apply font-nexa-rust-sans;
+  @apply text-xl;
+  @apply block;
+  @apply text-center;
 }
 
 .btn-main:hover {
-    @apply bg-rug-grey;
+  @apply bg-rug-grey;
 }
+
 @tailwind components;
 
 @tailwind utilities;
 
 .control {
-    display: block;
-    position: relative;
-    padding-left: 30px;
-    margin-bottom: 5px;
-    padding-top: 3px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .control input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
-  
-  .control_indicator {
-    position: absolute;
-    top: 2px;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background: #404b53;
-    border: 0px solid #000000;
-    border-radius: 0px;
-  }
-  
-  .control:hover input~.control_indicator,
-  .control input:focus~.control_indicator {
-    background: #0e1418;
-  }
-  
-  .control input:checked~.control_indicator {
-    background: #212A30;
-  }
-  
-  .control:hover input:not([disabled]):checked~.control_indicator,
-  .control input:checked:focus~.control_indicator {
-    background: #0e664d;
-  }
-  
-  .control input:disabled~.control_indicator {
-    background: #e6e6e6;
-    opacity: 0.6;
-    pointer-events: none;
-  }
-  
-  .control_indicator:after {
-    box-sizing: unset;
-    content: '';
-    position: absolute;
-    display: none;
-  }
-  
-  .control input:checked~.control_indicator:after {
-    display: block;
-  }
-  
-  .control-checkbox .control_indicator:after {
-    left: 10px;
-    top: 5px;
-    width: 3px;
-    height: 10px;
-    border: solid #F2C58C;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-  }
-  
-  .control-checkbox input:disabled~.control_indicator:after {
-    border-color: #7b7b7b;
-  }
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+  padding-top: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-  input#contactFormHoneypot {
-    display: none;
-  }
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
 
-  #contact-button {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom:20px;
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    outline: none; /* Remove outline */
-    background-color:#BDE3EF ; /* Set a background color */
-    color: #353A49; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 15px; /* Some padding */
-    font-size: 18px; /* Increase font size */
-    font-family: 'NexaRustSans-Book';
-  }
-  
-  #contact-button:hover {
-    background-color: #C6C6C6; /* Add a dark-grey background  hover */
-  }
+.control_indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: #404b53;
+  border: 0px solid #000000;
+  border-radius: 0px;
+}
+
+.control:hover input ~ .control_indicator,
+.control input:focus ~ .control_indicator {
+  background: #0e1418;
+}
+
+.control input:checked ~ .control_indicator {
+  background: #212a30;
+}
+
+.control:hover input:not([disabled]):checked ~ .control_indicator,
+.control input:checked:focus ~ .control_indicator {
+  background: #0e664d;
+}
+
+.control input:disabled ~ .control_indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.control_indicator:after {
+  box-sizing: unset;
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.control input:checked ~ .control_indicator:after {
+  display: block;
+}
+
+.control-checkbox .control_indicator:after {
+  left: 10px;
+  top: 5px;
+  width: 3px;
+  height: 10px;
+  border: solid #f2c58c;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.control-checkbox input:disabled ~ .control_indicator:after {
+  border-color: #7b7b7b;
+}
+
+input#contactFormHoneypot {
+  display: none;
+}
+
+#contact-button {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px;
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  outline: none; /* Remove outline */
+  background-color: #bde3ef; /* Set a background color */
+  color: #353a49; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  font-size: 18px; /* Increase font size */
+  font-family: "NexaRustSans-Book";
+}
+
+#contact-button:hover {
+  background-color: #c6c6c6; /* Add a dark-grey background  hover */
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}

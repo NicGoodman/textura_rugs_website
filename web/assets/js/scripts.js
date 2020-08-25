@@ -117,3 +117,13 @@ const observer = new IntersectionObserver(onIntersectionChange)
 const targetElement = document.getElementById('featured-collections')
 // Observe the target element using the IntersectionObserver instance
 observer.observe(targetElement)
+
+
+function handleFirstTab(e) {
+    if (e.keyCode === 9) { // the "I am a keyboard user" key
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
+    }
+}
+
+window.addEventListener('keydown', handleFirstTab);
