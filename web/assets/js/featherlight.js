@@ -155,7 +155,7 @@
 		closeOnClick:   'background',          /* Close lightbox on click ('background', 'anywhere' or false) */
 		closeOnEsc:     true,                  /* Close lightbox when pressing esc */
 		closeIcon:      '<i class="fas fa-times-circle"></i>',            /* Close icon */
-		loading:        '',                    /* Content to show while initial content is loading */
+		loading:        '<div class="lds-ring"><div></div><div></div><div></div><div></div></div>',                    /* Content to show while initial content is loading */
 		persist:        false,                 /* If set, the content will persist and will be shown again when opened again. 'shared' is a special value when binding multiple elements for them to share the same content */
 		otherClose:     null,                  /* Selector for alternate close buttons (e.g. "a.close") */
 		beforeOpen:     $.noop,                /* Called before open. can return false to prevent opening of lightbox. Gets event as parameter, this contains all data */
