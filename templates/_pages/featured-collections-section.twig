@@ -7,16 +7,18 @@
 			<h3 class="w-full m-4 text-rug-grey">Rugs By Size</h3>
 			{% set entries = craft.entries.section('inventory').limit(null) %}
 			{% set collections = craft.categories.group('size').relatedTo(entries) %}
-			{% for collection in collections.all() %}
-				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
-				<picture class="relative p-4">
-					<div class="w-32 md:w-auto">
-						<a href="{{ collection.getUrl }}">
-							<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
-							<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
-						</a>
-					</div>
-				</picture>
+			{% for collection in collections.all() if collection.featuredCollection(true) %}
+				{% if collection.collectionThumbnail.one()|length %}
+					{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
+					<picture class="relative p-4">
+						<div class="w-32 md:w-auto">
+							<a href="{{ collection.getUrl }}">
+								<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+								<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
+							</a>
+						</div>
+					</picture>
+				{% endif %}
 			{% endfor %}
 		</section>
 	</section>
@@ -25,16 +27,18 @@
 		<section class="flex flex-row flex-wrap justify-center w-full p-4">
 			<h3 class="w-full m-4 text-rug-grey">Rugs By Design</h3>
 			{% set collections = craft.categories.group('collections').relatedTo(entries) %}
-			{% for collection in collections.all() %}
-				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
-				<picture class="relative p-4">
-					<div class="w-32 md:w-auto">
-						<a href="{{ collection.getUrl }}">
-							<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
-							<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
-						</a>
-					</div>
-				</picture>
+			{% for collection in collections.all() if collection.featuredCollection(true) %}
+				{% if collection.collectionThumbnail.one()|length %}
+					{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
+					<picture class="relative p-4">
+						<div class="w-32 md:w-auto">
+							<a href="{{ collection.getUrl }}">
+								<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+								<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
+							</a>
+						</div>
+					</picture>
+				{% endif %}
 			{% endfor %}
 		</section>
 	</section>
