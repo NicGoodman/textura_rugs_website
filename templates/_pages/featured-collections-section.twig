@@ -3,8 +3,8 @@
 		<article id="" class="self-center w-full px-4 mb-6 text-center md:w-2/3 text-rug-white">
 			{{ entry.featuredCollectionsIntro|nl2br }}
 		</article>
-		<h3 class="m-4 text-rug-grey">Rugs By Size</h3>
 		<section class="flex flex-row flex-wrap justify-center w-full p-4">
+			<h3 class="w-full m-4 text-rug-grey">Rugs By Size</h3>
 			{% set entries = craft.entries.section('inventory').limit(null) %}
 			{% set collections = craft.categories.group('size').relatedTo(entries) %}
 			{% for collection in collections.all() %}
@@ -21,8 +21,9 @@
 		</section>
 	</section>
 	<section id="" class="flex flex-col flex-wrap justify-center w-full my-16">
-		<h3 class="m-4 text-rug-grey">Rugs By Design</h3>
+
 		<section class="flex flex-row flex-wrap justify-center w-full p-4">
+			<h3 class="w-full m-4 text-rug-grey">Rugs By Design</h3>
 			{% set collections = craft.categories.group('collections').relatedTo(entries) %}
 			{% for collection in collections.all() %}
 				{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
