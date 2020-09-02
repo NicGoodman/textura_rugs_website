@@ -6,8 +6,8 @@
 		<section class="flex flex-row flex-wrap justify-center w-full p-4">
 			<h3 class="w-full m-4 text-rug-grey">Rugs By Size</h3>
 			{% set entries = craft.entries.section('inventory').limit(null) %}
-			{% set collections = craft.categories.group('size').relatedTo(entries) %}
-			{% for collection in collections.all() if collection.featuredCollection(true) %}
+			{% set collections = craft.categories.group('size').relatedTo(entries).featuredCollection(true) %}
+			{% for collection in collections.all() %}
 				{% if collection.collectionThumbnail.one()|length %}
 					{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 					<picture class="relative p-4">
@@ -26,8 +26,8 @@
 
 		<section class="flex flex-row flex-wrap justify-center w-full p-4">
 			<h3 class="w-full m-4 text-rug-grey">Rugs By Design</h3>
-			{% set collections = craft.categories.group('collections').relatedTo(entries) %}
-			{% for collection in collections.all() if collection.featuredCollection(true) %}
+			{% set collections = craft.categories.group('collections').relatedTo(entries).featuredCollection(true) %}
+			{% for collection in collections.all() %}
 				{% if collection.collectionThumbnail.one()|length %}
 					{% set thumbnail = collection.collectionThumbnail.one().optimizedImages %}
 					<picture class="relative p-4">
