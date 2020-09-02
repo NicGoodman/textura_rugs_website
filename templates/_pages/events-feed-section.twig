@@ -1,0 +1,9 @@
+<section id="events-feed-section" class="flex flex-col flex-wrap w-full section-wrapper">
+	<h1 class="p-4">Upcoming Events</h1>
+	<div id="" class="flex flex-row flex-wrap">
+		{% set posts = craft.entries().section('eventPosts') %}
+		{% for post in posts.all() %}
+			{% include "_content/event-post-block" %}
+		{% endfor %}
+	</div>
+</section>

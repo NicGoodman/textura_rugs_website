@@ -1,0 +1,13 @@
+{% extends "_layout/base-layout" %}
+
+{% block header %}
+	{% include "_frame/header.twig" %}
+{% endblock %}
+{% block main %}
+	<main class="flex flex-col items-center flex-grow w-full p-4 md:p-8">
+		{% include "_pages/event-feed-section.twig" %}
+	</main>
+{% endblock %}
+{% block footer %}
+	{% include "_frame/footer.twig" %}
+{% endblock %}
