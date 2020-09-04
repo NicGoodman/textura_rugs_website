@@ -205,3 +205,8 @@ body:not(.user-is-tabbing) textarea:focus {
     transform: rotate(360deg);
   }
 }
+
+.button.outofview {
+  position: absolute;
+  right: 0;
+}
