@@ -104,35 +104,3 @@ $(function () {
         mixer.sort('sort', 'size:' + sortOrder);
     });
 });
-
-
-function elementVisibleInViewport(elem, buttonHeight) {
-    var offsetTop = elem.offsetTop;
-    var height = elem.offsetHeight;
-  
-    offsetTop = offsetTop - (buttonHeight * 2);
-    while (elem = elem.offsetParent) {
-      offsetTop += elem.offsetTop;
-    }
-  
-    var maxHeight = offsetTop + height;
-    var elementVisible = (offsetTop<(window.pageYOffset + window.innerHeight)) && (maxHeight >= window.pageYOffset);
-    return elementVisible; 
-  }
-  
-  window.addEventListener('scroll', checkVisibility, false);
-  
-  function checkVisibility() {
-    var maindiv = document.getElementById('featured-collections');
-    var button = document.getElementById('button');
-    var maindivHeight = document.getElementById('featured-collections').clientHeight;
-    var buttonHeight = document.getElementById('button').clientHeight;
-        buttonHeight = buttonHeight;
-    if (elementVisibleInViewport(maindiv, buttonHeight)) {
-      button.classList.remove('outofview');
-      button.removeAttribute('style');
-    } else {
-      button.classList.add('outofview');
-      button.setAttribute('style', 'top:'+(maindiv.offsetHeight - buttonHeight)+'px;');
-    }
-  }
