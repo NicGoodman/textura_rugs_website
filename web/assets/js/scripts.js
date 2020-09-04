@@ -106,24 +106,24 @@ $(function () {
 });
 
 
-// Declare the callback function for the IntersectionObserver
-const onIntersectionChange = () => {
-    console.log('I have observed an intersection change')
-}
-// Instantiate an IntersectionObserver
-const observer = new IntersectionObserver(onIntersectionChange)
-
-// Assign the target element to a variable
-const targetElement = document.getElementById('featured-collections')
-// Observe the target element using the IntersectionObserver instance
-observer.observe(targetElement)
+var button_ = $('#featured-collections');
+   height = button_.outerHeight();
 
 
-function handleFirstTab(e) {
-    if (e.keyCode === 9) { // the "I am a keyboard user" key
-        document.body.classList.add('user-is-tabbing');
-        window.removeEventListener('keydown', handleFirstTab);
-    }
-}
+   var previousScroll = 0;
 
-window.addEventListener('keydown', handleFirstTab);
+    $(window).scroll(function(){
+       var currentScroll = $(this).scrollTop();
+       if (currentScroll > previousScroll){
+           
+           if(currentScroll>height){
+             $('.button').hide();
+           }
+       } else {
+          if(previousScroll<height){
+             $('.button').show();
+           }
+       }
+      
+       previousScroll = currentScroll;
+    });
