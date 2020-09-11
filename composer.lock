@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e48c8dd6c0a8df76fc3df63508c153e",
+    "content-hash": "c2bd44f6aa6b67e9638c8a6c70128d13",
     "packages": [
         {
             "name": "cakephp/core",
@@ -4359,16 +4359,16 @@
         },
         {
             "name": "putyourlightson/craft-sprig",
-            "version": "1.0.0-beta.13",
+            "version": "1.0.0-beta.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-sprig.git",
-                "reference": "828f72fe738c831097054b9b02f56296f91cbc55"
+                "reference": "8e82728eae45ee0b6e9a57a077ae2eb645b10a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/828f72fe738c831097054b9b02f56296f91cbc55",
-                "reference": "828f72fe738c831097054b9b02f56296f91cbc55",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/8e82728eae45ee0b6e9a57a077ae2eb645b10a0d",
+                "reference": "8e82728eae45ee0b6e9a57a077ae2eb645b10a0d",
                 "shasum": ""
             },
             "require": {
@@ -4400,7 +4400,7 @@
                 "mit"
             ],
             "description": "A reactive Twig component framework for Craft.",
-            "time": "2020-09-03T07:15:11+00:00"
+            "time": "2020-09-10T21:16:01+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
