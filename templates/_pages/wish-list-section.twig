@@ -100,9 +100,7 @@
 							</p>
 						</li>
 					</ul>
-					<button sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list">
-						Remove from wishlist
-					</button>
+					{{ sprig('_snippets/wishlist-remove-button', {'entryId': entry.id}) }}
 					{# <form id="remove-button" method="POST">
 						<input type="hidden" name="action" value="wishlist/items/remove">
 						{{ csrfInput() }}
