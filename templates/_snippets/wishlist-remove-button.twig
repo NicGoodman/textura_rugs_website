@@ -5,6 +5,6 @@
 
 {% set item = craft.wishlist.item(entryId) %}
 
-<button sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list">
+<button sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove">
 	Remove from wishlist
 </button>
