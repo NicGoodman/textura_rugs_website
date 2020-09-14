@@ -96,7 +96,7 @@
 						Wishlist</button>
 				</form> #}
 		{{ sprig('_snippets/wishlist-button', {'entryId': entry.id}) }}
-		<a href="{{ entry.getUrl }}" target="_blank" class="text-xs text-rug-dark-blue font-quicksand hover:bg-light-blue">Open in a new Tab</a>
+		<a href="inventory/{{ entry.slug }}" target="_blank" class="text-xs text-rug-dark-blue font-quicksand hover:bg-light-blue">Open in a new Tab</a>
 	</section>
 	<section id="" class="flex flex-row flex-wrap content-start justify-start w-full px-4 md:w-2/3">
 		{% for image in entry.productImages.all() %}
