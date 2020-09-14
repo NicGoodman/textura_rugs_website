@@ -7,13 +7,13 @@
 
 {% if item.inList %}
   {# Posts to the `remove` action on click #}
-  <button sprig s-method="post" s-action="wishlist/items/remove">
+  <button sprig s-method="post" class="btn-main" s-action="wishlist/items/remove">
     Remove from wishlist
   </button>
 
 {% else %}
   {# Posts to the `add` action on click #}
-  <button sprig s-method="post" s-action="wishlist/items/add">
+  <button sprig s-method="post" class="btn-main" s-action="wishlist/items/add">
     Add to wishlist
   </button>
 

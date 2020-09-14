@@ -1,26 +1,26 @@
-$(function () {
-    $('body').on('click', '.wish-list-link', onWishListClick);
-});
+// $(function () {
+//     $('body').on('click', '.wish-list-link', onWishListClick);
+// });
 
 
 
-// Event handler for the filter click
-function onWishListClick(e) {
-    e.preventDefault();
-    var $wishListIcon = $(e.currentTarget);
-    $.ajax($wishListIcon.attr('href'), {
-        dataType: 'html',
-        success: function (response) {
-            refreshWishList(response);
-        }
-    });
-}
+// // Event handler for the filter click
+// function onWishListClick(e) {
+//     e.preventDefault();
+//     var $wishListIcon = $(e.currentTarget);
+//     $.ajax($wishListIcon.attr('href'), {
+//         dataType: 'html',
+//         success: function (response) {
+//             refreshWishList(response);
+//         }
+//     });
+// }
 
-function refreshWishList(html) {
-    // Update the .inventoryItemContent DOM element with new HTML
-    var $html = $('<div />').append(html);
-    $('.wishListContent').html($html.find('.wishListContent').html());
-}
+// function refreshWishList(html) {
+//     // Update the .inventoryItemContent DOM element with new HTML
+//     var $html = $('<div />').append(html);
+//     $('.wishListContent').html($html.find('.wishListContent').html());
+// }
 
 
 

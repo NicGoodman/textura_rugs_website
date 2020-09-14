@@ -1,5 +1,5 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
-	<a href="/wish-list" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
+	<a href="" hx-post="/wish-list" hx-trigger="click" hx-target="#wish-list" hx-swap="innerHTML" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'active': show }">
 		Wishlist <i class="fas fa-clipboard-list"></i>
 	</a>
 
