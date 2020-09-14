@@ -1,11 +1,25 @@
 $(function () {
-
     $('body').on('submit', '#remove-button', removeFromWishList);
-
 });
 
 
+
+
+function toggleButtonText() {
+    var button = document.getElementById("wish-list-button");
+    $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
+}
+
 function removeFromWishList(e) {
+    e.preventDefault();
+    var form = $(e.currentTarget);
+    $.ajax({
+        url: form.attr('action'),
+        type: form.attr('method'),
+        async: false,
+        dataType: 'html',
+        data: form.serialize(),
+    });
     $.ajax({
         url: '/wish-list',
         async: false,
@@ -14,7 +28,11 @@ function removeFromWishList(e) {
             refreshWishList(response);
         }
     });
+    toggleButtonText();
 }
+
+
+// Event handler for the filter click
 
 function refreshWishList(html) {
     // Update the .inventoryItemContent DOM element with new HTML
