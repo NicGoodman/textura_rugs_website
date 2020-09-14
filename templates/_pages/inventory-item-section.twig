@@ -85,15 +85,18 @@
 				</p>
 			</li>
 		</ul>
-		<form method="POST" id="add-to-wishlist" class="flex flex-row justify-start pt-2 md:justify-end">
-			<input type="hidden" name="action" value="wishlist/items/toggle">
-			{{ csrfInput() }}
-			<input type="hidden" name="elementId" value="{{ entry.id }}">
-			<button type="submit" id="wish-list-button" name="button" form="add-to-wishlist" class="btn-main">
-				{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
-				{% endif %}
-				Wishlist</button>
-		</form>
+		{# <form method="POST" id="add-to-wishlist" class="flex flex-row justify-start pt-2 md:justify-end">
+					<input type="hidden" name="action" value="wishlist/items/toggle">
+					{{ csrfInput() }}
+					<input type="hidden" name="elementId" value="{{ entry.id }}">
+					<button type="submit" id="wish-list-button" name="button" form="add-to-wishlist" class="btn-main">
+						{% if ( list|length ) and (entry.title in list.items) %}Remove From{% else %}Add to
+						{% endif %}
+						Wishlist</button>
+				</form> #}
+		{{ sprig('_snippets/wishlist-button', {'entryId': entry.id}) }}
+
+		{{ sprig.script }}
 	</section>
 	<section id="" class="flex flex-row flex-wrap content-start justify-start w-full px-4 md:w-2/3">
 		{% for image in entry.productImages.all() %}
@@ -101,13 +104,13 @@
 			<picture class="p-2" x-data="{open: false}">
 				<img src="{{ thumbnail.src() }}" alt="{{ image.title }}" data-srcset "{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue" x-on:click.prevent="open = true">
 
-				<div x-show.transition.opacity="open"  class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
+				<div x-show.transition.opacity="open" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75">
 					<div x-show.transition="open" class="container flex flex-col items-center h-full pt-4 pb-20 overflow-hidden">
-					<button x-on:click.prevent="open = false" class="self-end inline-block m-4 text-center text-rug-light-blue hover:text-rug-grey focus:outline-none">
+						<button x-on:click.prevent="open = false" class="self-end inline-block m-4 text-center text-rug-light-blue hover:text-rug-grey focus:outline-none">
 							<i class="fas fa-times-circle"></i>
 						</button>
 						<img src="{{ thumbnail.src() }}" alt="{{ image.title }}" data-srcset "{{ thumbnail.srcset() }}" class="object-cover w-auto h-full border-2 border-rug-grey" x-on:click.away="open = false">
-						
+
 
 					</div>
 				</div>

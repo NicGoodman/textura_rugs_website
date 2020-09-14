@@ -1,0 +1,20 @@
+{#--- _components/wishlist ---#}
+
+{# The value of this input field will be posted to the action #}
+<input type="hidden" name="elementId" value="{{ entryId }}">
+
+{% set item = craft.wishlist.item(entryId) %}
+
+{% if item.inList %}
+  {# Posts to the `remove` action on click #}
+  <button sprig s-method="post" s-action="wishlist/items/remove">
+    Remove from wishlist
+  </button>
+
+{% else %}
+  {# Posts to the `add` action on click #}
+  <button sprig s-method="post" s-action="wishlist/items/add">
+    Add to wishlist
+  </button>
+
+{% endif %}
