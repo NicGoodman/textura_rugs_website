@@ -1,30 +1,30 @@
-// $(function () {
+$(function () {
 
-//     $('body').on('submit', '#remove-button', removeFromWishList);
+    $('body').on('submit', '#remove-button', removeFromWishList);
 
-// });
+});
 
 
-// function removeFromWishList(e) {
-//     e.preventDefault();
-//     var form = $(e.currentTarget);
-//     $.ajax({
-//         url: form.attr('action'),
-//         type: form.attr('method'),
-//         async: false,
-//         dataType: 'html',
-//         data: form.serialize(),
-//     });
-//     $.ajax({
-//         url: '/wish-list',
-//         async: false,
-//         dataType: 'html',
-//         success: function (response) {
-//             refreshWishList(response);
-//         }
-//     });
-//     toggleButtonText();
-// }
+function removeFromWishList(e) {
+    e.preventDefault();
+    var form = $(e.currentTarget);
+    $.ajax({
+        url: form.attr('action'),
+        type: form.attr('method'),
+        async: false,
+        dataType: 'html',
+        data: form.serialize(),
+    });
+    $.ajax({
+        url: '/wish-list',
+        async: false,
+        dataType: 'html',
+        success: function (response) {
+            refreshWishList(response);
+        }
+    });
+    toggleButtonText();
+}
 
 
 
