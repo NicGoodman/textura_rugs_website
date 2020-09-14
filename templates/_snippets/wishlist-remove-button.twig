@@ -1,11 +1,10 @@
 {#--- _components/wishlist ---#}
 
 {# The value of this input field will be posted to the action #}
-<input type="hidden" name="elementId" value="{{ entryId }}"> 
+<input type="hidden" name="elementId" value="{{ entryId }}"> {% set item = craft.wishlist.item(entryId) %}
 
-{% set item = craft.wishlist.item(entryId) %}
-<div sprig s-method="post" s-action="wishlist/items/remove">
-<button hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue">
-	Remove from wishlist
+<button sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove">
+	<div hx-get="/wish-list" hx-trigger="submit" hx-target="#wish-list">
+		Remove from wishlist
+	</div>
 </button>
-</div>
