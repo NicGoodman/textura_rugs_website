@@ -1,15 +1,6 @@
 $(function () {
     $('body').on('submit', '#remove-button', removeFromWishList);
 });
-
-
-
-
-function toggleButtonText() {
-    var button = document.getElementById("wish-list-button");
-    $(button).text($(button).text() == 'Add to Wishlist' ? 'Remove From Wishlist' : 'Add to Wishlist');
-}
-
 function removeFromWishList(e) {
     e.preventDefault();
     var form = $(e.currentTarget);
@@ -28,7 +19,6 @@ function removeFromWishList(e) {
             refreshWishList(response);
         }
     });
-    toggleButtonText();
 }
 
 
