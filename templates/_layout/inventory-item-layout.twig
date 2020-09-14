@@ -4,6 +4,7 @@
 	{% include "_frame/header.twig" %}
 {% endblock %}
 {% block main %}
+{% set entry = craft.entries().section('inventory').slug(slug) %}
 	<main class="flex flex-col items-center flex-grow w-full p-4 md:p-8">
 		{% include "_pages/inventory-item-section" %}
 	</main>
