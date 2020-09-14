@@ -1,4 +1,8 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
-	<a href="" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="showWish = true">
-		Wishlist <i class="fas fa-clipboard-list"></i> <div id="alert"></div>
-	</a>
+<a href="" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="showWish = true">
+	Wishlist
+	<i class="fas fa-clipboard-list"></i>
+	<div class="	{% if list.items.all()|length %}block {% else %}hidden{% endif %}">
+		<div id="alert"></div>
+	</div>
+</a>
