@@ -114,7 +114,7 @@
 		{% endif %}
 		<section id="wishlistForm" class="w-full">
 			<div class="my-8">{{ entry.wishlistFormMessage|nl2br }}</div>
-			{{ sprig('_content/wishlist-form') }}
+			{% include "_content/wishlist-form" %}
 		</section>
 	</section>
 

@@ -1,0 +1,12 @@
+<div class="flex flex-row items-center mb-4">
+	{% set userToMail = userToMail ?? '' %}
+	<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+		<label for="to-email">To E-Mail</label>
+	</p>
+	<input id="to-email" sprig s-trigger="keyup changed" s-target="#toEmail" s-swap="outerHTML" type="text" name="userToEmail" value="{{ userToMail }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+	<div id="toEmail">
+		{{ userToMail }}
+	</div>
+	<input type="hidden" name="toEmail" value="{{ userToMail }}">
+	{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+</div>
