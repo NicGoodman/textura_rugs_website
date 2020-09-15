@@ -366,8 +366,8 @@ class ListsController extends BaseController
         }
 
          // Check if we're allowed to manage lists
-        // $this->enforceEnabledList($list);
-        // $this->enforceListPermissions($list);
+        $this->enforceEnabledList($list);
+        $this->enforceListPermissions($list);
 
         $sender = $request->getRequiredParam('sender');
         $recipient = $request->getRequiredParam('recipient');
