@@ -4,8 +4,7 @@ $config = [];
 $request = Craft::$app->request;
 
 if (
-    !$request->getIsConsoleRequest() &&
-    ($toEmail = $request->getValidatedBodyParam('toEmail')) !== null
+    !$request->getIsConsoleRequest()
 ) {
     $config['toEmail'] = $toEmail;
 }
