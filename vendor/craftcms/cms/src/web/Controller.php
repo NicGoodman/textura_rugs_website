@@ -59,7 +59,7 @@ abstract class Controller extends \yii\web\Controller
      * - An array of action ID/bitwise pairs (e.g. `['save-guest-entry' => self::ALLOW_ANONYMOUS_OFFLINE]` – indicates
      *   that the listed action IDs can be accessed anonymously per the bitwise int assigned to it.
      */
-    protected $allowAnonymous = self::ALLOW_ANONYMOUS_LIVE;
+    protected $allowAnonymous = self::ALLOW_ANONYMOUS_NEVER;
 
     /**
      * @inheritdoc

@@ -30,7 +30,7 @@ class ListsController extends BaseController
     // Properties
     // =========================================================================
 
-    protected $allowAnonymous = true;
+    protected $allowAnonymous = ['create', 'delete', 'clear', 'update'];
     public static $commercePlugin;
 
 

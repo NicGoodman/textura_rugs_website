@@ -16,7 +16,7 @@ class ItemsController extends BaseController
     // Properties
     // =========================================================================
 
-    protected $allowAnonymous = true;
+    protected $allowAnonymous = ['add', 'remove', 'update', 'toggle'];
 
 
     // Public Methods
