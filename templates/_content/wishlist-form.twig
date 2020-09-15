@@ -43,7 +43,10 @@
 				<label for="to-email">To E-Mail</label>
 			</p>
 			<input id="to-email" sprig s-trigger="keyup changed" s-target="#toEmail" s-swap="outerHTML" type="text" name="userToEmail" value="{{ userToMail }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
-			<input id="toEmail" type="hidden" name="toEmail" value="{{ userToMail|hash }}">
+			<div id="toEmail">
+			{% set userToMail = userToMail|hash %}
+			</div>
+			<input type="hidden" name="toEmail" value="{{ userToMail }}">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
 
