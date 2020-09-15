@@ -47,7 +47,6 @@
 		</div>
 
 
-
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
 				<label for="designer-first-name">Designer First Name</label>
@@ -71,6 +70,7 @@
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
 
+
 		<div class="flex flex-col mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
 				<label class="text-center" for="message">Special Requests</label>
@@ -80,5 +80,22 @@
 		</div>
 
 		<input type="submit" value="Submit Request" class="self-center block w-64 px-6 py-2 text-xl text-center rounded-none bg-rug-light-blue hover:bg-rug-grey text-rug-dark-blue font-nexa-rust-sans">
+	</form>
+
+	<form method="POST">
+		<input type="hidden" name="action" value="wishlist/lists/share-by-email">
+		{{ csrfInput() }}
+
+		<input type="text" name="listId" value="{{ list.id }}">
+
+		<input type="text" name="sender[firstName]" value="Sender">
+		<input type="text" name="sender[lastName]" value="Person">
+		<input type="text" name="sender[email]" value="sender@gmail.com">
+
+		<input type="text" name="recipient[firstName]" value="Recipient">
+		<input type="text" name="recipient[lastName]" value="Person">
+		<input type="text" name="recipient[email]" value="recipient@gmail.com">
+
+		<input type="submit" value="Send Email">
 	</form>
 </section>
