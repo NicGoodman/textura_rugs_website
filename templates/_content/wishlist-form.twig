@@ -37,12 +37,13 @@
 			<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
-
+		{% set userToMail = userToMail ?? '' %}
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
 				<label for="to-email">To E-Mail</label>
 			</p>
-			<input id="to-email" type="email" name="toEmail" value="{{ message.toEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			<input id="to-email" sprig s-trigger="keyup changed" s-target="#toEmail" s-swap="outerHTML" type="text" name="userToEmail" value="{{ userToMail }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			<input id="toEmail" type="hidden" name="toEmail" value="{{ userToMail|hash }}">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
 
