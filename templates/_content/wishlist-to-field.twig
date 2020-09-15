@@ -4,12 +4,11 @@
 		<label for="to-email">To E-Mail</label>
 	</p>
 	{% if sprig.isInclude %}
-	<input id="to-email" sprig s-trigger="keyup changed" s-target="#toEmail" s-swap="outerHTML" type="text" name="userToEmail" value="{{ userToMail }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+		<input id="to-email" sprig s-trigger="keyup changed" s-target="#toEmail" s-swap="outerHTML" type="text" name="userToEmail" value="{{ userToMail }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 	{% endif %}
 	<div id="toEmail">
+	{% set userToMail = userToMail %}
 		{{ userToMail }}
 		<input type="hidden" name="toEmail" value="{{ userToMail }}">
 	</div>
-	
-	{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 </div>
