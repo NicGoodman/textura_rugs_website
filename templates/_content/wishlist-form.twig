@@ -42,7 +42,7 @@
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
 				<label for="to-email">To E-Mail</label>
 			</p>
-			<input id="to-email" type="email" name="toEmail" value="{{ message.toEmail ?? ''|hash }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			<input id="to-email" type="email" name="toEmail" value="{{ message.toEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
 
