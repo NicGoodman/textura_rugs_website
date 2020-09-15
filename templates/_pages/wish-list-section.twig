@@ -107,11 +107,7 @@
 						<input type="hidden" name="elementId" value="{{ entry.id }}">
 
 						<button type="submit" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" wishlistlink="/wish-list">Remove from List</button>
-						{% if list.items.all()|length %}
-							<div id="alert" hx-swap-oob="true">
-								
-							</div>
-						{% endif %}
+
 					</form>
 				</div>
 			{% endfor %}
