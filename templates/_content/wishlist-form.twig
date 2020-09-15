@@ -14,7 +14,8 @@
 	<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full">
 		{{ csrfInput() }}
 
-		<input type="hidden" name="action" value="contact-form/send">
+		<input type="hidden" name="action" value="wishlist/lists/share-by-email">
+		<input type="text" name="listId" value="{{ list.id }}">
 		<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 		{{ redirectInput('#wishlistForm') }}
 		{% if craft.app.session.hasFlash('notice') %}
@@ -24,19 +25,52 @@
 		{% endif %}
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
-				<label for="from-name">Full Name</label>
+				<label for="from-first-name">Your First Name</label>
 			</p>
-			<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			<input id="from-first-name" type="text" name="sender[firstName]" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+		</div>
+		<div class="flex flex-row items-center mb-4">
+			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+				<label for="from-last-name">Your Last Name</label>
+			</p>
+			<input id="from-last-name" type="text" name="sender[lastName]" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 		</div>
 
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
-				<label for="from-email">E-Mail</label>
+				<label for="from-email">Your E-Mail</label>
 			</p>
-			<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			<input id="from-email" type="text" name="sender[email]" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 		</div>
+
+
+
+		<div class="flex flex-row items-center mb-4">
+			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+				<label for="designer-first-name">Designer First Name</label>
+			</p>
+			<input id="designer-first-name" type="text" name="recipient[firstName]" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+		</div>
+		<div class="flex flex-row items-center mb-4">
+			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+				<label for="designer-last-name">Designer Last Name</label>
+			</p>
+			<input id="designer-last-name" type="text" name="recipient[lastName]" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+		</div>
+
+		<div class="flex flex-row items-center mb-4">
+			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
+				<label for="designer-email">Designer E-Mail</label>
+			</p>
+			<input id="designer-email" type="text" name="recipient[email]" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
+			{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+		</div>
+
 		<div class="flex flex-col mb-4">
 			<p class="flex items-center justify-center w-32 h-12 text-sm uppercase bg-rug-light-blue text-rug-dark-blue">
 				<label class="text-center" for="message">Special Requests</label>
