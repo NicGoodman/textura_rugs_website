@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6ff893cd9cb0f18f88a5a5c889d7f229",
+    "content-hash": "195c9db48818caf3228773bc9e3a0ca5",
     "packages": [
         {
             "name": "cakephp/core",
@@ -6550,16 +6550,16 @@
         },
         {
             "name": "verbb/wishlist",
-            "version": "1.2.18",
+            "version": "dev-craft-3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/wishlist.git",
-                "reference": "93e84fa14d90c37d19cbf394dcf37d59f5fa8c44"
+                "reference": "cb4fed3176c8eae5e1cc9eda758b7b919a0b8c08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/wishlist/zipball/93e84fa14d90c37d19cbf394dcf37d59f5fa8c44",
-                "reference": "93e84fa14d90c37d19cbf394dcf37d59f5fa8c44",
+                "url": "https://api.github.com/repos/verbb/wishlist/zipball/cb4fed3176c8eae5e1cc9eda758b7b919a0b8c08",
+                "reference": "cb4fed3176c8eae5e1cc9eda758b7b919a0b8c08",
                 "shasum": ""
             },
             "require": {
@@ -6596,7 +6596,7 @@
                 "craftcms",
                 "wishlist"
             ],
-            "time": "2020-09-03T12:00:46+00:00"
+            "time": "2020-09-17T13:33:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8096,10 +8096,18 @@
             "time": "2020-05-02T11:43:24+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.2.18",
+            "alias_normalized": "1.2.18.0",
+            "version": "dev-craft-3",
+            "package": "verbb/wishlist"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "putyourlightson/craft-sprig": 10
+        "putyourlightson/craft-sprig": 10,
+        "verbb/wishlist": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
