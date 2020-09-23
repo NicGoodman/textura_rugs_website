@@ -1,4 +1,5 @@
 {
-  "buttons": ["bold", "italic"],
+  "buttons": ["bold", "italic", "link", "unorderedlist", "orderedlist"],
+  "linkNewTab": true,
   "toolbarFixed": true
 }
