@@ -3,7 +3,7 @@
 		<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
-					<h2>Origin</h2>
+					<h2>Size</h2>
 				</span>
 				<svg class="w-5 h-5 text-gray-400 transition duration-150 ease-in-out transform group-hover:text-gray-500 group-focus:text-gray-500" viewbox="0 0 20 20" fill="currentColor" :class="{ 'rotate-180': flyoutMenuOpen, 'rotate-0': !flyoutMenuOpen }">
 					<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -15,10 +15,10 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
 								<div id="" class="flex flex-col space-y-4">
-									{% set tags = craft.tags().group('origin') %}
-									{% for tag in tags.all() %}
-										<label class="control control-checkbox font-quicksand">{{ tag.title }}
-											<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
+									{% set categories = craft.categories().group('size') %}
+									{% for category in categories.all() %}
+										<label class="control control-checkbox font-quicksand">{{ category.title|replace(' ', '') }}
+											<input type="checkbox" value=".size{{ category.title|replace(' ', '') }}"/>
 											<div class="control_indicator"></div>
 										</label>
 									{% endfor %}
@@ -32,7 +32,7 @@
 		<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
-					<h2>Age</h2>
+					<h2>Collection</h2>
 				</span>
 				<svg class="w-5 h-5 text-gray-400 transition duration-150 ease-in-out transform group-hover:text-gray-500 group-focus:text-gray-500" viewbox="0 0 20 20" fill="currentColor" :class="{ 'rotate-180': flyoutMenuOpen, 'rotate-0': !flyoutMenuOpen }">
 					<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -44,10 +44,10 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
 								<div id="" class="flex flex-col space-y-4">
-									{% set tags = craft.tags().group('age') %}
-									{% for tag in tags.all() %}
-										<label class="control control-checkbox font-quicksand">{{ tag.title }}
-											<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
+									{% set categories = craft.categories().group('collections') %}
+									{% for category in categories.all() %}
+										<label class="control control-checkbox font-quicksand">{{ category.title }}
+											<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
 											<div class="control_indicator"></div>
 										</label>
 									{% endfor %}
@@ -121,7 +121,7 @@
 		<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
-					<h2>Collection</h2>
+					<h2>Age</h2>
 				</span>
 				<svg class="w-5 h-5 text-gray-400 transition duration-150 ease-in-out transform group-hover:text-gray-500 group-focus:text-gray-500" viewbox="0 0 20 20" fill="currentColor" :class="{ 'rotate-180': flyoutMenuOpen, 'rotate-0': !flyoutMenuOpen }">
 					<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -133,10 +133,10 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
 								<div id="" class="flex flex-col space-y-4">
-									{% set categories = craft.categories().group('collections') %}
-									{% for category in categories.all() %}
-										<label class="control control-checkbox font-quicksand">{{ category.title }}
-											<input type="checkbox" value=".{{ category.title|replace(' ', '') }}"/>
+									{% set tags = craft.tags().group('age') %}
+									{% for tag in tags.all() %}
+										<label class="control control-checkbox font-quicksand">{{ tag.title }}
+											<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 											<div class="control_indicator"></div>
 										</label>
 									{% endfor %}
@@ -150,7 +150,7 @@
 		<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 				<span>
-					<h2>Size</h2>
+					<h2>Origin</h2>
 				</span>
 				<svg class="w-5 h-5 text-gray-400 transition duration-150 ease-in-out transform group-hover:text-gray-500 group-focus:text-gray-500" viewbox="0 0 20 20" fill="currentColor" :class="{ 'rotate-180': flyoutMenuOpen, 'rotate-0': !flyoutMenuOpen }">
 					<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -162,10 +162,10 @@
 						<div class="relative z-20 grid gap-6 px-5 py-6 bg-rug-light-blue sm:gap-8 sm:p-8">
 							<fieldset data-filter-group>
 								<div id="" class="flex flex-col space-y-4">
-									{% set categories = craft.categories().group('size') %}
-									{% for category in categories.all() %}
-										<label class="control control-checkbox font-quicksand">{{ category.title|replace(' ', '') }}
-											<input type="checkbox" value=".size{{ category.title|replace(' ', '') }}"/>
+									{% set tags = craft.tags().group('origin') %}
+									{% for tag in tags.all() %}
+										<label class="control control-checkbox font-quicksand">{{ tag.title }}
+											<input type="checkbox" value=".{{ tag.title|replace(' ', '') }}"/>
 											<div class="control_indicator"></div>
 										</label>
 									{% endfor %}
@@ -178,6 +178,6 @@
 		</div>
 	</div>
 	<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
-	{{ entry.allRugsIntro|nl2br }}
+		{{ entry.allRugsIntro|nl2br }}
 	</article>
 </section>

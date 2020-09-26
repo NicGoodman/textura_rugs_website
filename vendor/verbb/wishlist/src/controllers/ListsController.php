@@ -398,7 +398,6 @@ class ListsController extends BaseController
 
         $sender = $request->getRequiredParam('sender');
         $recipient = $request->getRequiredParam('recipient');
-        $message = $request->getRequiredParam('message');
 
         if (!$sender || !$recipient) {
             throw new Exception(Craft::t('wishlist', 'You must supply and sender and recipient'));
@@ -408,9 +407,16 @@ class ListsController extends BaseController
         $sender = new User($sender);
         $recipient = new User($recipient);
 
+        $variables = [
+            'list' => $list, 
+            'sender' => $sender, 
+            'recipient' => $recipient,
+            'fields' => $request->getParam('fields'),
+        ];
+
         try {
             $mail = Craft::$app->getMailer()
-                ->composeFromKey('wishlist_share_list', ['list' => $list, 'sender' => $sender, 'recipient' => $recipient, 'message' => $message])
+                ->composeFromKey('wishlist_share_list', $variables)
                 ->setTo($recipient);
 
             $mail->send();
