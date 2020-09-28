@@ -387,16 +387,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "114f819054a2ea7db03287f5efb757e2af6e4079"
+                "reference": "38276325bd896f90dfcfe30029aa5db40df387a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/114f819054a2ea7db03287f5efb757e2af6e4079",
-                "reference": "114f819054a2ea7db03287f5efb757e2af6e4079",
+                "url": "https://api.github.com/repos/composer/semver/zipball/38276325bd896f90dfcfe30029aa5db40df387a7",
+                "reference": "38276325bd896f90dfcfe30029aa5db40df387a7",
                 "shasum": ""
             },
             "require": {
@@ -458,7 +458,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-09T09:34:06+00:00"
+            "time": "2020-09-27T13:13:07+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -3220,16 +3220,16 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.18",
+            "version": "3.3.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-seomatic.git",
-                "reference": "2c32a61643c406577a80982c2b9d6d1f975dfd7d"
+                "reference": "f24a4025b72b969614005dd63d2179fe62e7d491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/2c32a61643c406577a80982c2b9d6d1f975dfd7d",
-                "reference": "2c32a61643c406577a80982c2b9d6d1f975dfd7d",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/f24a4025b72b969614005dd63d2179fe62e7d491",
+                "reference": "f24a4025b72b969614005dd63d2179fe62e7d491",
                 "shasum": ""
             },
             "require": {
@@ -3294,7 +3294,7 @@
                 "tags",
                 "twitter"
             ],
-            "time": "2020-09-01T03:03:28+00:00"
+            "time": "2020-09-28T19:24:17+00:00"
         },
         {
             "name": "opis/closure",
@@ -7135,16 +7135,16 @@
         },
         {
             "name": "voku/stringy",
-            "version": "6.3.1",
+            "version": "6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/Stringy.git",
-                "reference": "68429ad7626e94e2ec3a2a9f0b530e96ebb4a4db"
+                "reference": "b534a95b58b020faf3e3b779abc0bc277b5fb83c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Stringy/zipball/68429ad7626e94e2ec3a2a9f0b530e96ebb4a4db",
-                "reference": "68429ad7626e94e2ec3a2a9f0b530e96ebb4a4db",
+                "url": "https://api.github.com/repos/voku/Stringy/zipball/b534a95b58b020faf3e3b779abc0bc277b5fb83c",
+                "reference": "b534a95b58b020faf3e3b779abc0bc277b5fb83c",
                 "shasum": ""
             },
             "require": {
@@ -7222,7 +7222,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-24T00:26:26+00:00"
+            "time": "2020-09-27T21:32:36+00:00"
         },
         {
             "name": "voku/urlify",
