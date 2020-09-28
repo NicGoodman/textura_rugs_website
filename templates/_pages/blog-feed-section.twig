@@ -3,7 +3,7 @@
 	<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
 		{{ entry.blogIntro|nl2br }}
 	</article>
-	<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
+	<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto" x-data="{ flyoutMenuOpen: false }">
 		<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
 			<span>
 				<h2>Post Categories</h2>
