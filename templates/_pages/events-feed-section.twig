@@ -2,8 +2,14 @@
 	<h1 class="p-4">Upcoming Events</h1>
 	<div id="" class="flex flex-row flex-wrap">
 		{% set posts = craft.entries().section('eventPosts') %}
-		{% for post in posts.all() %}
-			{% include "_content/event-post-block" %}
-		{% endfor %}
+		{% if posts|length %}
+			{% for post in posts.all() %}
+				{% include "_content/event-post-block" %}
+			{% endfor %}
+		{% else %}
+			<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
+				{{ entry.noEventsMessage|nl2br }}
+			</article>
+		{% endif %}
 	</div>
 </section>

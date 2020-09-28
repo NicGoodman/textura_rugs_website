@@ -1,4 +1,4 @@
-<article id="" class="w-full p-4 lg:w-1/2">
+<article id="" class="w-full p-4 lg:w-1/2 mix {% if entry.postCategories|length %}{% for tag in entry.postCategories.all() %}{{ tag.title|replace(' ', '') }} {% endfor %}{% endif %}">
 	{% if post.thumbnail|length %}
 		{% set thumbnail = post.thumbnail.one().optimizedImages %}
 	{% endif %}
