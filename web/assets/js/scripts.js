@@ -50,7 +50,7 @@ $(function () {
     var sortOrder = 'asc',
         $toggleSortSize = $('.toggle-sort-size');
 
-    var mixer = mixitup('#inventory-feed', {
+    var mixer = mixitup('#feed', {
         multifilter: {
             enable: true // enable the multifilter extension for the mixer
         },

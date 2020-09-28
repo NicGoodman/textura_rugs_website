@@ -33,10 +33,11 @@
 			</div>
 		</div>
 	</div>
-	<div id="" class="flex flex-row flex-wrap">
+	<div id="feed" class="flex flex-row flex-wrap">
 		{% set posts = craft.entries().section('blogPosts') %}
 		{% for post in posts.all() %}
 			{% include "_content/blog-post-block" %}
 		{% endfor %}
 	</div>
 </section>
+<div class="p-4 text-lg text-center border-t mixitup-page-list font-bioRhyme text-rug-dark-blue border-dark-blue"></div>
