@@ -1,12 +1,13 @@
 {% set contactBackgroundImage = entry.contactBackgroundImage.one().optimizedImages %}
 <section id="contact-us-section" class="flex flex-col w-full bg-opacity-25 bg-no-repeat bg-cover bg-rug-white" style="background-image: url('{{ contactBackgroundImage.src() }}'); background-color: rgba(255, 255, 255, 0.66);
-		    background-blend-mode: lighten;">
+						    background-blend-mode: lighten;">
 
 	{% set contactImage = "" %}
 	{% set contactIntroHeader = "" %}
 	{% set contactIntroBodyText = "" %}
 	{% for block in entry.contactUsContent.all() %}
 		{% set contactImage = block.contactImage.one().optimizedImages %}
+		{% set contactMap = block.contactMap.one().optimizedImages %}
 		{% set contactIntroHeader = block.contactIntroHeader %}
 		{% set contactIntroBodyText = block.contactIntroBodyText %}
 	{% endfor %}
@@ -17,6 +18,9 @@
 					<h1 class="text-rug-grey">{{ contactIntroHeader }}</h1>
 					<h2 class="mb-6">{{ contactIntroBodyText|nl2br }}</h2>
 				</span>
+				<a href="https://goo.gl/maps/X3F4Qs2x2YQxedd9A" target="_blank" rel="nofollow">
+					<img src="{{ contactMap.src }}" data-srcset="{{ contactMap.srcset}}" alt="" class="w-full h-full border-2 border-rug-grey hover:border-rug-light-blue">
+				</a>
 				{% include "_content/contact-form" %}
 			</article>
 			<picture id="contact-intro-image" class="flex flex-col flex-grow mb-12">
@@ -24,7 +28,9 @@
 				<section id="contact-contact-block" class="flex-col hidden p-4 text-left md:flex text-rug-dark-blue">
 					{% set contactStyles = "text-left text-base font-bioRhyme" %}
 					{% include "_snippets/contact-info" %}
-					<a href="mailto:texturarugs@gmail.com" class="text-left"><p>texturarugs@gmail.com</p></a>
+					<a href="mailto:sales@texturarugs.com" class="text-left">
+						<p>sales@texturarugs.com</p>
+					</a>
 				</section>
 			</picture>
 		</section>

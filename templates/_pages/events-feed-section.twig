@@ -4,7 +4,7 @@
 		{% for post in craft.entries().section('eventPosts').all() if post.date|date('Y-m-d') >= now|date('Y-m-d') %}
 			{% include "_content/event-post-block" %}
 		{% else %}
-			<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
+			<article id="" class="self-center w-full mt-12 text-left md:w-2/3 text-rug-black">
 				<p>{{ entry.noEventsMessage|nl2br }}</p>
 			</article>
 		{% endfor %}
