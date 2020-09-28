@@ -16,5 +16,6 @@
 				{{ post.intro }}
 			</div>
 		</section>
+		{% for tag in entry.postCategories.all() %}{{ tag.title|replace(' ', '') }} {% endfor %}
 	</a>
 </article>
