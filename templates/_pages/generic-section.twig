@@ -62,7 +62,7 @@
 							</div>
 						{% case "button" %}
 							{% set ctaText = block.text %}
-							{% set ctaLink = block.link.getUrl %}
+							{% set ctaLink = block.buttonLink.getUrl %}
 							{% include "_snippets/btn-main.twig" %}
 
 					{% endswitch %}
