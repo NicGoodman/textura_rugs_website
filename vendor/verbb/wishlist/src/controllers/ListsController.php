@@ -417,7 +417,7 @@ class ListsController extends BaseController
         try {
             $mail = Craft::$app->getMailer()
                 ->composeFromKey('wishlist_share_list', $variables)
-                ->setTo($recipient);
+                ->setTo($recipient, $sender);
 
             $mail->send();
 
