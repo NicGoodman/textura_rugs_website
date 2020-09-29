@@ -14,7 +14,7 @@
 							</div>
 
 						{% case "break" %}
-							<div class="flex-shrink-0 w-full mt-4 mb-4 {% if block.appearance == "line" %}border-b-2 border-rug-dark-blue{% endif %}"></div>
+							<div class="flex-shrink-0 w-full mt-4 mb-4 {% if block.appearance == " line" %}border-b-2 border-rug-dark-blue{% endif %}"></div>
 						{% case "image" %}
 							{% set imageWidth = "" %}
 							{% set imageHeight = "" %}
@@ -60,6 +60,10 @@
 							<div class="w-full" x-show="selected == {{ loop.index }}">
 								{{ block.text|nl2br }}
 							</div>
+						{% case "button" %}
+							{% set ctaText = block.text %}
+							{% set ctaLink = block.link.getUrl %}
+							{% include "_snippets/btn-main.twig" %}
 
 					{% endswitch %}
 				{% endfor %}
