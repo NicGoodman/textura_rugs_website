@@ -23,7 +23,7 @@
 			<p class="mb-2 font-bold text-center message error">{{ craft.app.session.getFlash('error') }}</p>
 		{% endif %}
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue">
+			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="from-name">Full Name</label>
 			</p>
 			<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue">
+			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="from-email">Email</label>
 			</p>
 			<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
@@ -39,7 +39,7 @@
 		</div>
 
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue">
+			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="phonel">Phone</label>
 			</p>
 			<input id="phone" type="text" name="message[Phone]" value="{{ message.fromPhone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-rug-light-blue">
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="flex flex-col mb-4">
-			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue">
+			<p class="flex items-center justify-start w-24 h-12 p-2 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="message">Comment</label>
 			</p>
 			<textarea rows="4" cols="40" id="message" name="message[body]" class="w-full p-4 border-4 rounded-none resize-none border-rug-light-blue">{{ message.message ?? '' }}</textarea>
