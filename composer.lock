@@ -3023,16 +3023,16 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize",
-            "version": "1.6.17",
+            "version": "1.6.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-imageoptimize.git",
-                "reference": "47c11daa33a617c511e5d0544b5fbdce8fb4baf3"
+                "reference": "06f464f16543b83114bf952c09049fd29943c1f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/47c11daa33a617c511e5d0544b5fbdce8fb4baf3",
-                "reference": "47c11daa33a617c511e5d0544b5fbdce8fb4baf3",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/06f464f16543b83114bf952c09049fd29943c1f5",
+                "reference": "06f464f16543b83114bf952c09049fd29943c1f5",
                 "shasum": ""
             },
             "require": {
@@ -3085,7 +3085,7 @@
                 "optimize",
                 "optimize-images"
             ],
-            "time": "2020-09-18T18:45:30+00:00"
+            "time": "2020-09-29T02:12:18+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
@@ -6541,16 +6541,16 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/super-table.git",
-                "reference": "34a3c1a79c2956fc0c83c349fa2b303b4d9cbced"
+                "reference": "d1e7b06082aebb67750e0793eaa7f0e5a868107e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/34a3c1a79c2956fc0c83c349fa2b303b4d9cbced",
-                "reference": "34a3c1a79c2956fc0c83c349fa2b303b4d9cbced",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/d1e7b06082aebb67750e0793eaa7f0e5a868107e",
+                "reference": "d1e7b06082aebb67750e0793eaa7f0e5a868107e",
                 "shasum": ""
             },
             "require": {
@@ -6589,7 +6589,13 @@
                 "craftcms",
                 "super table"
             ],
-            "time": "2020-08-21T00:48:21+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-29T00:19:36+00:00"
         },
         {
             "name": "verbb/wishlist",
