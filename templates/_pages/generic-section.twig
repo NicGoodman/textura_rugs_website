@@ -42,6 +42,8 @@
 								{% set imageHeight = "h-64 md:h-48 lg:h-64" %}
 							{% elseif block.height =="uniformTall" %}
 								{% set imageHeight = "h-96 md:h-72 lg:h-96" %}
+							{% elseif block.height =="auto" %}
+								{% set imageHeight = "" %}
 							{% endif %}
 
 
