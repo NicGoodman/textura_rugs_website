@@ -3220,16 +3220,16 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.19",
+            "version": "3.3.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-seomatic.git",
-                "reference": "f24a4025b72b969614005dd63d2179fe62e7d491"
+                "reference": "f04a14e040f6e3d7a57065be9aca8624e163c25b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/f24a4025b72b969614005dd63d2179fe62e7d491",
-                "reference": "f24a4025b72b969614005dd63d2179fe62e7d491",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/f04a14e040f6e3d7a57065be9aca8624e163c25b",
+                "reference": "f04a14e040f6e3d7a57065be9aca8624e163c25b",
                 "shasum": ""
             },
             "require": {
@@ -3294,7 +3294,7 @@
                 "tags",
                 "twitter"
             ],
-            "time": "2020-09-28T19:24:17+00:00"
+            "time": "2020-09-29T15:56:10+00:00"
         },
         {
             "name": "opis/closure",
