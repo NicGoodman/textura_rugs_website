@@ -3,7 +3,9 @@
 		{{ csrfInput() }}
 
 		<input type="hidden" name="action" value="wishlist/lists/share-by-email">
+		{% if list|length %}
 		<input type="text" class="hidden" name="listId" value="{{ list.id }}">
+		{% endif %}
 		<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 		{{ redirectInput('#wishlistForm') }}
 		{% if craft.app.session.hasFlash('notice') %}{% endif %}
