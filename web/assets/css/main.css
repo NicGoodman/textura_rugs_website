@@ -635,14 +635,14 @@ p {
   font-size: 1.25rem;
   font-weight: 500;
   --text-opacity: 1;
-  color: #bde3ef;
-  color: rgba(189, 227, 239, var(--text-opacity));
+  color: #c6c6c6;
+  color: rgba(198, 198, 198, var(--text-opacity));
 }
 
 .social-item:hover {
   --text-opacity: 1;
-  color: #c6c6c6;
-  color: rgba(198, 198, 198, var(--text-opacity));
+  color: #bde3ef;
+  color: rgba(189, 227, 239, var(--text-opacity));
 }
 
 .btn-main {

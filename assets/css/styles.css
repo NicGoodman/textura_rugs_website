@@ -42,11 +42,11 @@ p {
 .social-item {
   @apply text-xl;
   @apply font-medium;
-  @apply text-rug-light-blue;
+  @apply text-rug-grey;
 }
 
 .social-item:hover {
-  @apply text-rug-grey;
+  @apply text-rug-light-blue;
 }
 
 .btn-main {
