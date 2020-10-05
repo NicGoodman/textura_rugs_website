@@ -3,6 +3,7 @@ namespace verbb\wishlist\controllers;
 
 use verbb\wishlist\Wishlist;
 use verbb\wishlist\elements\ListElement;
+use verbb\wishlist\errors\ItemError;
 use verbb\wishlist\errors\ListError;
 
 use Craft;
@@ -30,7 +31,7 @@ class ListsController extends BaseController
     // Properties
     // =========================================================================
 
-    protected $allowAnonymous = ['create', 'delete', 'clear', 'update', 'add-to-cart', 'share-by-email'];
+    protected $allowAnonymous = ['create', 'delete', 'clear', 'update', 'update-items', 'add-to-cart', 'share-by-email'];
     public static $commercePlugin;
 
 
@@ -231,6 +232,60 @@ class ListsController extends BaseController
         return $this->returnSuccess('List updated.', [], $list);
     }
 
+    public function actionUpdateItems()
+    {
+        $request = Craft::$app->getRequest();
+        $listId = $request->getParam('listId');
+
+        if (!$listId) {
+            return $this->returnError('List ID must be provided.');
+        }
+
+        $list = $this->_setListFromPost();
+
+        // Check if we're allowed to manage lists
+        $this->enforceEnabledList($list);
+        $this->enforceListPermissions($list);
+
+        // Only owners can update their own lists
+        if (!WishList::$plugin->getLists()->isListOwner($list)) {
+            throw new Exception(Craft::t('wishlist', 'You can only update your own list.'));
+        }
+
+        $variables = [];
+        $errors = [];
+
+        if ($items = $request->getParam('items')) {
+            foreach ($items as $itemId => $item) {
+                $removeItem = $request->getParam("items.{$itemId}.remove");
+                $fields = $request->getParam("items.{$itemId}.fields");
+
+                $item = Wishlist::getInstance()->getItems()->getItemById($itemId);
+                $item->setFieldValues($fields);
+
+                if ($removeItem) {
+                    if (!Craft::$app->getElements()->deleteElement($item)) {
+                        $errors[$itemId] = new ItemError('Unable to delete item from list.', ['item' => $item]);
+                    }
+                } else {
+                    if (!Craft::$app->getElements()->saveElement($item)) {
+                        $errors[$itemId] = new ItemError('Unable to update item in list.', ['item' => $item]);
+                    }
+                }
+
+                $variables['items'][] = $item;
+            }
+        }
+
+        if ($errors) {
+            foreach ($errors as $itemError) {
+                return $this->returnError($itemError->message, $itemError->params);
+            }
+        }
+
+        return $this->returnSuccess('List items updated.', $variables, $list);
+    }
+
     public function actionDelete()
     {
         $request = Craft::$app->getRequest();
@@ -420,6 +475,14 @@ class ListsController extends BaseController
                 ->setTo($recipient)
                 ->setCC($sender);
 
+            if ($cc = $request->getParam('cc')) {
+                $mail->setCc(explode(',', $cc));
+            }
+
+            if ($bcc = $request->getParam('bcc')) {
+                $mail->setBcc(explode(',', $bcc));
+            }
+
             $mail->send();
 
             Wishlist::log('Sent list share notification to ' . $recipient->email);
@@ -466,6 +529,19 @@ class ListsController extends BaseController
                 $variables['list']->typeId = $variables['listType']->id;
             }
         }
+
+        if (!empty($variables['listTypeHandle'])) {
+            $variables['listType'] = Wishlist::$plugin->getListTypes()->getListTypeByHandle($variables['listTypeHandle']);
+        } else if (!empty($variables['listTypeHandleId'])) {
+            $variables['listType'] = Wishlist::$plugin->getListTypes()->getListTypeById($variables['listTypeId']);
+        }
+
+        $listType = $variables['listType'];
+        $list = $variables['list'];
+
+        $form = $listType->getFieldLayout()->createForm($list);
+        $variables['tabs'] = $form->getTabMenu();
+        $variables['fieldsHtml'] = $form->render();
     }
 
     private function _setListFromPost(): ListElement
