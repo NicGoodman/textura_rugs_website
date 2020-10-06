@@ -3,6 +3,6 @@
 {# The value of this input field will be posted to the action #}
 <input type="hidden" name="elementId" value="{{ entryId }}"> {% set item = craft.wishlist.item(entryId) %}
 
-<button id="remove-button" sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove">
+<button id="remove-button" sprig s-method="post" class="p-1 mt-2 text-xs bg-rug-grey text-rug-dark-blue font-quicksand hover:bg-light-blue" s-action="wishlist/items/remove" @click="count--">
 		Remove from wishlist
 </button>

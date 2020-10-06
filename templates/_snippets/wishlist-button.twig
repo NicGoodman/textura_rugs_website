@@ -2,10 +2,10 @@
 
 {# The value of this input field will be posted to the action #}
 <input type="hidden" name="elementId" value="{{ entryId }}"> {% set item = craft.wishlist.item(entryId) %}
-<a sprig href="#">test</a>
+
 {% if item.inList %}
 	{# Posts to the `remove` action on click #}
-	<button id="wish-list-button" sprig s-method="post" class="btn-main" s-action="wishlist/items/remove">
+	<button id="wish-list-button" sprig s-method="post" class="btn-main" s-action="wishlist/items/remove" @click="count--">
 		Remove From Wishlist
 	</button>
 		{# <div id="alert" hx-swap-oob="true">
@@ -13,7 +13,7 @@
 		</div> #}
 {% else %}
 	{# Posts to the `add` action on click #}
-	<button id="wish-list-button" sprig s-method="post" class="btn-main" s-action="wishlist/items/add">
+	<button id="wish-list-button" sprig s-method="post" class="btn-main" s-action="wishlist/items/add" @click="count++">
 		Add to Wishlist
 	</button>
 {% endif %}

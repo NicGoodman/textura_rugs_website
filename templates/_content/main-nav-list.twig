@@ -11,7 +11,7 @@
 		<a href="{{siteUrl}}#contact-us-section" class="hover:text-rug-light-blue">Contact Us</a>
 	</li>
 	<li class="md:pb-2 lg:pb-0 lg:mr-10 xl:pl-20">
-	{{ sprig('_snippets/wish-list-icon', {}, {'id': 'counter'}) }}
+		{% include "_snippets/wish-list-icon" %}
 	</li>
 	<ul class="flex-row items-center justify-center hidden space-x-4 md:flex md:justify-start lg:hidden">
 	{% for block in socialMediaList %}

@@ -1,4 +1,4 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
 <a href="" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="showWish = true">
-	Wishlist <span class="bg-rug-yellow text-rug-dark-blue">{{ sprig.isRequest ? 1 : 0 }}</span>
+	Wishlist <span class="bg-rug-yellow text-rug-dark-blue" x-text="count"></span>
 </a>
