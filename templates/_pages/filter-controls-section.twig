@@ -1,4 +1,17 @@
 <section id="" class="w-full h-full px-4 md:px-8 section-wrapper">
+	<div class="flex flex-col self-center w-full md:w-2/3" x-data="{selected:null}">
+		<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
+			{{ entry.allRugsIntro|nl2br }}
+		</article>
+
+		<div id="" class="flex flex-row self-center justify-between w-full my-4 border-b-2 cursor-pointer border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
+			<p>{{ entry.picturesIntro }}</p>
+			<span :class="selected == 1 ? 'fa-minus-circle' : 'fa-plus-circle'" class="pb-1 text-2xl far"></span>
+		</div>
+		<div class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black" x-show="selected == 1">
+			{{ entry.picturesMoreInfo|nl2br }}
+		</div>
+	</div>
 	<div id="" class="flex flex-col flex-wrap items-start space-x-0 md:flex-row md:justify-center md:space-x-8 filter-ui-group">
 		<div id="" class="relative flex flex-col items-start w-full my-2 md:w-auto md:items-center" x-data="{ flyoutMenuOpen: false }">
 			<button type="button" class="inline-flex items-center text-base font-medium leading-6 text-gray-500 transition duration-150 ease-in-out group hover:text-gray-900 focus:outline-none focus:text-gray-900" @click="flyoutMenuOpen = !flyoutMenuOpen" x-state:on="Item active" x-state:off="Item inactive" :class="{ 'text-gray-900': flyoutMenuOpen, 'text-gray-500': !flyoutMenuOpen }">
@@ -201,19 +214,5 @@
 			</div>
 		</div>
 
-	</div>
-
-	<div class="flex flex-col self-center w-full md:w-2/3" x-data="{selected:null}">
-		<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
-			{{ entry.allRugsIntro|nl2br }}
-		</article>
-
-		<div id="" class="flex flex-row self-center justify-between w-full my-4 border-b-2 cursor-pointer border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
-			<p>{{ entry.picturesIntro }}</p>
-			<span :class="selected == 1 ? 'fa-minus-circle' : 'fa-plus-circle'" class="pb-1 text-2xl far"></span>
-		</div>
-		<div class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black" x-show="selected == 1">
-			{{ entry.picturesMoreInfo|nl2br }}
-		</div>
 	</div>
 </section>
