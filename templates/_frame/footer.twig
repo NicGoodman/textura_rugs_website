@@ -2,9 +2,9 @@
 	{% set homeEntry = craft.entries().section('home').one() %}
 	<nav id="site-navigation" class="w-full col-gap-8 text-base text-center md:text-left text-rug-white md:w-auto font-quicksand" style="column-count: 2;">
 		{% set navLinks = homeEntry.navigationItems.all() %}
+		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% set listStyles = "space-y-1" %}
 		{% include "_content/main-nav-list" %}
-		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% include "_content/social-media-list" %}
 	</nav>
 	{% set logo = homeEntry.logo.one().optimizedImages %}
