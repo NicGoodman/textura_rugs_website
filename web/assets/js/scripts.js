@@ -1,6 +1,7 @@
 $(function () {
     $('body').on('submit', '#remove-button', removeFromWishList);
     $('body').on('submit', '#send-wishlist', wishlistCC);
+    $('body').on('click', '#wishlistMenuButton', wishlistScrollLock);
 });
 
 function wishlistCC() {
@@ -82,3 +83,14 @@ $(function () {
         mixer.sort('sort', 'size:' + sortOrder);
     });
 });
+
+function wishlistScrollLock() {
+    const targetElement = document.querySelector('#wish-list');
+    var targetElementState = targetElement.style.display;
+    if (targetElementState == none) {
+        bodyScrollLock.disableBodyScroll(targetElement);
+    } else {
+        bodyScrollLock.enableBodyScroll(targetElement);
+    }
+
+}
