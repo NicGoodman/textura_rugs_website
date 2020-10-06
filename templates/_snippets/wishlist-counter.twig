@@ -1,1 +1,2 @@
+{% set list = craft.wishlist.lists().default(true).one() %}
 <span class="bg-rug-yellow text-rug-dark-blue" sprig s-trigger="every 1s">{{ list.items.all()|length }}</span>
