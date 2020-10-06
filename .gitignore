@@ -28,5 +28,3 @@
 *.zip
 
 *.unison.tmp
-
-!/vendor/verbb/wishlist/src/controllers/ListsController.php
