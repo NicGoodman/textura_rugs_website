@@ -1,5 +1,6 @@
 <section id="feed" class="flex flex-row flex-wrap items-start justify-center w-full">
 	{% set list = craft.wishlist.lists().default(true).one() %}
+	{% cache %}
 	{% for entry in inventoryQuery.all() %}
 		{% set name = entry.productTitle %}
 		{% if entry.primaryImage|length %}
@@ -7,6 +8,7 @@
 		{% endif %}
 		{% include "_content/rug-block" %}
 	{% endfor %}
+	{% endcache %}
 </section>
 <div class="p-4 space-x-4 text-xl text-center border-t mixitup-page-list font-bioRhyme text-rug-dark-blue border-dark-blue"></div>
 <div class="fixed top-0 left-0 z-50 flex flex-col items-end justify-end w-screen min-h-screen overflow-scroll" style="background-color: rgba(33, 42, 48, 0.33);" x-show="showRug" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform">
