@@ -1,7 +1,12 @@
 $(function () {
     $('body').on('submit', '#remove-button', removeFromWishList);
+    $('body').on('submit', '#send-wishlist', wishlistCC);
 });
 
+function wishlistCC() {
+    var setCC = $('#from-email').val();
+    $('[name="CC"]').val(setCC);
+}
 
 
 
