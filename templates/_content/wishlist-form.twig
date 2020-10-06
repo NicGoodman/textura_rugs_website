@@ -4,7 +4,7 @@
 
 		<input type="hidden" name="action" value="wishlist/lists/share-by-email">
 		{% if list|length %}
-		<input type="text" class="hidden" name="listId" value="{{ list.id }}">
+			<input type="text" class="hidden" name="listId" value="{{ list.id }}">
 		{% endif %}
 		<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 		{{ redirectInput('#wishlistForm') }}
@@ -33,15 +33,14 @@
 		</div>
 
 
-
-			<input id="designer-first-name" type="hidden" name="recipient[firstName]" value="Textura" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
-
-
-			<input id="designer-last-name" type="hidden" name="recipient[lastName]" value="Rugs" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
+		<input id="designer-first-name" type="hidden" name="recipient[firstName]" value="Textura" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
 
 
-			<input id="designer-email" type="hidden" name="recipient[email]" value="sales@texturarugs.com" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
+		<input id="designer-last-name" type="hidden" name="recipient[lastName]" value="Rugs" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
 
+		<input id="designer-email" type="hidden" name="recipient[email]" value="nic.goodman@hey.com" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
+
+		{# <input id="designer-email" type="hidden" name="recipient[email]" value="sales@texturarugs.com" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue"> #}
 
 
 		<div class="flex flex-col mb-4">
