@@ -86,8 +86,7 @@ $(function () {
 
 function wishlistScrollLock() {
     const targetElement = document.querySelector('#wish-list');
-    var targetElementState = targetElement.style.display;
-    if (targetElementState == none) {
+    if (targetElement.display === "flex") {
         bodyScrollLock.disableBodyScroll(targetElement);
     } else {
         bodyScrollLock.enableBodyScroll(targetElement);
