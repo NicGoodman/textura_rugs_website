@@ -203,14 +203,14 @@
 
 	</div>
 
-	<div class="flex flex-col w-full" x-data="{selected:null}">
+	<div class="flex flex-col w-full md:w-2/3" x-data="{selected:null}">
 		<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
 			{{ entry.allRugsIntro|nl2br }}
 		</article>
 
-		<div id="" class="flex flex-row self-center justify-between w-full my-4 border-b-2 md:w-2/3 h- border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
+		<div id="" class="flex flex-row self-center justify-between w-full my-4 border-b-2 cursor-pointer border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
 			<p>{{ entry.picturesIntro }}</p>
-			<span :class="selected == 1 ? 'fa-minus-circle' : 'fa-plus-circle'" class="text-2xl far "></span>
+			<span :class="selected == 1 ? 'fa-minus-circle' : 'fa-plus-circle'" class="pb-1 text-2xl far"></span>
 		</div>
 		<div class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black" x-show="selected == 1">
 			{{ entry.picturesMoreInfo|nl2br }}
