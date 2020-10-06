@@ -16,7 +16,9 @@
 		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% set listStyles = "flex flex-col md:flex-row flex-wrap items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4 md:mb-0 md:mt-2 lg:mt-0 font-quicksand" %}
 		{% include "_content/main-nav-list" %}
+		<div class="block md:hidden lg:block">
 		{% include "_content/social-media-list" %}
+		</div>
 	</nav>
 </header>
 <div class="fixed top-0 left-0 z-50 flex flex-row items-end justify-end w-screen min-h-screen overflow-scroll" style="background-color: rgba(33, 42, 48, 0.33);" x-show="showWish" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform" x-transition:enter-end="opacity-100 transform" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform" x-transition:leave-end="opacity-0 transform">
