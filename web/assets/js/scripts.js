@@ -4,8 +4,8 @@ $(function () {
 });
 
 function wishlistCC() {
-    var setCC = $('#from-email').val();
-    $('[name="CC"]').val(setCC);
+    var setCC = document.getElementById('from-email').value;
+    document.getElementById('ccEmail').value = setCC;
 }
 
 
