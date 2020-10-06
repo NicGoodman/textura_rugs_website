@@ -15,6 +15,7 @@
 		{% set navLinks = homeEntry.navigationItems.all() %}
 		{% set socialMediaList = homeEntry.socialMediaAccounts.all() %}
 		{% set listStyles = "flex flex-col md:flex-row flex-wrap items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4 md:mb-0 md:mt-2 lg:mt-0 font-quicksand" %}
+		{% set headerStyles = "lg:mr-10 xl:pl-20" %}
 		{% include "_content/main-nav-list" %}
 		<div class="block md:hidden lg:block">
 		{% include "_content/social-media-list" %}
