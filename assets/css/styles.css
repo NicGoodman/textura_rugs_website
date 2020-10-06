@@ -31,6 +31,11 @@ p {
   @apply text-base;
 }
 
+p a:hover {
+  @apply font-bold;
+  @apply text-rug-light-blue;
+}
+
 .section-wrapper {
   @apply max-w-screen-xl;
   @apply flex;
