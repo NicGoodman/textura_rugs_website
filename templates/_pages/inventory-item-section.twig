@@ -2,7 +2,6 @@
 <i class="z-50 w-full text-2xl cursor-pointer fas fa-times text-rug-dark-blue" @click="showRug = false"></i>
 	{% set list = craft.wishlist.lists().default(true).one() %}
 	<section id="" class="flex flex-col items-end w-full px-6 mb-4 text-left md:text-right md:w-1/3">
-	<button @click="count--">remove</button>
 		<h1 class="w-full">{{ entry.title }}</h1>
 		<h2>{{ entry.productDescription }}</h2>
 		<ul class="mb-6">
