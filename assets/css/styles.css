@@ -31,8 +31,12 @@ p {
   @apply text-base;
 }
 
-p a:hover {
+p a {
   @apply font-bold;
+  @apply italic;
+}
+
+p a:hover {
   @apply text-rug-light-blue;
 }
 
