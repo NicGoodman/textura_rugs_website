@@ -13,4 +13,46 @@
 	<li class="md:pb-2 lg:pb-0 lg:mr-10 xl:pl-20">
 		{% include "_snippets/wish-list-icon" %}
 	</li>
+	<ul class="flex-row items-center justify-center hidden space-x-4 md:flex md:justify-start lg:hidden">
+	{% for block in socialMediaList %}
+		{% set accountLink = block.accountLink %}
+		{% if 'youtube' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" target="_blank" rel="nofollow">
+					<i class="fab fa-youtube"></i>
+				</a>
+			</li>
+		{% elseif 'facebook' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" @click="isOpen = false" target="_blank" rel="nofollow">
+					<i class="fab fa-facebook-f"></i>
+				</a>
+			</li>
+		{% elseif 'twitter' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" @click="isOpen = false" target="_blank" rel="nofollow">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</li>
+		{% elseif 'instagram' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" @click="isOpen = false" target="_blank" rel="nofollow">
+					<i class="fab fa-instagram"></i>
+				</a>
+			</li>
+		{% elseif 'pinterest' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" @click="isOpen = false" target="_blank" rel="nofollow">
+					<i class="fab fa-pinterest-p"></i>
+				</a>
+			</li>
+		{% elseif 'linkedin' in accountLink %}
+			<li>
+				<a href="{{ accountLink }}" class="social-item" @click="isOpen = false" target="_blank" rel="nofollow">
+					<i class="fab fa-linkedin-in"></i>
+				</a>
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
 </ul>
