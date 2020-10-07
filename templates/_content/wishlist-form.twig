@@ -10,14 +10,14 @@
 		{{ redirectInput('#wishlistForm') }}
 		{% if craft.app.session.hasFlash('notice') %}{% endif %}
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-48 h-12 p-4 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
+			<p class="flex items-center justify-start w-48 h-12 p-4 text-xs md:text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="from-first-name">Your First Name</label>
 			</p>
 			<input id="from-first-name" type="text" name="sender[firstName]" value="" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
 
 		</div>
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-48 h-12 p-4 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
+			<p class="flex items-center justify-start w-48 h-12 p-4 text-xs md:text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="from-last-name">Your Last Name</label>
 			</p>
 			<input id="from-last-name" type="text" name="sender[lastName]" value="" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
@@ -25,7 +25,7 @@
 		</div>
 
 		<div class="flex flex-row items-center mb-4">
-			<p class="flex items-center justify-start w-48 h-12 p-4 text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
+			<p class="flex items-center justify-start w-48 h-12 p-4 text-xs md:text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label for="from-email">Your E-Mail</label>
 			</p>
 			<input id="from-email" type="text" name="sender[email]" value="" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
@@ -46,7 +46,7 @@
 
 
 		<div class="flex flex-col mb-4">
-			<p class="flex items-center justify-start w-48 h-12 p-4 text-sm text-left bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
+			<p class="flex items-center justify-start w-48 h-12 p-4 text-xs text-left md:text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
 				<label class="text-center" for="message">Special Requests</label>
 			</p>
 			<textarea rows="4" cols="40" id="specialRequests" name="fields[specialRequests]" class="w-full p-4 border-4 rounded-none resize-none text-rug-dark-blue border-rug-light-blue"></textarea>
