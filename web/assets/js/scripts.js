@@ -84,7 +84,7 @@ $(function () {
     });
 });
 function wishlistScrollLock() {
-    const targetElement = document.querySelector('#wish-list');
+    var targetElement = document.querySelector('#wish-list');
     if (targetElement.display === "flex") {
         bodyScrollLock.disableBodyScroll(targetElement);
     } else {
