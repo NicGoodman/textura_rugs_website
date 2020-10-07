@@ -60,9 +60,14 @@
 							<div class="w-full" x-show="selected == {{ loop.index }}">
 								{{ block.text|nl2br }}
 							</div>
-						{% case "button" %}
+						{% case "genericButton" %}
 							{% set ctaText = block.text %}
-							{% set ctaLink = block.buttonLink.getUrl %}
+							{% set ctaLink = block.buttonLink %}
+							{% include "_snippets/btn-main.twig" %}
+
+						{% case "callToActionButton" %}
+							{% set ctaText = block.callToActionText %}
+							{% set ctaLink = siteUrl ~ '#contact-us-section' %}
 							{% include "_snippets/btn-main.twig" %}
 
 					{% endswitch %}
