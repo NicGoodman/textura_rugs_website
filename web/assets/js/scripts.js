@@ -82,8 +82,3 @@ $(function () {
         mixer.sort('sort', 'size:' + sortOrder);
     });
 });
-$("#wish-list").on("show", function () {
-    $("body").addClass("overflow-hidden");
-  }).on("hidden", function () {
-    $("body").removeClass("overflow-hidden")
-  });
