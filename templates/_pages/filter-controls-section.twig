@@ -1,10 +1,10 @@
-<section id="" class="w-full h-full px-4 md:px-8 section-wrapper">
+<section id="" class="flex flex-col w-full h-full max-w-screen-xl px-4 mt-16 mb-8 md:px-8">
 	<div class="flex flex-col self-center w-full md:w-2/3" x-data="{selected:null}">
 		<article id="" class="self-center w-full mt-12 text-center md:w-2/3 text-rug-black">
 			{{ entry.allRugsIntro|nl2br }}
 		</article>
 
-		<div id="" class="flex flex-row self-center justify-between w-full my-4 border-b-2 cursor-pointer border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
+		<div id="" class="flex flex-row self-center justify-between w-full py-2 mt-4 mb-8 border-b-2 cursor-pointer border-rug-light-blue" @click="selected !== 1 ? selected = 1 : selected = null" :class="{ 'text-rug-dark-blue font-bold': selected === 1, 'text-rug-dark-blue': selected !== 1 }">
 			<p>{{ entry.picturesIntro }}</p>
 			<span :class="selected == 1 ? 'fa-minus-circle' : 'fa-plus-circle'" class="pb-1 text-2xl far"></span>
 		</div>

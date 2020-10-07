@@ -1357,6 +1357,10 @@ p a:hover {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -1371,6 +1375,10 @@ p a:hover {
 
 .mb-12 {
   margin-bottom: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .mt-20 {
@@ -1399,6 +1407,10 @@ p a:hover {
 
 .max-w-screen-md {
   max-width: 768px;
+}
+
+.max-w-screen-xl {
+  max-width: 1280px;
 }
 
 .min-h-screen {
@@ -1487,6 +1499,10 @@ p a:hover {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .pt-2 {
@@ -1707,6 +1723,10 @@ p a:hover {
 
 .z-20 {
   z-index: 20;
+}
+
+.z-40 {
+  z-index: 40;
 }
 
 .z-50 {
@@ -2087,6 +2107,10 @@ body:not(.user-is-tabbing) textarea:focus {
     height: 18rem;
   }
 
+  .md\:text-sm {
+    font-size: 0.875rem;
+  }
+
   .md\:m-4 {
     margin: 1rem;
   }
@@ -2106,6 +2130,10 @@ body:not(.user-is-tabbing) textarea:focus {
 
   .md\:mt-2 {
     margin-top: 0.5rem;
+  }
+
+  .md\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .md\:ml-10 {
