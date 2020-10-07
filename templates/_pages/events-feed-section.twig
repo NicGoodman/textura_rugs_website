@@ -5,8 +5,8 @@
 		{% for post in craft.entries().section('eventPosts').all() if post.date|date('Y-m-d') >= now|date('Y-m-d') %}
 			{% include "_content/event-post-block" %}
 		{% else %}
-			<article id="" class="flex flex-row flex-wrap self-center w-full mt-12 text-center border-2 text-rug-black border-rug-grey">
-			<img src="{{ noEventsImage.src }}" alt="" data-srcset="{{ noEventsImage.srcset}}" class="object-cover w-full mb-4 h-80" />
+			<article id="" class="flex flex-row flex-wrap justify-center w-full mt-12 text-center text-rug-black">
+			<img src="{{ noEventsImage.src }}" alt="" data-srcset="{{ noEventsImage.srcset}}" class="object-cover w-full mb-4 border-2 h-80 border-rug-grey" />
 				<p>{{ entry.noEventsMessage|nl2br }}</p>
 			</article>
 		{% endfor %}
