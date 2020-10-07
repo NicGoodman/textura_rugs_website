@@ -83,10 +83,6 @@ $(function () {
         mixer.sort('sort', 'size:' + sortOrder);
     });
 });
-const bodyScrollLock = require('body-scroll-lock');
-const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-
 function wishlistScrollLock() {
     const targetElement = document.querySelector('#wish-list');
     if (targetElement.display === "flex") {
