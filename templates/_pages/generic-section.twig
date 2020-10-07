@@ -63,12 +63,14 @@
 						{% case "genericButton" %}
 							{% set ctaText = block.text %}
 							{% set ctaLink = block.buttonLink %}
-							{% include "_snippets/btn-main.twig" %}
+							<a href="{{ ctaLink }}" class="self-start btn-main">{{ ctaText }}</a>
+
 
 						{% case "callToActionButton" %}
 							{% set ctaText = block.callToActionText %}
 							{% set ctaLink = siteUrl ~ '#contact-us-section' %}
-							{% include "_snippets/btn-main.twig" %}
+							<a href="{{ ctaLink }}" class="self-start btn-main">{{ ctaText }}</a>
+
 
 					{% endswitch %}
 				{% endfor %}
