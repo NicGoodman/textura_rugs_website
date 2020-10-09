@@ -40,7 +40,7 @@
 
 		<div class="flex flex-row items-center mb-4">
 			<p class="flex items-center justify-start w-32 h-12 p-4 text-xs text-left md:text-sm bg-rug-light-blue text-rug-dark-blue font-nexa-rust-sans">
-				<label for="phonel">Phone</label>
+				<label for="phone">Phone</label>
 			</p>
 			<input id="phone" type="text" name="message[Phone]" value="{{ message.fromPhone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none text-rug-dark-blue border-rug-light-blue">
 			{{ message is defined and message ? errorList(message.getErrors('fromPhone')) }}

@@ -14,7 +14,7 @@
 					<picture class="relative p-4">
 						<div class="w-32 md:w-auto">
 							<a href="{{ collection.getUrl }}">
-								<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+								<img src="{{ thumbnail.src(320) }}" alt="{{ collection.title }} rug picture" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 								<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 							</a>
 						</div>
@@ -34,7 +34,7 @@
 					<picture class="relative p-4">
 						<div class="w-32 md:w-auto">
 							<a href="{{ collection.getUrl }}">
-								<img src="{{ thumbnail.src() }}" alt="{{ collection.collectionThumbnail.title }}" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+								<img src="{{ thumbnail.src(320) }}" alt="{{ collection.title }} rug picture" data-srcset="{{ thumbnail.srcset() }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 								<p class="right-0 block p-2 text-sm leading-tight md:absolute md:p-4 bg-rug-grey hover:bg-rug-light-blue bottom-1">{{ collection.title }}</p>
 							</a>
 						</div>

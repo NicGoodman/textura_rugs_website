@@ -2,6 +2,7 @@
 
 @font-face {
   font-family: "NexaRustSans-Book";
+  font-display: swap;
   src: url("../fonts/nexa-rust-sans-book.woff2") format("woff2"),
     url("..//fonts/nexa-rust-sans-book.woff") format("woff");
 }

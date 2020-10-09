@@ -1,6 +1,6 @@
 {% set list = craft.wishlist.lists().default(true).one() %}
 <div class="flex flex-row justify-center">
-<a href="" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" id="wishlistMenuButton" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="showWish = true, open = true">
+<a href="" hx-get="/wish-list" hx-trigger="click" hx-target="#wish-list" id="{{ wishlistID }}" class="wish-list-link font-quicksand hover:text-rug-light-blue" @click="showWish = true, open = true">
 	Wishlist
 </a>
 {{ sprig('_snippets/wishlist-counter') }}

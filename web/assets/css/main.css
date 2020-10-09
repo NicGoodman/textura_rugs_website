@@ -593,6 +593,8 @@ video {
 @font-face {
   font-family: "NexaRustSans-Book";
 
+  font-display: swap;
+
   src: url("../fonts/nexa-rust-sans-book.woff2") format("woff2"),
     url("..//fonts/nexa-rust-sans-book.woff") format("woff");
 }
@@ -1391,6 +1393,10 @@ p a:hover {
 
 .mb-20 {
   margin-bottom: 5rem;
+}
+
+.max-h-96 {
+  max-height: 24rem;
 }
 
 .max-h-2\/3-screen {
