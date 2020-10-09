@@ -3,7 +3,7 @@
 		{% if entry.primaryImage|length %}
 			<picture>
 			{% set altName = entry.title ~ 'rug picture' %}
-				<img src="" data-srcset="{{ thumbnail.srcset() }}" data-src="{{ thumbnail.src(320) }}" alt="{{ name }}" class="object-cover w-32 h-32 border-2 md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
+				<img data-src="{{ thumbnail.src(320) }}" data-srcset="{{ thumbnail.srcset() }}" alt="{{ name }}" class="object-cover w-32 h-32 border-2 lazyload md:w-40 md:h-40 xl:w-56 xl:h-56 border-rug-grey hover:border-rug-light-blue">
 			</picture>
 		{% endif %}
 		<h2 class="mt-2">{{ entry.title }}</h2>
