@@ -16,7 +16,7 @@
 
 		<input type="hidden" name="action" value="contact-form/send">
 		<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
-		{{ redirectInput('#contact-us') }}
+		{{ redirectInput('#contact-us-section') }}
 		{% if craft.app.session.hasFlash('notice') %}
 			<p class="mb-2 font-bold text-center message notice">{{ craft.app.session.getFlash('notice') }}</p>
 		{% elseif craft.app.session.hasFlash('error') %}
