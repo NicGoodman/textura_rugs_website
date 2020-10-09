@@ -1,4 +1,5 @@
-var chevronSize = document.getElementById("chevron-size");
+$(document).ready(function () {
+    var chevronSize = document.getElementById("chevron-size");
 $(function () {
     var sortOrder = 'asc',
         $toggleSortSize = $('.toggle-sort-size');
@@ -30,3 +31,4 @@ $(function () {
         mixer.sort('sort', 'size:' + sortOrder);
     });
 });
+  });
