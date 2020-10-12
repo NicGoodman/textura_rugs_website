@@ -1146,6 +1146,10 @@ p a:hover {
   flex-wrap: wrap;
 }
 
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -2079,6 +2083,10 @@ body:not(.user-is-tabbing) textarea:focus {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:flex-no-wrap {
+    flex-wrap: nowrap;
   }
 
   .md\:items-start {
