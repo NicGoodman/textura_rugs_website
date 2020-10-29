@@ -5,8 +5,8 @@
 		{% set name = entry.productTitle %}
 		{% if entry.primaryImage|length %}
 			{% set thumbnail = entry.primaryImage.one().optimizedImages %}
-		{% endif %}
 		{% include "_content/rug-block" %}
+		{% endif %}
 	{% endfor %}
 	{% endcache %}
 </section>
