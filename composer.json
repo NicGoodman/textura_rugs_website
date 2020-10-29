@@ -9,7 +9,7 @@
     "ether/tags": "^1.0",
     "nystudio107/craft-imageoptimize": "^1.6",
     "nystudio107/craft-seomatic": "^3.3",
-    "putyourlightson/craft-sprig": "1.0.0-beta.17",
+    "putyourlightson/craft-sprig": "^1.0",
     "venveo/craft-bulkedit": "^2.0",
     "verbb/expanded-singles": "^1.1",
     "verbb/super-table": "^2.5",

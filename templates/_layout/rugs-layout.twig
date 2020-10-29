@@ -6,7 +6,7 @@
 {% block main %}
 	<main class="flex flex-col items-center flex-grow w-full bg-rug-white">
 		{% set headingText = "All Rugs" %}
-		{% set inventoryQuery = craft.entries().section('inventory') %}
+		{% set inventoryQuery = craft.entries().section('inventory').orderBy('postDate desc') %}
 
 		<section id="" class="w-full p-4 section-wrapper md:p-8">
 			{% include "_snippets/heading" %}
