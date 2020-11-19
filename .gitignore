@@ -29,3 +29,4 @@
 
 *.unison.tmp
 vendor/verbb/wishlist/src/controllers/ListsController.php
+vendor/craftcms/cms/src/web/Controller.php
