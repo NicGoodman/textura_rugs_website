@@ -26,6 +26,8 @@ return [
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
+        'maxSlugIncrement' => 1000,
+
         // Hyperlane defined aliases
         'aliases' => [
             '@assetBasePath' => getenv('ASSET_BASE_PATH'),
