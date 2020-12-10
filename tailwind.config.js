@@ -42,7 +42,4 @@ module.exports = {
     zIndex: ['responsive', 'hover', 'focus'],
     textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [
-    require('@tailwindcss/ui'),
-  ],
 }
