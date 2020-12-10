@@ -1751,6 +1751,10 @@ body:not(.user-is-tabbing) textarea:focus {
     flex-direction: row;
   }
 
+  .md\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
   .md\:items-start {
     align-items: flex-start;
   }
